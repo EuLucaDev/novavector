@@ -3,9 +3,9 @@
 //! Library writes `.vcstyles` files that open as libraries.
 
 use egui::{Event, Modifiers, PointerButton, Pos2, Rect, vec2};
-use serde_json::{Value, json};
 use novavector_doc::style_libs::STYLE_LIBRARIES;
 use novavector_engine::Session;
+use serde_json::{Value, json};
 
 use super::graphic_styles::GraphicStyleLibraries;
 use super::library_panel::{self, LibraryKind, OpenLibrary};

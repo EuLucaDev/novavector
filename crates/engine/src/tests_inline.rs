@@ -1,9 +1,9 @@
 //! Inline graphics in text: `text.insertInline`, editing over them, undo, following their symbol.
 
-use serde_json::json;
 use novavector_doc::text::INLINE_CHAR;
 use novavector_doc::{NodeId, NodeKind, TextObject};
 use novavector_tools::{Mods, PointerEvent, PointerKind, ToolKey};
+use serde_json::json;
 
 use super::*;
 

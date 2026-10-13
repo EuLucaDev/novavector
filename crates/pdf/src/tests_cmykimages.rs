@@ -6,11 +6,11 @@ use std::sync::Arc;
 
 use hayro_syntax::Pdf;
 use hayro_syntax::object::{Array, Name, Object, Stream};
-use serde_json::json;
 use novavector_color::cms::{self, DEVICE_CMYK, GENERIC_CMYK, SRGB};
 use novavector_doc::cmyk::Inks;
 use novavector_doc::{ColorMode, Document, ImageBlob, ImageObject, Node, NodeKind};
 use novavector_geom::Affine;
+use serde_json::json;
 
 use crate::*;
 

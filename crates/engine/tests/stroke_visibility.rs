@@ -1,10 +1,10 @@
 //! Painting a previously unpainted zero-width stroke restores the existing 1 pt default.
 #![allow(clippy::unwrap_used)]
 
-use serde_json::json;
 use novavector_doc::NodeId;
 use novavector_engine::{Session, ViewInfo};
 use novavector_tools::{PointerEvent, PointerKind};
+use serde_json::json;
 
 fn fixture() -> (Session, NodeId) {
     let mut s = Session::new();

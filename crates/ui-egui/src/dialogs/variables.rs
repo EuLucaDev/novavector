@@ -6,8 +6,8 @@
 //! `text` variable, a checkbox for a `visibility` one. `dataset.set` opens with the row's
 //! current values, so editing a row is editing what it already says.
 
-use serde_json::{Value, json};
 use novavector_doc::{DataValue, VariableKind, Variables};
+use serde_json::{Value, json};
 
 use super::{DialogSpec, run_and_close};
 use crate::NovavectorApp;
@@ -286,8 +286,8 @@ fn confirm(app: &mut NovavectorApp, d: &Dialog) -> Result<Value, String> {
 
 #[cfg(test)]
 mod tests {
-    use serde_json::json;
     use novavector_engine::Session;
+    use serde_json::json;
 
     use super::*;
 

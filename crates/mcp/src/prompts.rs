@@ -6,8 +6,8 @@
 //! the same [`Live`] catalogues, so `completion/complete` can suggest real command ids, effect ids,
 //! swatch names and export formats instead of a fixed list that goes stale.
 
-use serde_json::{Value, json};
 use novavector_engine::cmd::fileio::FORMATS;
+use serde_json::{Value, json};
 
 use crate::backend::Backend;
 
@@ -156,7 +156,7 @@ pub static PROMPTS: &[PromptDef] = &[
             },
         ],
         text: "\
-Design a poster in NovaVector.
+Design a poster in Nova Vector.
 
 Brief: {brief}
 Palette: {palette}
@@ -208,7 +208,7 @@ rasterise unless the brief asks for it.",
             },
         ],
         text: "\
-Draw a set of {count} icons of {subject} in NovaVector, {detail}.
+Draw a set of {count} icons of {subject} in Nova Vector, {detail}.
 
 Coordinates are points in document space (y down, origin at the first artboard's
 top-left).
@@ -251,7 +251,7 @@ Return the ids of the icons in a grid, and leave them as separate objects on one
             },
         ],
         text: "\
-Recolour the current selection in NovaVector with {palette}, using the `{method}` recolour method.
+Recolour the current selection in Nova Vector with {palette}, using the `{method}` recolour method.
 
 Method:
 1. inspect_document to see what is selected and what colours it actually uses.
@@ -289,7 +289,7 @@ One undo step covers the whole change; gradients and linked swatches stay linked
             },
         ],
         text: "\
-Trace the image at {path} in NovaVector with the \"{preset}\" preset, then style the result
+Trace the image at {path} in Nova Vector with the \"{preset}\" preset, then style the result
 with the {effect} effect.
 
 Method:
@@ -340,7 +340,7 @@ The trace is real geometry: every traced shape stays selectable and editable.",
             },
         ],
         text: "\
-Export the document in NovaVector to {formats}, into {directory}, at {scale} pixels per
+Export the document in Nova Vector to {formats}, into {directory}, at {scale} pixels per
 point for the raster formats.
 
 Method:

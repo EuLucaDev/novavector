@@ -5,13 +5,13 @@
 
 use std::sync::{Mutex, MutexGuard};
 
-use serde_json::json;
 use novavector_color::cms;
 use novavector_engine::Session;
 use novavector_engine::cmd::colormgmt::{PROFILES_KEY, doc_profiles};
 use novavector_geom::Affine;
 use novavector_render::{RenderOptions, Renderer};
 use novavector_testkit::fixtures::{exec, rect, session};
+use serde_json::json;
 
 /// The active Color Settings: one test at a time.
 fn settings() -> MutexGuard<'static, ()> {

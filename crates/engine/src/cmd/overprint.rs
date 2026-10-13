@@ -5,10 +5,10 @@
 use std::collections::BTreeSet;
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_doc::overprint::OverprintBlack;
 use novavector_doc::{Document, ImageMap, Node, NodeId, NodeKind};
 use novavector_geom::FillRule;
+use serde_json::{Value, json};
 
 use super::appearance::{ItemTarget, item_target};
 use super::edit::selected_roots;

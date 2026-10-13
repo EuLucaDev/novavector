@@ -1,13 +1,13 @@
 //! The built-in [Registration] swatch (every plate, PDF `/Separation /All`), Object → Create Trim
 //! Marks (Registration, every artboard, Japanese marks) and Effect → Crop Marks.
 
-use serde_json::{Value, json};
 use novavector_color::Paint;
 use novavector_color::swatch::REGISTRATION;
 use novavector_doc::{Document, Node};
 use novavector_geom::Affine;
 use novavector_render::proof::ProofSetup;
 use novavector_render::{RenderOptions, Renderer};
+use serde_json::{Value, json};
 
 use super::*;
 use crate::tests_colormgmt::GLOBAL;
@@ -103,11 +103,9 @@ fn pdf_writes_registration_as_separation_all() {
     let mut s = session();
     run(&mut s, "shape.rectangle", json!({"x": 30, "y": 30, "width": 40, "height": 40}));
     run(&mut s, "object.createTrimMarks", json!({}));
-    let bytes = novavector_pdf::export(
-        &s.doc().unwrap().doc,
-        &novavector_pdf::PdfOptions { created: Some(0), ..novavector_pdf::PdfOptions::uncompressed() },
-    )
-    .unwrap();
+    let bytes =
+        novavector_pdf::export(&s.doc().unwrap().doc, &novavector_pdf::PdfOptions { created: Some(0), ..novavector_pdf::PdfOptions::uncompressed() })
+            .unwrap();
     let pdf = String::from_utf8_lossy(&bytes);
     assert!(pdf.contains("/Separation/All/DeviceCMYK"), "Registration prints on every plate");
 }

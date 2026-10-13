@@ -1,8 +1,8 @@
 //! `document.open` keeps a PDF's CMYK, Gray and spot colours, and `colorMode` picks the mode.
 
-use serde_json::json;
 use novavector_color::{Color, Paint};
 use novavector_doc::ColorMode;
+use serde_json::json;
 
 use super::*;
 

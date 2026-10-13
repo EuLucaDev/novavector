@@ -2,11 +2,11 @@
 //! handles turn with them, sizes are measured along their own axes, and Reset Bounding Box squares
 //! the box to the page again.
 
-use serde_json::{Value, json};
 use novavector_doc::OrientedBox;
 use novavector_geom::{Point, Rect};
 use novavector_tools::bbox::Handle;
 use novavector_tools::{Mods, PointerEvent, PointerKind};
+use serde_json::{Value, json};
 
 use super::*;
 

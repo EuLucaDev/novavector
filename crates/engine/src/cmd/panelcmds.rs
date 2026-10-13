@@ -1,9 +1,9 @@
 //! Commands the panels need beyond the core set: artboard reorder, duplicate, copy and cut, and the advanced
 //! Character/Paragraph attributes.
 
-use serde_json::{Value, json};
 use novavector_doc::{Composer, NodeKind, Scaling};
 use novavector_geom::{Rect, Vec2};
+use serde_json::{Value, json};
 
 use super::*;
 use crate::{Clipboard, EngineError};

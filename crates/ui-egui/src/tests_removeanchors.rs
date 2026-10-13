@@ -3,10 +3,10 @@
 //! the Properties panel's other anchor buttons: convert to corner or smooth, connect, cut.
 
 use egui::{Event, PointerButton, Pos2, Rect, Shape, vec2};
-use serde_json::json;
 use novavector_doc::NodeId;
 use novavector_engine::Session;
 use novavector_geom::Point;
+use serde_json::json;
 
 use crate::canvas::Xf;
 use crate::menus::{self, Item};
@@ -182,9 +182,8 @@ fn the_control_bar_converts_connects_and_cuts_selected_anchors() {
     app.run("select.anchors", json!({"id": id.0, "anchors": [[0, 1]]})).unwrap();
     let ctx = egui::Context::default();
     crate::theme::install_fonts(&ctx);
-    let anchor = |app: &NovavectorApp, id: NodeId, ai: usize| {
-        app.session.active().unwrap().doc.node(id).unwrap().path_data().unwrap().subpaths[0].anchors[ai]
-    };
+    let anchor =
+        |app: &NovavectorApp, id: NodeId, ai: usize| app.session.active().unwrap().doc.node(id).unwrap().path_data().unwrap().subpaths[0].anchors[ai];
     let last_undo = |app: &NovavectorApp| app.session.active().unwrap().history.undo.last().unwrap().label.clone();
     // Convert: smooth, then corner again.
     click_button(&mut app, &ctx, "Convert:", 1);

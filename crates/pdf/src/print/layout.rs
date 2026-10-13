@@ -7,10 +7,10 @@
 //! corner, of which each page shows one tile.
 
 use kurbo::{Affine, Rect};
-use serde::Serialize;
 use novavector_doc::marks::outset;
 use novavector_doc::range::parse_range;
 use novavector_doc::{Document, Node, NodeKind};
+use serde::Serialize;
 
 use super::{Emulsion, Orientation, PrintArtboards, PrintScaling, PrintSettings};
 use crate::PdfError;

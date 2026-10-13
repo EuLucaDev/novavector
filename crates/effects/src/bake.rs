@@ -358,9 +358,9 @@ pub fn bake_document(doc: &Document) -> Option<Document> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use serde_json::json;
     use novavector_doc::{Effect, NodeId};
     use novavector_geom::{Rect, shapes};
+    use serde_json::json;
 
     fn fx(id: &str, params: serde_json::Value) -> Effect {
         Effect { id: id.into(), params, visible: true }

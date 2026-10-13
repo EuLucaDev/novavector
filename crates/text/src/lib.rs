@@ -10,7 +10,6 @@
 #![forbid(unsafe_code)]
 
 mod composer;
-pub mod novafoods_fonts;
 pub mod edit;
 pub mod embed;
 mod features;
@@ -18,6 +17,7 @@ mod fontconfig;
 mod fontdb;
 pub mod hyphen;
 mod layout;
+pub mod novafoods_fonts;
 mod shape;
 #[cfg(not(target_arch = "wasm32"))]
 mod suitcase;
@@ -25,7 +25,6 @@ mod suitcase;
 pub mod test_fonts;
 pub mod thread;
 
-pub use novafoods_fonts::{NOVAFOODS_FONTS, CraftFont, WEB_FONTS, WebFont};
 pub use features::{EXTRA_FEATURES, LIGATURE_TRACKING_LIMITS, OtFeatures, explicit_ligatures, ligatures_suppressed_by};
 pub use fontdb::{
     FALLBACK_FAMILY, FontClass, FontDb, FontFace, FontMatch, FontTraits, IcfMargins, PlatformFontFiles, WantedFont, WantedFonts, app_font_dir,
@@ -34,6 +33,7 @@ pub use fontdb::{
 pub use hyphen::{hyphenation_exceptions, set_hyphenation_exceptions};
 use kurbo::{Affine, BezPath, Point, Rect, Vec2};
 pub use layout::{decorations, fit_first_line, layout, layout_with};
+pub use novafoods_fonts::{CraftFont, NOVAFOODS_FONTS, WEB_FONTS, WebFont};
 pub use novavector_doc::TextObject;
 
 pub use novavector_doc::{AreaFit, FirstBaseline, VerticalAlign};

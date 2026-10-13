@@ -4,10 +4,10 @@
 //! edited as commands, listed in the catalogue, drawn on the canvas, and written to PDF and SVG
 //! as images of the effected object.
 
-use serde_json::{Value, json};
 use novavector_doc::NodeKind;
 use novavector_geom::Rect;
 use novavector_render::{Rendered, Renderer};
+use serde_json::{Value, json};
 
 use super::*;
 

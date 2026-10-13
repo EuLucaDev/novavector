@@ -6,9 +6,9 @@
 
 use std::collections::HashSet;
 
-use usvg::roxmltree;
 use novavector_doc::TextObject;
 use novavector_geom::Affine;
+use usvg::roxmltree;
 
 use super::css::{Styles, XNode};
 use super::{Edits, href};

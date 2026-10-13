@@ -1,10 +1,10 @@
 //! Use Preview Bounds: the Transform panel values, the bounding box, Align and Distribute measure
 //! visual bounds (strokes included) when it is on.
 
-use serde_json::{Value, json};
 use novavector_doc::NodeId;
 use novavector_geom::Rect;
 use novavector_tools::{PointerEvent, PointerKind};
+use serde_json::{Value, json};
 
 use super::*;
 

@@ -2,11 +2,11 @@
 //! attachment bookkeeping (copy, paste, duplicate, Selection-tool moves, release) and drawing in
 //! perspective (flare, spiral, polar grid, click-to-size dialogs).
 
-use serde_json::json;
 use novavector_doc::NodeKind;
 use novavector_geom::{Point, Rect};
 use novavector_tools::Mods;
 use novavector_tools::distort::perspective::{self as persp, Plane};
+use serde_json::json;
 
 use super::tests_persp_select::{attached, drag, grid, persp_session, undo_len};
 use super::*;

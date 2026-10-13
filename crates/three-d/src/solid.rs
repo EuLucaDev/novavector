@@ -989,9 +989,8 @@ fn material(outline: &PathData, cell: Rect) -> Option<Vec<Vec<Point>>> {
         true,
     ));
     let rule = novavector_geom::FillRule::NonZero;
-    let part =
-        novavector_pathops::try_boolean(&r, rule, outline, rule, novavector_pathops::BoolOp::Intersect, novavector_pathops::DEFAULT_PRECISION)
-            .ok()?;
+    let part = novavector_pathops::try_boolean(&r, rule, outline, rule, novavector_pathops::BoolOp::Intersect, novavector_pathops::DEFAULT_PRECISION)
+        .ok()?;
     rings(&part, cell.width(), MAX_PLANE_POINTS).ok()
 }
 

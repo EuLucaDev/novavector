@@ -7,7 +7,6 @@
 use std::collections::{HashMap, HashSet};
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_color::cms::Model;
 use novavector_color::harmony::{Guide, GuideOptions, Harmony, Variation};
 use novavector_color::{Color, Paint, keep_model};
@@ -16,6 +15,7 @@ use novavector_doc::pattern::PatternDef;
 pub(crate) use novavector_doc::recolor::map_paint;
 use novavector_doc::recolor::{ColorVisitor, Reach, map_links, recolor_node};
 use novavector_doc::{Document, ImageBlob, Node, NodeId, NodeKind};
+use serde_json::{Value, json};
 
 use super::edit::selected_roots;
 use super::*;

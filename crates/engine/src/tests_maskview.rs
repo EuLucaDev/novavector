@@ -1,9 +1,9 @@
 //! View Opacity Mask (M3.86): the canvas shows only the mask, as greyscale coverage, while it is
 //! edited; toggling it off shows the artwork again, and leaving editing by any route ends it.
 
-use serde_json::json;
 use novavector_geom::Affine;
 use novavector_render::{RenderOptions, Renderer};
+use serde_json::json;
 
 use super::*;
 

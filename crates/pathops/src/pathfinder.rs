@@ -502,8 +502,8 @@ fn mid_point(c: &[Seg]) -> Point {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use proptest::prelude::*;
     use novavector_geom::{Rect, SubPath, shapes};
+    use proptest::prelude::*;
 
     /// The faces one contour pass per mask finds: what [`regions_of`] must match exactly.
     fn regions_one_mask_at_a_time(arr: &Arrangement) -> Vec<Region> {

@@ -1,9 +1,9 @@
 //! Menu long-tail commands (Object/Edit/Select/Type/View/File), driven through `Session::execute`.
 
-use serde_json::{Value, json};
 use novavector_color::{Color, Paint};
 use novavector_doc::{Appearance, ColorMode, LiveShape, Node, NodeKind, TextKind};
 use novavector_geom::{Rect, shapes};
+use serde_json::{Value, json};
 
 use super::tests_large_edits::{layer, run_soon, square, undo_gives_back};
 use super::*;

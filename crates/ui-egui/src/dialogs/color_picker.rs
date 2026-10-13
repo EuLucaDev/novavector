@@ -9,11 +9,11 @@
 //! and `swatches`. `stroke` and `original` come from the opener.
 
 use egui::{Rect, Sense, Ui, vec2};
-use serde_json::{Value, json};
 use novavector_color::cms::{self, Lab};
 use novavector_color::{Color, Paint};
 use novavector_doc::ColorMode;
 use novavector_engine::cmd::color_value;
+use serde_json::{Value, json};
 
 use super::DialogSpec;
 use super::form::PREVIEWED;

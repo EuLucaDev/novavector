@@ -1,7 +1,7 @@
 //! Object → Slice, View → Hide/Lock Slices, Select → Object → Slices and `slice.list`.
 
-use serde_json::{Value, json};
 use novavector_doc::SliceKind;
+use serde_json::{Value, json};
 
 use super::*;
 

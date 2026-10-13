@@ -115,8 +115,8 @@ pub fn confirm(app: &mut NovavectorApp) -> Result<Value, String> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use std::sync::{Arc, Mutex};
     use novavector_engine::Session;
+    use std::sync::{Arc, Mutex};
 
     /// An app whose Save As picks `out.novavector` and records written paths.
     fn app() -> (NovavectorApp, Arc<Mutex<Vec<String>>>) {

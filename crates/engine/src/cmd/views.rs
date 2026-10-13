@@ -1,9 +1,9 @@
 //! View → New View… / Edit Views…: saved views stored in the document; per-document view
 //! toggles (Show Transparency Grid).
 
-use serde_json::{Value, json};
 use novavector_doc::SavedView;
 use novavector_geom::Point;
+use serde_json::{Value, json};
 
 use super::*;
 

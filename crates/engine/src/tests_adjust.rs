@@ -1,8 +1,8 @@
 //! Live colour adjustments (Effect → Color Adjustments) through the commands: applied, listed,
 //! exported, expanded and kept in the native file.
 
-use serde_json::json;
 use novavector_doc::{Node, NodeKind};
+use serde_json::json;
 
 use super::*;
 
@@ -73,13 +73,11 @@ fn an_adjustment_is_live_and_one_undo_step() {
     assert_eq!(fill_hex(&n), "#ff0000");
     assert_eq!(n.appearance.effects.len(), 1);
     // Drawn green.
-    let img =
-        novavector_render::Renderer::new().render_region(&s.doc().unwrap().doc, novavector_geom::Rect::new(0.0, 0.0, 100.0, 100.0), 1.0, true);
+    let img = novavector_render::Renderer::new().render_region(&s.doc().unwrap().doc, novavector_geom::Rect::new(0.0, 0.0, 100.0, 100.0), 1.0, true);
     assert_eq!(img.pixel(50, 50), [0, 255, 0, 255]);
     // Editing the parameters changes it live.
     s.execute("effect.setParams", &json!({"index": 0, "item": null, "params": {"hue": -120}})).unwrap();
-    let img =
-        novavector_render::Renderer::new().render_region(&s.doc().unwrap().doc, novavector_geom::Rect::new(0.0, 0.0, 100.0, 100.0), 1.0, true);
+    let img = novavector_render::Renderer::new().render_region(&s.doc().unwrap().doc, novavector_geom::Rect::new(0.0, 0.0, 100.0, 100.0), 1.0, true);
     assert_eq!(img.pixel(50, 50), [0, 0, 255, 255]);
 }
 

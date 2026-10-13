@@ -1,8 +1,8 @@
 //! Creating art: shapes, paths, text.
 
-use serde_json::{Value, json};
 use novavector_doc::{Appearance, CharStyle, LiveShape, Node, NodeKind, TextObject};
 use novavector_geom::{Affine, Anchor, AnchorKind, FillRule, PathData, Point, Rect, SubPath, shapes};
+use serde_json::{Value, json};
 
 use super::newart::NewArt;
 use super::*;

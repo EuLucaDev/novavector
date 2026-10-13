@@ -4,9 +4,9 @@
 
 use std::sync::Arc;
 
-use serde::{Deserialize, Serialize};
 use novavector_color::{Color, Paint};
 use novavector_geom::{Point, Rect, shapes};
+use serde::{Deserialize, Serialize};
 
 use crate::{Appearance, CharStyle, Node, NodeId, NodeKind, TextObject};
 

@@ -5,10 +5,10 @@
 //! (Clear Overrides first resets to the Normal style). Redefining a style updates its users but keeps
 //! their local overrides: an attribute changes only where it still had the old style's value.
 
+use novavector_doc::{CharStyle, Document, NodeId, NodeKind, ParaStyle, TextStyleDef};
 use serde::Serialize;
 use serde::de::DeserializeOwned;
 use serde_json::{Map, Value, json};
-use novavector_doc::{CharStyle, Document, NodeId, NodeKind, ParaStyle, TextStyleDef};
 
 use super::typecmd::{refresh_bounds, text_targets};
 use super::*;

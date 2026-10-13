@@ -6,11 +6,11 @@
 
 use std::time::Instant;
 
-use serde_json::json;
 use novavector_color::{Color, Paint};
 use novavector_doc::{Appearance, Document, Node, hit};
 use novavector_geom::{Affine, Point, Rect, shapes};
 use novavector_render::{RenderOptions, Renderer};
+use serde_json::json;
 
 /// Deterministic xorshift in 0..1.
 struct Rng(u64);

@@ -1,10 +1,10 @@
 //! Flatten Transparency in CMYK documents composites inks, as the canvas shows them (M3.90).
 
-use serde_json::{Value, json};
 use novavector_color::{BlendMode, Color};
 use novavector_doc::{AppearanceItem, Node, NodeKind};
 use novavector_geom::{Point, Rect, Shape};
 use novavector_render::Renderer;
+use serde_json::{Value, json};
 
 use super::*;
 

@@ -10,9 +10,9 @@
 //! other tools collect the drag polyline (shown as an overlay) and run
 //! one command on release.
 
-use serde_json::{Value, json};
 use novavector_doc::NodeId;
 use novavector_geom::Point;
+use serde_json::{Value, json};
 
 use super::{FEEDBACK, points_json, polyline};
 use crate::guides::DrawSnap;

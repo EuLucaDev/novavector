@@ -493,8 +493,8 @@ mod tests {
     use std::sync::Arc;
 
     use super::*;
-    use serde_json::json;
     use novavector_engine::Session;
+    use serde_json::json;
 
     use crate::NovavectorApp;
 

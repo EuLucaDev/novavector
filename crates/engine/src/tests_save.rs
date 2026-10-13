@@ -3,9 +3,9 @@
 
 use std::path::PathBuf;
 
-use serde_json::{Value, json};
 use novavector_doc::SavedView;
 use novavector_geom::Point;
+use serde_json::{Value, json};
 
 use super::*;
 use crate::cmd::fileio::{SaveMode, save_plan};

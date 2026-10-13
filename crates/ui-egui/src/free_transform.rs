@@ -122,9 +122,9 @@ fn paint(ui: &Ui, glyph: Glyph, r: Rect, color: Color32) {
 
 #[cfg(test)]
 mod tests {
-    use serde_json::json;
     use novavector_engine::Session;
     use novavector_geom::Point;
+    use serde_json::json;
 
     use super::*;
     use crate::canvas::Xf;

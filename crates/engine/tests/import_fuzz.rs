@@ -15,11 +15,11 @@
 // Integration tests: unwrapping and panicking on failure is fine here, unlike in shipped code (AGENTS.md › Robustness).
 #![allow(clippy::unwrap_used, clippy::expect_used, clippy::panic)]
 
-use proptest::prelude::*;
-use serde_json::{Value, json};
 use novavector_doc::Document;
 use novavector_testkit::catch_quiet;
 use novavector_testkit::fixtures::rich_session;
+use proptest::prelude::*;
+use serde_json::{Value, json};
 
 /// 64 cases each, unless `PROPTEST_CASES` asks for more.
 fn config() -> ProptestConfig {

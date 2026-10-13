@@ -1,10 +1,10 @@
 //! The Swatches panel: new, delete and duplicate swatches, colour groups and sorting.
 
-use serde_json::{Value, json};
 use novavector_color::{Color, Paint, Swatch, SwatchGroup, tint_percent};
 use novavector_doc::pattern::pattern_paint;
 use novavector_doc::swatches::{LinkFn, color_name, node_colors};
 use novavector_doc::{Document, NodeId};
+use serde_json::{Value, json};
 
 use super::paint::paint_from;
 use super::*;

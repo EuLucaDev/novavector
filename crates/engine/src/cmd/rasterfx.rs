@@ -14,7 +14,6 @@
 
 use std::sync::Arc;
 
-use serde_json::{Map, Value, json};
 use novavector_color::{BlendMode, Paint};
 use novavector_doc::rastersettings::MAX_ADD_AROUND;
 use novavector_doc::{
@@ -23,6 +22,7 @@ use novavector_doc::{
 use novavector_geom::{Affine, FillRule, PathData, Rect};
 use novavector_render::effects::{self, RasterFx};
 use novavector_render::{AntiAlias, RenderOptions};
+use serde_json::{Map, Value, json};
 
 use super::*;
 
@@ -555,8 +555,8 @@ pub fn export_pdf_with_report(
 
 #[cfg(test)]
 mod tests {
-    use serde_json::json;
     use novavector_doc::NodeKind;
+    use serde_json::json;
 
     use crate::Session;
 

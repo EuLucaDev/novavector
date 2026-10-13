@@ -2,10 +2,10 @@
 //! state follow the active fill or stroke, objects without bounds still show their paints, and the
 //! proxy focus can be set directly (M3.51).
 
-use serde_json::json;
 use novavector_color::{Color, Paint};
 use novavector_doc::{Appearance, Node};
 use novavector_geom::PathData;
+use serde_json::json;
 
 use super::*;
 

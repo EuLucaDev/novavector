@@ -1,8 +1,8 @@
 //! Recolor Artwork (M3.78): colour reduction, preserve rules, recolour methods, Limit to Library,
 //! randomize; Edit Color Group (M3.79).
 
-use serde_json::{Value, json};
 use novavector_color::Color;
+use serde_json::{Value, json};
 
 use super::*;
 use crate::cmd::color_value;

@@ -41,8 +41,8 @@ use std::borrow::Cow;
 use std::collections::{BTreeMap, HashSet};
 use std::io::{Read as _, Write};
 
-use serde::{Deserialize, Serialize};
 use novavector_doc::{Document, ImageBlob};
+use serde::{Deserialize, Serialize};
 
 #[cfg(not(target_arch = "wasm32"))]
 pub use atomic::{sync_file, write_atomic, write_atomic_with, write_new_with};

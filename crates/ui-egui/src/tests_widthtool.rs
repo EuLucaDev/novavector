@@ -1,8 +1,8 @@
 //! The Width tool in the UI: its cursors and hint.
 
-use serde_json::json;
 use novavector_engine::Session;
 use novavector_tools::Cursor;
+use serde_json::json;
 
 use crate::{NovavectorApp, chrome, tests_labels::painted_text};
 

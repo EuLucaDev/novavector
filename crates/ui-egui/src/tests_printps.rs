@@ -3,11 +3,11 @@
 use std::cell::RefCell;
 use std::rc::Rc;
 
-use serde_json::json;
 use novavector_engine::Session;
+use serde_json::json;
 
 use crate::print::{PrintJob, PrintService, Printer};
-use crate::{Services, NovavectorApp};
+use crate::{NovavectorApp, Services};
 
 /// What the app wrote: (path, bytes).
 type Written = Rc<RefCell<Vec<(String, Vec<u8>)>>>;

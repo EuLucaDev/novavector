@@ -1610,9 +1610,8 @@ impl Writer<'_> {
                 None => String::new(),
             };
             let sd = |blur: f64| fmt_num((blur / 2.0).max(0.0), 3);
-            let flood = |c: &novavector_color::Color, o: f32| {
-                format!("<feFlood flood-color=\"{}\" flood-opacity=\"{}\"/>", c.to_hex(), fmt_num(o as f64, 3))
-            };
+            let flood =
+                |c: &novavector_color::Color, o: f32| format!("<feFlood flood-color=\"{}\" flood-opacity=\"{}\"/>", c.to_hex(), fmt_num(o as f64, 3));
             let body = match f {
                 RasterFx::DropShadow { opacity, dx, dy, blur, color, .. } => format!(
                     "<feGaussianBlur in=\"SourceAlpha\" stdDeviation=\"{}\"/><feOffset dx=\"{}\" dy=\"{}\" result=\"shadow\"/>{}<feComposite in2=\"shadow\" operator=\"in\" result=\"paint\"/><feMerge><feMergeNode in=\"paint\"/><feMergeNode in=\"SourceGraphic\"/></feMerge>",

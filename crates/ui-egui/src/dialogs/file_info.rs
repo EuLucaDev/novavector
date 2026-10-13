@@ -5,9 +5,9 @@
 //! (Enter or Add turns it into chips; OK keeps it too). OK runs `file.info` with them: one undo
 //! step. On an error the dialog stays open.
 
-use serde_json::{Value, json};
 use novavector_doc::CopyrightStatus;
 use novavector_doc::metadata::MAX_RATING;
+use serde_json::{Value, json};
 
 use super::document_setup::{LABEL, choice};
 use super::{DialogSpec, form};
@@ -192,8 +192,8 @@ fn chips(ui: &mut egui::Ui, d: &mut Dialog) {
 
 #[cfg(test)]
 mod tests {
-    use serde_json::json;
     use novavector_engine::Session;
+    use serde_json::json;
 
     use crate::NovavectorApp;
 

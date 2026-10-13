@@ -4,9 +4,9 @@
 use std::cell::Cell;
 
 use egui::{CursorIcon, Event, Key, Modifiers, PointerButton, Pos2, Rect, vec2};
-use serde_json::json;
 use novavector_doc::Unit;
 use novavector_engine::Session;
+use serde_json::json;
 
 use crate::{NovavectorApp, scrub, widgets};
 

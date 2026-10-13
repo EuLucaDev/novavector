@@ -3,8 +3,8 @@
 //! picks the Single-line or Every-line Composer.
 
 use egui::{Ui, vec2};
-use serde_json::{Value, json};
 use novavector_doc::{Composer, Justify, NodeKind, ParaDirection, ParaStyle};
+use serde_json::{Value, json};
 
 use super::character::text_style;
 use super::{pstate, set_pstate};

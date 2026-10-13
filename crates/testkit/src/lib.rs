@@ -31,8 +31,8 @@ pub mod pdf;
 pub mod raster;
 pub mod strategies;
 
-pub use serde_json::{Value, json};
 pub use novavector_engine::{Session, doc::NodeId};
+pub use serde_json::{Value, json};
 /// Re-exports so dependents without direct dependencies (e.g. app test crates) can use them.
 pub use {novavector_doc as doc, novavector_format as format, novavector_render as render, novavector_svg as svg};
 

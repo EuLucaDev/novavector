@@ -9,13 +9,13 @@
 
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_color::{BlendMode, Color, Paint};
 use novavector_doc::{Appearance, Node, NodeId};
 use novavector_geom::hit::fill_contains;
 use novavector_geom::{Affine, BezPath, FillRule, PathData, Point, Rect, shapes};
 use novavector_pathops as po;
 use novavector_pathops::BoolOp;
+use serde_json::{Value, json};
 
 use super::edit::selected_roots;
 use super::menucmds::isolated_doc;

@@ -4,9 +4,9 @@
 
 use std::collections::HashSet;
 
+use novavector_doc::{Document, Node, NodeId, NodeKind};
 use serde::Deserialize;
 use serde_json::Value;
-use novavector_doc::{Document, Node, NodeId, NodeKind};
 
 use super::super::*;
 use super::FormatOption;

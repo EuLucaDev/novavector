@@ -19,9 +19,9 @@
 
 use std::sync::{Arc, Mutex};
 
-use serde_json::{Value, json};
 use novavector_doc::{Document, Node, NodeId, PuppetPin, PuppetPins};
 use novavector_geom::{BezPath, Point, Rect};
+use serde_json::{Value, json};
 
 use super::arap::{self, Mesh, MeshOptions, default_pins};
 use super::{BLUE, collect_points, warp_node_with};

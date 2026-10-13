@@ -2,9 +2,9 @@
 //! point.
 
 use egui::{Event, Key, Modifiers, PointerButton, Pos2, Rect, vec2};
-use serde_json::{Value, json};
 use novavector_color::{Freeform, FreeformMode, Paint};
 use novavector_engine::Session;
+use serde_json::{Value, json};
 
 use super::*;
 

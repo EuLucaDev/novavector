@@ -5,13 +5,13 @@ use std::collections::{HashMap, HashSet};
 use std::str::FromStr;
 use std::sync::Arc;
 
-use usvg::roxmltree;
 use novavector_color::{BlendMode, Color, Gradient, GradientGeom, GradientKind, GradientPaint, GradientStop, Paint};
 use novavector_doc::{
     Appearance, AppearanceItem, Dash, Document, FillLayer, ImageBlob, ImageObject, LayerColor, LineCap, LineJoin, Node, NodeId, NodeKind, PatternDef,
     StrokeLayer, Unit,
 };
 use novavector_geom::{Affine, BezPath, FillRule, PathData, Point, Rect, Vec2, shapes};
+use usvg::roxmltree;
 
 use crate::export::Reuse;
 use crate::{ImportOptions, SvgError, fnv1a};

@@ -9,10 +9,10 @@
 
 use std::collections::{HashMap, HashSet};
 
-use serde::{Deserialize, Serialize};
-use serde_json::{Map, Value, json};
 use novavector_color::{Color, Paint};
 use novavector_doc::TextStyleDef;
+use serde::{Deserialize, Serialize};
+use serde_json::{Map, Value, json};
 
 use super::*;
 use crate::Clipboard;

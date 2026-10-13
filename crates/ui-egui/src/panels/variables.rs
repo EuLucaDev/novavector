@@ -9,9 +9,9 @@
 //! art back into it.
 
 use egui::Ui;
-use serde_json::json;
 use novavector_doc::{NodeId, NodeKind, VariableKind};
 use novavector_engine::DocState;
+use serde_json::json;
 
 use crate::NovavectorApp;
 use crate::widgets;

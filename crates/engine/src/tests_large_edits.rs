@@ -5,10 +5,10 @@
 use std::sync::Arc;
 use std::time::Duration;
 
-use serde_json::{Value, json};
 use novavector_doc::{Appearance, Document, LAYER_COLORS, LayerColor, Node, NodeId, NodeKind};
 use novavector_geom::{FillRule, Rect, shapes};
 use novavector_tools::{Mods, PointerEvent, PointerKind};
+use serde_json::{Value, json};
 
 use super::*;
 

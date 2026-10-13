@@ -2,11 +2,11 @@
 //! straight spine becomes a path on the first edit), keys picked and edited live, Release keeping
 //! the spine as a path.
 
-use serde_json::{Value, json};
 use novavector_color::Paint;
 use novavector_doc::live::BlendSpec;
 use novavector_doc::{Node, NodeKind};
 use novavector_geom::{Point, Rect};
+use serde_json::{Value, json};
 
 use super::*;
 

@@ -15,7 +15,7 @@ fn main() -> Result<(), String> {
     res.set_icon("../../assets/app-icon/novavector.ico")
         .set("ProductName", "Nova Vector")
         .set("FileDescription", "Nova Vector vector illustration editor")
-        .set("CompanyName", "Learning Machines LLC")
+        .set("CompanyName", "Nova Foods")
         .set("LegalCopyright", "Copyright (c) the Nova Vector authors. MIT OR Apache-2.0.")
         .set("OriginalFilename", "novavector.exe")
         .set("InternalName", "novavector");

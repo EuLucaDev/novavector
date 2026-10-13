@@ -1,8 +1,8 @@
 //! The Links panel's commands: listing images with their status (`links.list`), Go To, Embed and
 //! Unembed, Link Info and the Placement Options a relinked file follows.
 
-use serde_json::{Value, json};
 use novavector_doc::{NodeKind, PlacementOptions};
+use serde_json::{Value, json};
 
 use super::tests_links::{BLUE, Folder, RED, bounds, centre_colour, image, near, open, place, png, save, session, write};
 use super::*;

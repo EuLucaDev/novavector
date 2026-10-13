@@ -6,13 +6,13 @@
 
 use std::sync::Arc;
 
-use serde_json::json;
-use skrifa::raw::TableProvider;
 use novavector_color::{BlendMode, Color, Paint};
 use novavector_doc::{Appearance, CharStyle, Document, Effect, Node, NodeKind, OpacityMask, Symbol, TextObject, TextRun};
 use novavector_geom::{Affine, Point, Rect, shapes};
 use novavector_svg::{Encoding, ExportOptions, Profile, Styling, compress_bytes, editing, export_full, import, text_of};
 use novavector_testkit::format::base64_decode;
+use serde_json::json;
+use skrifa::raw::TableProvider;
 
 fn add(d: &mut Document, mut n: Node) {
     n.id = d.alloc_id();

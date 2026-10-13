@@ -52,7 +52,7 @@ use novavector_engine::cmd::fileio;
 use novavector_engine::file_access::{self, AutomationRoots};
 use novavector_ui_egui::graphics::GraphicsLoss;
 use novavector_ui_egui::picks::PickRequest;
-use novavector_ui_egui::{ClipboardProbeFactory, FilePick, Services, NovavectorApp};
+use novavector_ui_egui::{ClipboardProbeFactory, FilePick, NovavectorApp, Services};
 
 struct App {
     app: NovavectorApp,

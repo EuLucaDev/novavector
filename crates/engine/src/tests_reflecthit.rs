@@ -1,8 +1,8 @@
 //! A reflected object is still clicked by its fill, not only by its outline.
 
-use serde_json::{Value, json};
 use novavector_geom::Point;
 use novavector_tools::{Mods, PointerEvent, PointerKind};
+use serde_json::{Value, json};
 
 use super::*;
 

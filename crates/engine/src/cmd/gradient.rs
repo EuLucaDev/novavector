@@ -1,11 +1,11 @@
 //! The Gradient panel and the Gradient tool: in-place gradient edits and the gradient vector.
 
-use serde_json::{Value, json};
 use novavector_color::{Gradient, GradientGeom, GradientKind, GradientPaint, GradientStop, Paint};
 use novavector_doc::appearance::stroke_paint_bounds;
 use novavector_doc::{Document, Node, NodeKind, StrokeGradientMode};
 use novavector_geom::{Affine, Point, Rect};
 use novavector_tools::params::color_json;
+use serde_json::{Value, json};
 
 use super::appearance::{ItemTarget, edit_items, edits_stroke, item_target};
 use super::edit::selected_roots;

@@ -5,8 +5,8 @@
 use std::io::{BufRead, BufReader, Write};
 use std::process::{Child, ChildStdin, ChildStdout, Command, Stdio};
 
-use serde_json::{Value, json};
 use novavector_testkit::raster::Image;
+use serde_json::{Value, json};
 
 const BIN: &str = env!("CARGO_BIN_EXE_novavector-cli");
 

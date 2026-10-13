@@ -3,10 +3,10 @@
 //! (`print.tiling`), and where the tool put them ([`novavector_pdf::TileOrigin`], saved with
 //! the print settings).
 
-use serde_json::{Value, json};
 use novavector_doc::Document;
 use novavector_geom::Point;
 use novavector_pdf::{TileOrigin, TilingPage};
+use serde_json::{Value, json};
 
 use super::fileio::pdf::pdf_error;
 use super::print::{settings, to_json};

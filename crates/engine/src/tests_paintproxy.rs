@@ -1,9 +1,9 @@
 //! Fill/Stroke proxy commands: invert, complement, last colour/gradient, swap/default on type and
 //! the Session's recent colours.
 
-use serde_json::json;
 use novavector_color::{Color, Paint};
 use novavector_doc::NodeKind;
+use serde_json::json;
 
 use super::*;
 

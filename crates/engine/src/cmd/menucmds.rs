@@ -5,13 +5,13 @@
 use std::collections::{BTreeMap, BTreeSet, HashSet};
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_color::{Color, Paint};
 use novavector_doc::marks::{MarkStyle, TrimMarks};
 use novavector_doc::{Appearance, ImageObject, LiveShape, Node, NodeId, NodeKind, RasterColorModel, RasterEffectsSettings, Scaling};
 use novavector_geom::{Affine, Anchor, PathData, Point, Rect, Vec2};
 use novavector_render::AntiAlias;
 use novavector_render::encode::{RasterExportOptions, RasterFormat};
+use serde_json::{Value, json};
 
 use super::edit::{duplicate_in, selected_roots};
 use super::*;

@@ -4,13 +4,13 @@
 use std::cell::RefCell;
 use std::rc::Rc;
 
-use serde_json::{Value, json};
 use novavector_engine::Session;
+use serde_json::{Value, json};
 
 use super::print::{KIND, SECTIONS};
 use crate::print::{PrintJob, PrintService, Printer};
 use crate::state::Dialog;
-use crate::{Services, NovavectorApp, theme};
+use crate::{NovavectorApp, Services, theme};
 
 /// What the mock service was sent: (printer, title, PDF).
 type Jobs = Rc<RefCell<Vec<(Option<String>, String, Vec<u8>)>>>;

@@ -1,8 +1,8 @@
 //! Raster (painted) effects: descriptions for the renderer.
 
-use serde_json::Value;
 use novavector_doc::Effect;
 use novavector_doc::color::{BlendMode, Color};
+use serde_json::Value;
 
 use novavector_geom::Rect;
 

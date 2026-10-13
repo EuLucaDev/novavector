@@ -4,12 +4,12 @@
 // Integration tests: unwrapping and panicking on failure is fine here, unlike in shipped code (AGENTS.md › Robustness).
 #![allow(clippy::unwrap_used, clippy::expect_used, clippy::panic)]
 
-use serde_json::{Value, json};
 use novavector_engine::{Session, command_specs};
 use novavector_testkit::catch_quiet;
 use novavector_testkit::fixtures::Fixture;
 use novavector_testkit::invariants::{check_all, check_session, doc_json};
 use novavector_testkit::strategies::{junk_params, junk_values, param_keys};
+use serde_json::{Value, json};
 
 /// Commands that replace/close the active document or touch the filesystem are fine to call, but a
 /// few need their paths redirected into a temp dir (handled by `junk_params`).
@@ -544,8 +544,8 @@ fn every_command_undoes_exactly() {
 /// params never panic.
 #[test]
 fn recovery_commands_with_a_damaged_store_and_junk_params() {
-    use std::sync::Arc;
     use novavector_engine::cmd::recovery::{MemoryStore, RecoveryStore};
+    use std::sync::Arc;
     let store = Arc::new(MemoryStore::default());
     for (name, bytes) in [
         ("1-1/bad-1.novavector", &b"{not json"[..]),

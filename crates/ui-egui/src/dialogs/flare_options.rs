@@ -9,9 +9,9 @@
 //! `largest` (%), `rays` and `rings` (counts), `direction` (degrees); `raysOn` and `ringsOn`; and
 //! `x`, `y` where a click opened it.
 
-use serde_json::{Map, Value, json};
 use novavector_geom::Point;
 use novavector_tools::extra::{FLARE_OPTIONS, flare_params};
+use serde_json::{Map, Value, json};
 
 use super::document_setup::check;
 use super::{DialogResult, DialogSpec, form, run_and_close};

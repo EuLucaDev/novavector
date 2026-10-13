@@ -13,9 +13,9 @@ use hayro_interpret::Function;
 use hayro_interpret::color::ColorSpace;
 use hayro_syntax::Pdf;
 use hayro_syntax::object::{Array, MaybeRef, Name, Object, Stream};
-use smallvec::SmallVec;
 use novavector_color::swatch::REGISTRATION;
 use novavector_color::{Color, Paint, Swatch};
+use smallvec::SmallVec;
 
 /// The longest `Debug` text read: a colour whose space is longer (a big sampled tint transform)
 /// imports as RGB.

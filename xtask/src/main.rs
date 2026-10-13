@@ -29,7 +29,7 @@ commands:
   corpus [--download] [--affinity]
                   show where test corpora live; --download fetches PngSuite into corpus/pngsuite,
                   --affinity the pinned public Affinity documents into corpus/affinity
-  bundle          build dist/NovaVector.app (macOS) with assets/app-icon/novavector.icns
+  bundle          build dist/Nova Vector.app (macOS) with assets/app-icon/novavector.icns
   ico <out.ico> <png>...
                   pack PNGs into a Windows .ico (used by packaging/icons.sh)
   stats [--exact] count tests and lines per crate (--exact: ask the test harness via `-- --list`)

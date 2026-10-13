@@ -2,9 +2,9 @@
 //! copied appearances placing their gradients on the target's own bounds (M3.34) and the
 //! Gradient tool's snapping and Eyedropper Options (M3.35).
 
-use serde_json::json;
 use novavector_color::{GradientGeom, Paint};
 use novavector_geom::Point;
+use serde_json::json;
 
 use super::*;
 

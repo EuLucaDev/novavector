@@ -4,11 +4,11 @@
 use std::cell::RefCell;
 use std::rc::Rc;
 
-use serde_json::json;
 use novavector_engine::Session;
 use novavector_geom::Point;
+use serde_json::json;
 
-use crate::{Services, NovavectorApp, dialogs, io, menus, palette, theme};
+use crate::{NovavectorApp, Services, dialogs, io, menus, palette, theme};
 
 /// An app that reads and writes real files.
 fn app() -> NovavectorApp {

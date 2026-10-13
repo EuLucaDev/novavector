@@ -1,10 +1,10 @@
 //! #1212: real ruler gestures and position fields share the document's zero point.
 
 use egui::{Event, Key, PointerButton, Pos2, Rect, Ui, pos2, vec2};
-use serde_json::json;
 use novavector_doc::{NodeId, Unit};
 use novavector_engine::Session;
 use novavector_geom::Point;
+use serde_json::json;
 
 use crate::{NovavectorApp, canvas, chrome, panels};
 

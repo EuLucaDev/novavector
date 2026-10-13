@@ -2,10 +2,10 @@
 //! transactional), live-effect plug-ins in appearance stacks, and the `plugin.*` management
 //! commands.
 
-use serde_json::{Value, json};
 use novavector_color::{Color, Paint};
 use novavector_geom::{PathData, Point, SubPath};
 use novavector_plugins::wat as tpl;
+use serde_json::{Value, json};
 
 use super::*;
 

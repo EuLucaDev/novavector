@@ -17,9 +17,9 @@
 //! points show on every subpath of the stroke (one profile runs along each). The cursor says what a
 //! drag does: add a width point on a stroke, or move or widen the one under it.
 
-use serde_json::json;
 use novavector_doc::{Document, NodeId, NodeKind, StrokeLayer};
 use novavector_geom::{Point, Vec2};
+use serde_json::json;
 
 use super::pathutil::{eval_fraction, left_normal, nearest_fraction};
 use super::{BLUE, diamond};

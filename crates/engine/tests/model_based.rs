@@ -3,11 +3,11 @@
 // Integration tests: unwrapping and panicking on failure is fine here, unlike in shipped code (AGENTS.md › Robustness).
 #![allow(clippy::unwrap_used, clippy::expect_used, clippy::panic)]
 
-use proptest::prelude::*;
-use serde_json::json;
 use novavector_testkit::fixtures::{self, exec};
 use novavector_testkit::invariants::{self, check_all, check_session, doc_json, first_diff, redo_all, undo_all};
 use novavector_testkit::strategies::{Op, arb_ops};
+use proptest::prelude::*;
+use serde_json::json;
 
 fn run_sequence(ops: &[Op], full_checks_every: usize) -> Result<(), TestCaseError> {
     let mut s = fixtures::session();

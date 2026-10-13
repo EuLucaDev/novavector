@@ -5,8 +5,8 @@
 
 use std::time::{Duration, Instant};
 
-use serde_json::{Value, json};
 use novavector_plugins::{Error, Kind, Limits, Plugin, registry, wat as tpl};
+use serde_json::{Value, json};
 
 /// The example Desaturate plug-in, built from `crates/plugins/example`.
 const DESATURATE: &[u8] = include_bytes!("fixtures/desaturate.wasm");

@@ -3,13 +3,13 @@
 
 use std::sync::Mutex;
 
-use serde_json::{Value, json};
 use novavector_color::cms::{self, Intent, Lab, delta_e2000};
 use novavector_color::{Color, Paint};
 use novavector_doc::{ColorMode, Document};
 use novavector_geom::Affine;
 use novavector_render::proof::{ProofSetup, ProofTarget};
 use novavector_render::{RenderOptions, Renderer};
+use serde_json::{Value, json};
 
 use super::*;
 
@@ -318,8 +318,7 @@ fn has_cmyk_op(pdf: &str) -> bool {
 }
 
 fn pdf_text(doc: &Document) -> String {
-    let bytes =
-        novavector_pdf::export(doc, &novavector_pdf::PdfOptions { created: Some(0), ..novavector_pdf::PdfOptions::uncompressed() }).unwrap();
+    let bytes = novavector_pdf::export(doc, &novavector_pdf::PdfOptions { created: Some(0), ..novavector_pdf::PdfOptions::uncompressed() }).unwrap();
     String::from_utf8_lossy(&bytes).into_owned()
 }
 

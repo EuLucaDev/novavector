@@ -3,11 +3,11 @@
 
 use std::collections::{BTreeMap, BTreeSet};
 
-use serde_json::{Value, json};
 use novavector_color::Paint;
 use novavector_doc::{ColorMode, Document, Node, NodeId, NodeKind};
 use novavector_geom::{Affine, Rect};
 use novavector_text::embed::Embedding;
+use serde_json::{Value, json};
 
 use super::*;
 

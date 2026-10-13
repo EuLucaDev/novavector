@@ -1,9 +1,9 @@
 use super::*;
-use serde_json::json;
 use novavector_doc::shaper::{FILL_PREFIX, SOURCES, STROKE_PREFIX};
 use novavector_doc::{LiveShape, Node};
 use novavector_geom::{Point, Shape as _};
 use novavector_tools::{Mods, PointerEvent, PointerKind};
+use serde_json::json;
 
 fn session() -> Session {
     let mut s = Session::new();

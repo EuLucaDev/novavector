@@ -3,10 +3,10 @@
 //! alignment; editing and undo across them; and a save round trip with all of them on.
 //! (`novavector_text`'s `tests_combos` covers the layout side.)
 
-use serde_json::{Value, json};
 use novavector_doc::text::INLINE_CHAR;
 use novavector_doc::{AreaFit, Composer, Justify, NodeKind, TextKind, TextObject, VerticalAlign};
 use novavector_geom::Rect;
+use serde_json::{Value, json};
 
 use super::*;
 

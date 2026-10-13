@@ -1,7 +1,7 @@
 //! Slice layout: object slices follow their objects, clipping, numbering and auto slices.
 
-use proptest::prelude::*;
 use novavector_geom::{Point, Rect, shapes};
+use proptest::prelude::*;
 
 use crate::slices::auto_slices;
 use crate::{Appearance, Document, Node, Slice, SliceOptions, SliceSource};

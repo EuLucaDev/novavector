@@ -1,8 +1,8 @@
 //! Swatch libraries: listing, reading, adding to the document (deduped, one undo step, applied)
 //! and Default Swatches.
 
-use serde_json::{Value, json};
 use novavector_color::{Color, Paint};
+use serde_json::{Value, json};
 
 use super::*;
 

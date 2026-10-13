@@ -8,10 +8,10 @@
 
 use std::sync::{Arc, OnceLock};
 
-use serde::{Deserialize, Serialize};
-use serde_json::{Value, json};
 use novavector_color::{BlendMode, Color, Gradient, GradientGeom, GradientKind, GradientPaint, GradientStop, Paint};
 use novavector_geom::Point;
+use serde::{Deserialize, Serialize};
+use serde_json::{Value, json};
 
 use crate::{
     Appearance, AppearanceItem, Arrowhead, Dash, Document, Effect, FillLayer, GraphicStyle, Knockout, LineCap, LineJoin, PatternDef, StrokeAlign,

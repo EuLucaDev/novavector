@@ -2,12 +2,12 @@
 // Integration tests: unwrapping and panicking on failure is fine here, unlike in shipped code (AGENTS.md › Robustness).
 #![allow(clippy::unwrap_used, clippy::expect_used, clippy::panic)]
 
-use serde_json::json;
 use novavector_color::Paint;
 use novavector_doc::{Document, NodeId, NodeKind, TextObject, appearance::stroke_paint_bounds};
 use novavector_geom::Rect;
 use novavector_testkit::fixtures::{exec, session_with};
 use novavector_testkit::raster::{Image, render_view};
+use serde_json::json;
 
 /// Mean red and blue of the solid ink (no green: the ramp has none, the paper and anti-aliased
 /// edges do) in columns `x0..x1`.

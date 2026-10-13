@@ -6,12 +6,12 @@
 
 use std::collections::HashSet;
 
-use serde::{Deserialize, Serialize};
 use novavector_color::{BlendMode, Color, GradientKind, GradientPaint, Paint};
 use novavector_doc::{AppearanceItem, CharStyle, Document, Justify, LineCap, LiveShape, Node, NodeId, NodeKind, StrokeAlign, StrokeLayer, TextKind};
 use novavector_effects::RasterFx;
 use novavector_geom::shapes::{self, CornerKind};
 use novavector_geom::{Affine, PathData, Point, Rect};
+use serde::{Deserialize, Serialize};
 
 use crate::export::sanitize_id;
 use crate::fmt_num;

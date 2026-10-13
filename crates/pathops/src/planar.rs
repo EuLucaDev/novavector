@@ -915,8 +915,8 @@ pub fn interior_point(path: &PathData) -> Option<Point> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use proptest::prelude::*;
     use novavector_geom::{Rect, shapes};
+    use proptest::prelude::*;
 
     fn line(a: (f64, f64), b: (f64, f64), key: u64) -> Shape {
         Shape::new(PathData::single(SubPath::polyline(&[Point::new(a.0, a.1), Point::new(b.0, b.1)], false)), FillRule::NonZero, key)

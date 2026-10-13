@@ -1062,12 +1062,9 @@ mod tests {
         ] {
             assert!(in_graphics_stack(file), "{file}");
         }
-        for file in [
-            "apps/novavector/src/main.rs",
-            "/home/wgpu/novavector/crates/ui-egui/src/lib.rs",
-            "egui-0.36.2/src/context.rs",
-            "winit-0.30.12/src/x.rs",
-        ] {
+        for file in
+            ["apps/novavector/src/main.rs", "/home/wgpu/novavector/crates/ui-egui/src/lib.rs", "egui-0.36.2/src/context.rs", "winit-0.30.12/src/x.rs"]
+        {
             assert!(!in_graphics_stack(file), "{file}");
         }
     }

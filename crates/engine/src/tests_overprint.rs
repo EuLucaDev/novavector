@@ -1,10 +1,10 @@
 //! Overprint per fill and stroke (`object.setOverprint`, `attributes.info`), its preview, the
 //! legacy Overprint Black list, and Edit → Edit Colors → Overprint Black.
 
-use serde_json::{Value, json};
 use novavector_doc::{Document, Node, NodeKind};
 use novavector_geom::Affine;
 use novavector_render::{RenderOptions, Renderer};
+use serde_json::{Value, json};
 
 use super::*;
 

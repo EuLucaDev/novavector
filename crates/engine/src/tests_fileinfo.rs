@@ -1,8 +1,8 @@
 //! File → File Info (`file.info`): editing as one undo step, the native round trip, and the PDF,
 //! PNG and SVG metadata it writes.
 
-use serde_json::{Value, json};
 use novavector_doc::{CopyrightStatus, DocMetadata};
+use serde_json::{Value, json};
 
 use super::*;
 

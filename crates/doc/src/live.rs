@@ -17,9 +17,9 @@
 use std::f64::consts::PI;
 use std::sync::Arc;
 
-use serde::{Deserialize, Serialize};
 use novavector_color::{Color, Paint};
 use novavector_geom::{Affine, Anchor, BezPath, CubicBez, ParamCurve, PathData, Point, Rect, Shape, SubPath, Vec2};
+use serde::{Deserialize, Serialize};
 
 use crate::appearance::{Appearance, AppearanceItem, FillLayer};
 use crate::node::{ImageObject, Node, NodeId, NodeKind};

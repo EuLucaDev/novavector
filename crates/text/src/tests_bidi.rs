@@ -1,8 +1,8 @@
 //! Direction, source-cluster and editing regressions; no RTL font assets required.
 use super::*;
 use kurbo::{Point, Rect, Shape};
-use std::sync::Arc;
 use novavector_doc::{CharStyle, TextKind, TextRun};
+use std::sync::Arc;
 
 fn text_layout(s: &str) -> TextLayout {
     layout(FontDb::global(), &TextObject::point(Point::ZERO, s, CharStyle::default()))

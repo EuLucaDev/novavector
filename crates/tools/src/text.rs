@@ -22,11 +22,11 @@
 use std::ops::Range;
 use std::sync::{Arc, Mutex};
 
-use serde_json::{Value, json};
 use novavector_doc::hit::hit_test;
 use novavector_doc::{NodeId, NodeKind, TextKind, TextObject, TextRun};
 use novavector_geom::{BezPath, Point, Rect, Shape};
 use novavector_text::{FontDb, TextLayout, edit};
+use serde_json::{Value, json};
 
 use crate::guides::DrawSnap;
 use crate::{Action, Cursor, Mods, Overlay, PointerEvent, PointerKind, Tool, ToolContext, ToolKey};
@@ -538,8 +538,7 @@ impl Tool for TypeTool {
             }
             ToolKey::Left => {
                 let to = if a != b && !mods.shift {
-                    if lay.glyphs.iter().any(|g| g.rtl)
-                        && novavector_text::caret_position(&lay, a).0.x > novavector_text::caret_position(&lay, b).0.x
+                    if lay.glyphs.iter().any(|g| g.rtl) && novavector_text::caret_position(&lay, a).0.x > novavector_text::caret_position(&lay, b).0.x
                     {
                         b
                     } else {
@@ -558,8 +557,7 @@ impl Tool for TypeTool {
             }
             ToolKey::Right => {
                 let to = if a != b && !mods.shift {
-                    if lay.glyphs.iter().any(|g| g.rtl)
-                        && novavector_text::caret_position(&lay, a).0.x > novavector_text::caret_position(&lay, b).0.x
+                    if lay.glyphs.iter().any(|g| g.rtl) && novavector_text::caret_position(&lay, a).0.x > novavector_text::caret_position(&lay, b).0.x
                     {
                         a
                     } else {

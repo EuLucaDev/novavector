@@ -1,10 +1,10 @@
 //! Pattern swatches, pattern editing mode and Repeat, driven through `Session::execute`.
 
-use serde_json::{Value, json};
 use novavector_color::Paint;
 use novavector_doc::pattern::{PATTERN_EDIT_LAYER, RepeatKind, TileType};
 use novavector_doc::{Node, NodeKind};
 use novavector_geom::{Point, Rect};
+use serde_json::{Value, json};
 
 use super::*;
 

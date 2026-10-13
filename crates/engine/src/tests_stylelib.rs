@@ -3,10 +3,10 @@
 
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_color::{Paint, Swatch};
 use novavector_doc::{GraphicStyle, Node, NodeId, PatternDef};
 use novavector_geom::{Point, Rect, shapes};
+use serde_json::{Value, json};
 
 use super::*;
 

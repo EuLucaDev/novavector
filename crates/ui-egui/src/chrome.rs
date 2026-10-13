@@ -3,8 +3,8 @@
 use std::borrow::Cow;
 
 use egui::{CornerRadius, Sense, Stroke, Ui, vec2};
-use serde_json::json;
 use novavector_doc::NodeKind;
+use serde_json::json;
 
 use crate::panels::stroke as stroke_panel;
 use crate::state::{ZOOM_STOPS, zoom_label};
@@ -858,8 +858,8 @@ mod tests {
         assert_eq!(super::first_tab_shown(&widths, None, 350.0), 0);
         assert_eq!(super::first_tab_shown(&widths, Some(4), 50.0), 4, "a tab wider than the room still shows");
     }
-    use serde_json::json;
     use novavector_engine::Session;
+    use serde_json::json;
 
     #[test]
     fn hints_name_keys_as_the_menus_do() {

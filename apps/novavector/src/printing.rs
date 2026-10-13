@@ -1,9 +1,9 @@
 //! Desktop printer transport. Nova Vector composes every page and copy before submission;
 //! nova-print owns discovery and spooling. Windows 7 keeps its viewer-based transport because
 //! Windows.Data.Pdf is unavailable there.
+use novavector_ui_egui::print::{PrintJob, PrintService, Printer};
 #[cfg(not(all(windows, any(feature = "windows7", target_vendor = "win7"))))]
 use std::process::Command;
-use novavector_ui_egui::print::{PrintJob, PrintService, Printer};
 
 #[cfg(all(windows, any(feature = "windows7", target_vendor = "win7")))]
 mod windows7;

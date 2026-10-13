@@ -139,11 +139,7 @@ fn affinity3_all_artboards_survive_native_save_and_export() {
                 "{name}: SVG artboard order"
             );
             let pdf = novavector_engine::cmd::fileio::encode(doc, "pdf", &params).unwrap();
-            assert_eq!(
-                novavector_pdf::info(&pdf, None).unwrap().pages.len(),
-                doc.artboards.len(),
-                "{name}: PDF must write every artboard as a page"
-            );
+            assert_eq!(novavector_pdf::info(&pdf, None).unwrap().pages.len(), doc.artboards.len(), "{name}: PDF must write every artboard as a page");
         }
         for (index, board) in doc.artboards.iter().enumerate() {
             assert!(

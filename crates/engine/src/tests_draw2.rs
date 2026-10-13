@@ -1,9 +1,9 @@
 //! Drawing / path-editing tools driven through the session (tools → actions → `path.*` commands).
 
-use serde_json::json;
 use novavector_doc::{NodeId, NodeKind};
 use novavector_geom::{FillRule, PathData, Point};
 use novavector_tools::{Mods, PointerEvent, PointerKind, ToolKey};
+use serde_json::json;
 
 use super::*;
 use crate::tooling::{UiRequest, ViewInfo};

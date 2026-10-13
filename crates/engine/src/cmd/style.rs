@@ -15,10 +15,10 @@
 
 use std::collections::HashMap;
 
-use serde_json::{Value, json};
 use novavector_color::Paint;
 use novavector_doc::{Appearance, DEFAULT_GRAPHIC_STYLE, Document, GraphicStyle, Node, NodeId, NodeKind};
 use novavector_geom::Rect;
+use serde_json::{Value, json};
 
 use super::*;
 use crate::EngineError;

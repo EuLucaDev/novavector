@@ -4,9 +4,9 @@
 //! mode it lists the document's patterns with an Edit button.
 
 use egui::Ui;
-use serde_json::{Value, json};
 use novavector_doc::pattern::{PatternDef, RepeatKind, TileType};
 use novavector_doc::{NodeKind, Unit};
+use serde_json::{Value, json};
 
 use super::{pstate, set_pstate};
 use crate::NovavectorApp;

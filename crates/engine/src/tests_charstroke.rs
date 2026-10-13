@@ -2,9 +2,9 @@
 //! through `text.setRangeStyle`), and the character stroke kept by the Eyedropper, outlines and
 //! the native format.
 
-use serde_json::{Value, json};
 use novavector_color::{Color, Paint};
 use novavector_doc::{CharStyle, Dash, LineCap, LineJoin, NodeId, NodeKind, TextObject};
+use serde_json::{Value, json};
 
 use super::*;
 

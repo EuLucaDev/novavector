@@ -1,6 +1,6 @@
-use serde_json::json;
 use novavector_doc::{Document, NodeId};
 use novavector_geom::{Affine, BezPath};
+use serde_json::json;
 
 use super::*;
 

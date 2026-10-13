@@ -3,11 +3,11 @@
 
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_color::Paint;
 use novavector_doc::{AppearanceItem, Node, NodeKind};
 use novavector_geom::Rect;
 use novavector_tools::{Mods, PointerEvent, PointerKind, ToolKey};
+use serde_json::{Value, json};
 
 use super::*;
 
@@ -174,8 +174,8 @@ fn replace_keeps_the_transform_and_the_stacking_place() {
 #[test]
 fn replace_needs_exactly_one_selected_object() {
     let mut s = session();
-    let r = s
-        .execute("file.place", &json!({"replace": true, "name": "b.png", "dataBase64": novavector_format::base64_encode(&png(2, 2, [0; 4], None))}));
+    let r =
+        s.execute("file.place", &json!({"replace": true, "name": "b.png", "dataBase64": novavector_format::base64_encode(&png(2, 2, [0; 4], None))}));
     assert!(r.unwrap_err().to_string().contains("select the one object"));
 }
 

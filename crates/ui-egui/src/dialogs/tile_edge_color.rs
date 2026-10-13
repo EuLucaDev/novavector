@@ -4,9 +4,9 @@
 //!
 //! Fields: `color` (`#rrggbb`, or a preset's name such as "Light Blue").
 
-use serde_json::{Value, json};
 use novavector_color::Color;
 use novavector_doc::LAYER_COLORS;
+use serde_json::{Value, json};
 
 use super::swatch_options::{grid, label};
 use super::{DialogSpec, run_and_close};

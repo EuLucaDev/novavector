@@ -8,12 +8,12 @@
 use std::sync::Arc;
 
 use egui::{Color32, Rect, Response, Sense, Shape, Stroke, StrokeKind, Ui, pos2, vec2};
-use serde_json::{Value, json};
 use novavector_color::libraries::{BuiltinLibrary, GRADIENT_LIBRARIES, SWATCH_LIBRARIES};
 use novavector_color::swatch::REGISTRATION;
 use novavector_color::{Color, GradientKind, Paint, Swatch, SwatchLibrary};
 use novavector_doc::Document;
 use novavector_engine::cmd::swatchlib;
+use serde_json::{Value, json};
 
 use super::library_panel::{self, LibraryKind, LibraryRef, Row};
 use super::{active_paint, pstate, set_pstate};

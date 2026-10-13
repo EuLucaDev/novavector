@@ -7,10 +7,10 @@
 use std::collections::HashSet;
 use std::sync::Arc;
 
-use serde::Deserialize;
-use serde_json::{Map, Value, json};
 use novavector_doc::Document;
 use novavector_geom::Rect;
+use serde::Deserialize;
+use serde_json::{Map, Value, json};
 
 use super::super::*;
 use super::encode::single_artboard;

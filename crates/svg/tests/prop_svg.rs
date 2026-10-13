@@ -3,7 +3,6 @@
 // Integration tests: unwrapping and panicking on failure is fine here, unlike in shipped code (AGENTS.md › Robustness).
 #![allow(clippy::unwrap_used, clippy::expect_used, clippy::panic)]
 
-use proptest::prelude::*;
 use novavector_color::{Color, Paint};
 use novavector_doc::Appearance;
 use novavector_geom::{PathData, Rect, shapes};
@@ -12,6 +11,7 @@ use novavector_testkit::fixtures::{self, DocBuilder, art_nodes};
 use novavector_testkit::invariants::check_document;
 use novavector_testkit::raster::{assert_similar, render_artboard};
 use novavector_testkit::strategies::{arb_closed_shape, arb_ops, arb_path_data};
+use proptest::prelude::*;
 
 fn all_options() -> Vec<ExportOptions> {
     let mut v = vec![];

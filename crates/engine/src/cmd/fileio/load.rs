@@ -2,9 +2,9 @@
 
 use std::io::Cursor;
 
-use serde_json::{Value, json};
 use novavector_doc::{Document, ImageBlob, ImageObject, Node, NodeKind};
 use novavector_geom::Affine;
+use serde_json::{Value, json};
 
 use super::super::*;
 use super::pdfimport::LoadOptions;

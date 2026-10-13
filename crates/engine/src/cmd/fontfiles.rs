@@ -7,9 +7,9 @@ use std::path::{Path, PathBuf};
 use std::sync::Arc;
 use std::sync::atomic::{AtomicU64, Ordering};
 
-use serde_json::{Value, json};
 use novavector_doc::Document;
 use novavector_text::{FontDb, FontMatch, WantedFont, WantedFonts};
+use serde_json::{Value, json};
 
 use super::findfiles::{self, Limits, Visitor};
 use super::*;
@@ -195,8 +195,7 @@ impl Visitor for FontFiles {
     fn worth_reading(&self, path: &Path) -> bool {
         // A search reads font files and suitcase fonts of at most [`MAX_FONT_FILE`] bytes, the files
         // `text.addFontFiles` copies.
-        (novavector_text::is_font_file(path) || novavector_text::is_suitcase(path))
-            && std::fs::metadata(path).is_ok_and(|m| m.len() <= MAX_FONT_FILE)
+        (novavector_text::is_font_file(path) || novavector_text::is_suitcase(path)) && std::fs::metadata(path).is_ok_and(|m| m.len() <= MAX_FONT_FILE)
     }
     fn items(&self, path: &Path) -> Vec<usize> {
         self.0.provided_by(path)

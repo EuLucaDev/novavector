@@ -5,11 +5,11 @@
 
 use std::borrow::Cow;
 
-use serde::Deserialize;
-use serde_json::{Value, json};
 use novavector_doc::Document;
 use novavector_eps::{EpsOptions, Level, Overprint, Preview, Raster};
 use novavector_geom::{Point, Rect};
+use serde::Deserialize;
+use serde_json::{Value, json};
 
 use super::super::flatten::{FlattenOptions, flatten_document};
 use super::super::*;

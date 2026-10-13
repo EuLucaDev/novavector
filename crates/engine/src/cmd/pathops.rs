@@ -4,13 +4,13 @@
 
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_color::BlendMode;
 use novavector_doc::appearance::{AppearanceItem, StrokeLayer};
 use novavector_doc::{Appearance, Document, Node, NodeId, NodeKind, TextObject};
 use novavector_geom::{FillRule, PathData};
 use novavector_pathops as po;
 use novavector_pathops::{BoolOp, PathfinderOp};
+use serde_json::{Value, json};
 
 use super::edit::selected_roots;
 use super::*;

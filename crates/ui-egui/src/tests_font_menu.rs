@@ -1,9 +1,9 @@
 //! The font menu's samples, ↑/↓ highlight with live preview, and applying or undoing the preview.
 
-use serde_json::json;
 use novavector_doc::NodeKind;
 use novavector_engine::Session;
 use novavector_text::FontDb;
+use serde_json::json;
 
 use crate::NovavectorApp;
 use crate::font_menu::{FontPick, MenuLook, font_menu};

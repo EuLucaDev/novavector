@@ -1,9 +1,9 @@
 //! Color Themes: saving, editing and deleting themes in the local theme library (the preferences),
 //! and adding one to the Swatches panel as a colour group.
 
-use serde_json::{Value, json};
 use novavector_color::Color;
 use novavector_color::harmony::Harmony;
+use serde_json::{Value, json};
 
 use super::*;
 

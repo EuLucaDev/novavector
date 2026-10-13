@@ -2,12 +2,12 @@
 //! palette, RLE, row order) and Targa (depth), after the raster export rows they share with PNG
 //! Options ([`super::png_options`]): the `tiffOptions`, `bmpOptions` and `tgaOptions` dialogs.
 
-use serde_json::{Map, Value, json};
 use novavector_render::encode::bmp::{self, BmpOptions};
 use novavector_render::encode::jpeg::ColorModel;
 use novavector_render::encode::quantize::{Dither, PaletteOptions, Reduction};
 use novavector_render::encode::tga::{self, TgaOptions};
 use novavector_render::encode::tiff::{ByteOrder, TiffOptions};
+use serde_json::{Map, Value, json};
 
 use super::form;
 use super::png_options::choice;

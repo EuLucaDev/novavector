@@ -5,14 +5,14 @@
 use std::cell::RefCell;
 use std::rc::Rc;
 
-use serde_json::json;
 use novavector_engine::Session;
 use novavector_svg::{CssOptions, CssUnits};
+use serde_json::json;
 
 use super::css_properties::{ALL, ID, OPTIONS, menu, show};
 use super::set_pstate;
 use crate::tests_labels::painted_text;
-use crate::{Services, NovavectorApp};
+use crate::{NovavectorApp, Services};
 
 type Log = Rc<RefCell<Vec<(String, Vec<u8>)>>>;
 

@@ -10,9 +10,9 @@
 //! objects' anchors, centres and edges; or the grid, pixels, Snap to Point), so a corner dragged
 //! onto another object's anchor scales exactly onto it.
 
-use serde_json::{Value, json};
 use novavector_doc::NodeId;
 use novavector_geom::{Affine, Point, Rect, Vec2};
+use serde_json::{Value, json};
 
 use super::target_overlays;
 use crate::bbox::rotate_for_drag;
@@ -461,12 +461,8 @@ mod tests {
         let (mut d, id) = doc_with_rect();
         let l = d.layers[0].id;
         let other = d.alloc_id();
-        d.insert(
-            Some(l),
-            1,
-            Node::path(other, novavector_geom::shapes::rectangle(Rect::new(300.0, 260.0, 340.0, 300.0)), Appearance::default_art()),
-        )
-        .unwrap();
+        d.insert(Some(l), 1, Node::path(other, novavector_geom::shapes::rectangle(Rect::new(300.0, 260.0, 340.0, 300.0)), Appearance::default_art()))
+            .unwrap();
         let mut s = Selection::default();
         s.add(id);
         let p = paint();

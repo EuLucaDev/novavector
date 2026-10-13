@@ -5,10 +5,10 @@
 use std::io::Write as _;
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_doc::{Node, NodeKind};
 use novavector_testkit::ai;
 use novavector_testkit::pdf::{PdfPage, first_extra, pdf_with};
+use serde_json::{Value, json};
 
 use super::*;
 

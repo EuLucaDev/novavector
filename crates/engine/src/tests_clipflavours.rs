@@ -1,10 +1,10 @@
 //! Clipboard flavours (M4.57): PNG, PDF and plain text out; bitmaps, plain text and PDF in; the
 //! Clipboard Handling preferences.
 
-use serde_json::{Value, json};
 use novavector_doc::{NodeKind, TextObject};
 use novavector_geom::Point;
 use novavector_tools::{Mods, PointerEvent, PointerKind, ToolKey};
+use serde_json::{Value, json};
 
 use super::*;
 use crate::cmd::clipboard::{BITMAP, FILE_HEAD, PASTE_ORDER, PDF, PNG, SVG, TEXT, file_flavour};

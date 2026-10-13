@@ -1,11 +1,11 @@
 //! Object → Flatten Transparency (M3.91): atomic regions with the composited colours, rasterized
 //! complex regions, the options and presets, undo and the look of the result.
 
-use serde_json::{Value, json};
 use novavector_color::{BlendMode, Color, Paint};
 use novavector_doc::{AppearanceItem, Node, NodeKind};
 use novavector_geom::{BezPath, Point, Rect, Shape};
 use novavector_render::{Rendered, Renderer};
+use serde_json::{Value, json};
 
 use super::*;
 

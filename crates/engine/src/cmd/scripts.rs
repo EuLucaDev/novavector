@@ -5,8 +5,8 @@
 //! With a path and `includes`, the files its `#include` lines name are read from inside its folder,
 //! each through the same checks as every other file a command reads.
 
-use serde_json::{Value, json};
 use novavector_scriptcheck::{Limits, Loaded, Loader, Report};
+use serde_json::{Value, json};
 
 /// The ids a reply can hold, for the windows that show it.
 pub use novavector_scriptcheck::{IncludeStatus, Need, OUTSIDE, PROBLEMS};

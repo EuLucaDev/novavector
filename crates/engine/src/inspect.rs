@@ -1,8 +1,8 @@
 //! Agent-friendly document summaries and view-models for panels.
 
-use serde_json::{Value, json};
 use novavector_color::BlendMode;
 use novavector_doc::{ArrowAlign, Document, LineCap, LineJoin, Node, NodeKind, StrokeAlign, StrokeLayer, WidthProfile};
+use serde_json::{Value, json};
 
 use crate::Session;
 

@@ -1,10 +1,10 @@
 //! Smart Guides for the drawing tools, driven through the session (#506): where the Rectangle
 //! tool's corners and the Pen's anchors land, and the guides they show.
 
-use serde_json::json;
 use novavector_doc::NodeId;
 use novavector_geom::{Point, Rect};
 use novavector_tools::{Mods, Overlay, PointerEvent, PointerKind};
+use serde_json::json;
 
 use super::*;
 use crate::tooling::ViewInfo;

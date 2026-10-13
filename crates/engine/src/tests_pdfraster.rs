@@ -5,11 +5,11 @@
 use std::io::Cursor;
 use std::sync::Arc;
 
-use serde_json::json;
 use novavector_color::{Color, Paint};
 use novavector_doc::{Appearance, CharStyle, Document, Effect, ImageBlob, ImageObject, Node, NodeKind, Symbol, TextObject};
 use novavector_geom::{Affine, Point, Rect, shapes};
 use novavector_render::{Rendered, Renderer};
+use serde_json::json;
 
 use super::*;
 

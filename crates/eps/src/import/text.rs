@@ -4,8 +4,8 @@
 
 use std::rc::Rc;
 
-use std::sync::Arc;
 use novavector_color::Paint;
+use std::sync::Arc;
 
 use novavector_doc::{CharStyle, Node, NodeId, NodeKind, TextObject};
 use novavector_geom::{Affine, Point, Vec2};

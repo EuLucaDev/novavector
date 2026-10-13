@@ -4,13 +4,13 @@
 // Integration tests: unwrapping and panicking on failure is fine here, unlike in shipped code (AGENTS.md › Robustness).
 #![allow(clippy::unwrap_used, clippy::expect_used, clippy::panic)]
 
-use proptest::prelude::*;
-use serde_json::{Value, json};
 use novavector_doc::Document;
 use novavector_mcp::{Headless, Server, tool_definitions};
 use novavector_testkit::catch_quiet;
 use novavector_testkit::invariants::{check_document, doc_json};
 use novavector_testkit::strategies::{arb_ops, junk_values};
+use proptest::prelude::*;
+use serde_json::{Value, json};
 
 fn server() -> Server {
     Server::new(Box::new(Headless::with_document()))

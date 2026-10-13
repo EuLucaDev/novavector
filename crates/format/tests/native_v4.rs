@@ -5,10 +5,10 @@
 
 use std::sync::Arc;
 
-use serde_json::Value;
 use novavector_doc::{Document, ImageBlob, ImageObject, Node, NodeKind};
 use novavector_format::{BLOB_MAGIC, FormatError, INLINE_MAX, SaveOptions, load, load_file, pdf_content, save_with};
 use novavector_geom::Affine;
+use serde_json::Value;
 
 /// A document showing image `key` of `len` bytes.
 fn doc_with_image(key: &str, len: usize) -> Document {

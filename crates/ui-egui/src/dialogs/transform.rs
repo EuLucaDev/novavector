@@ -142,8 +142,8 @@ fn confirm(app: &mut NovavectorApp, d: &Dialog) -> Result<Value, String> {
 
 #[cfg(test)]
 mod tests {
-    use serde_json::json;
     use novavector_engine::Session;
+    use serde_json::json;
 
     use crate::NovavectorApp;
 

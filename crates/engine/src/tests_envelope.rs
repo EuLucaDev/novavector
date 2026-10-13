@@ -1,11 +1,11 @@
 //! Envelope Distort: Reset with Warp / Mesh, Envelope Options, Release, Expand and Object → Expand,
 //! driven through `Session::execute`.
 
-use serde_json::{Value, json};
 use novavector_color::BlendMode;
 use novavector_doc::live::{self, EnvelopeKind, EnvelopeOptions, PreserveShape};
 use novavector_doc::{Knockout, Node, NodeKind, OpacityMask};
 use novavector_geom::Rect;
+use serde_json::{Value, json};
 
 use super::*;
 

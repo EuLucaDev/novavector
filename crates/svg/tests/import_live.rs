@@ -6,13 +6,13 @@
 
 use std::sync::Arc;
 
-use serde_json::json;
 use novavector_color::{BlendMode, Color, Paint};
 use novavector_doc::{Appearance, Document, Effect, Node, NodeKind};
 use novavector_effects::RasterFx;
 use novavector_geom::{Point, Rect, shapes};
 use novavector_svg::{ExportOptions, export, import, import_with_report};
 use novavector_testkit::raster::{Image, assert_similar, render_artboard};
+use serde_json::json;
 
 fn svg(body: &str) -> String {
     format!(r#"<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="120">{body}</svg>"#)

@@ -4,13 +4,13 @@
 use std::cell::RefCell;
 use std::rc::Rc;
 
-use serde_json::{Value, json};
 use novavector_doc::{Node, NodeKind};
 use novavector_engine::Session;
 use novavector_engine::cmd::clipboard::{BITMAP, Flavour, PDF, PNG, SVG, TEXT};
 use novavector_geom::Point;
+use serde_json::{Value, json};
 
-use crate::{Services, SystemClipboard, NovavectorApp, menus};
+use crate::{NovavectorApp, Services, SystemClipboard, menus};
 
 /// The fake clipboard's contents: what the app wrote, or what "another app" copied.
 #[derive(Default)]

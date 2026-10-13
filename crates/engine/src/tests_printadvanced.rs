@@ -1,11 +1,11 @@
 //! File → Print › Advanced: simulated overprints print what Overprint Preview shows, Print as
 //! Bitmap prints images of the art, and a flattener preset flattens transparency first.
 
-use serde_json::{Value, json};
 use novavector_doc::{Document, NodeKind};
 use novavector_geom::Rect;
 use novavector_pdf::PrintSettings;
 use novavector_render::{RenderOptions, Renderer};
+use serde_json::{Value, json};
 
 use super::*;
 

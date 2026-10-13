@@ -9,12 +9,12 @@
 // Integration tests: unwrapping and panicking on failure is fine here, unlike in shipped code (AGENTS.md › Robustness).
 #![allow(clippy::unwrap_used, clippy::expect_used, clippy::panic)]
 
-use proptest::prelude::*;
-use serde_json::{Map, Value, json};
 use novavector_engine::Session;
 use novavector_plugins::wat as tpl;
 use novavector_testkit::catch_quiet;
 use novavector_testkit::fixtures::rich_session;
+use proptest::prelude::*;
+use serde_json::{Map, Value, json};
 
 const DESATURATE: &[u8] = include_bytes!("../../plugins/tests/fixtures/desaturate.wasm");
 

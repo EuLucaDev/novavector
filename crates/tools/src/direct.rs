@@ -27,10 +27,10 @@
 
 use std::borrow::Cow;
 
-use serde_json::{Value, json};
 use novavector_doc::hit::{HitKind, hit_test};
 use novavector_doc::{AnchorRef, Node, NodeId, NodeKind, Selection};
 use novavector_geom::{Anchor, PathData, Point, Rect};
+use serde_json::{Value, json};
 
 use crate::bbox::move_delta;
 use crate::corners::{self, CornerDrag, over_widget};

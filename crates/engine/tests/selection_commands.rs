@@ -1,9 +1,9 @@
 //! Selection command results and validation for agent callers (#784).
 #![allow(clippy::unwrap_used, clippy::expect_used, clippy::panic)]
 
-use serde_json::{Value, json};
 use novavector_doc::NodeId;
 use novavector_engine::{EngineError, Session};
+use serde_json::{Value, json};
 
 fn session() -> (Session, NodeId, NodeId) {
     let mut s = Session::new();

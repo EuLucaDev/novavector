@@ -2,8 +2,8 @@
 //! ordinals, fractions, figure style) for the selected text or the Type tool's selected characters.
 
 use egui::Ui;
-use serde_json::json;
 use novavector_text::OtFeatures;
+use serde_json::json;
 
 use super::character::{text_editing, text_style};
 use crate::NovavectorApp;

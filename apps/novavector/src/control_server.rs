@@ -14,8 +14,8 @@ use std::sync::atomic::{AtomicUsize, Ordering};
 use std::sync::mpsc::{Receiver, Sender, channel};
 use std::time::Duration;
 
-use serde_json::{Value, json};
 use novavector_ui_egui::ControlRequest;
+use serde_json::{Value, json};
 
 /// Longest accepted request line (bytes, without the newline). Requests are small JSON objects;
 /// anything longer is refused and the connection closed.

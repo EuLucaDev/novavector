@@ -50,9 +50,9 @@ mod prefs_dir;
 #[path = "../../novavector/src/system_fonts.rs"]
 mod system_fonts;
 
-use serde_json::{Value, json};
 use novavector_engine::file_access::{self, AutomationRoots};
 use novavector_mcp::{Backend, DEFAULT_ADDR, Headless, Remote, Server};
+use serde_json::{Value, json};
 
 /// stdout went away. A reader that stopped early (a closed pipe) ends the program quietly, as
 /// ripgrep does; any other write error is reported.
@@ -65,7 +65,7 @@ fn stdout_failed(e: std::io::Error) -> ! {
 }
 
 const USAGE: &str = "\
-novavector-cli — NovaVector automation
+novavector-cli — Nova Vector automation
 
 USAGE:
   novavector-cli mcp [--connect ADDR | --headless] [--automation-read-root DIR] [--automation-write-root DIR]

@@ -8,9 +8,9 @@
 use std::sync::Arc;
 
 use egui::{Color32, CornerRadius, Sense, Stroke, Ui, pos2, vec2};
-use serde_json::{Value, json};
 use novavector_color::Paint;
 use novavector_tools::{Mods, TOOL_GROUPS, ToolInfo, ToolKey, tool_info};
+use serde_json::{Value, json};
 
 use crate::theme::{self, Tokens};
 use crate::{NovavectorApp, icons, widgets};

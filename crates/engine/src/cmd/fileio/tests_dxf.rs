@@ -181,10 +181,8 @@ fn dwg_and_pict_say_what_to_use_instead() {
     }
     let e = s.execute("document.export", &json!({"format": "pict"})).unwrap_err().to_string();
     assert!(e.contains("PICT is a retired format"), "{e}");
-    let e = s
-        .execute("document.open", &json!({"name": "old.pct", "dataBase64": novavector_format::base64_encode(&[0u8; 600])}))
-        .unwrap_err()
-        .to_string();
+    let e =
+        s.execute("document.open", &json!({"name": "old.pct", "dataBase64": novavector_format::base64_encode(&[0u8; 600])})).unwrap_err().to_string();
     assert!(e.contains("old.pct") && e.contains("PICT"), "{e}");
     let e = s
         .execute("document.open", &json!({"name": "site.dwg", "dataBase64": novavector_format::base64_encode(b"AC1032\0\0")}))

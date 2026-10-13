@@ -5,9 +5,9 @@
 use std::io::Cursor;
 
 use image::{DynamicImage, ImageFormat};
-use serde_json::{Value, json};
 use novavector_doc::{Document, ImageBlob, ImageObject, Node, NodeKind};
 use novavector_geom::Affine;
+use serde_json::{Value, json};
 
 use crate::*;
 

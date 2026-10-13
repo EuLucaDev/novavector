@@ -5,9 +5,9 @@
 // Integration tests: unwrapping and panicking on failure is fine here, unlike in shipped code (AGENTS.md › Robustness).
 #![allow(clippy::unwrap_used, clippy::expect_used, clippy::panic)]
 
+use novavector_testkit::catch_quiet;
 use proptest::prelude::*;
 use serde_json::json;
-use novavector_testkit::catch_quiet;
 
 proptest! {
     #![proptest_config(ProptestConfig { cases: 64, failure_persistence: None, ..ProptestConfig::default() })]

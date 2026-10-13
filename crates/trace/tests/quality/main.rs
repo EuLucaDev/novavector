@@ -140,14 +140,7 @@ fn svg_trace(svg: &str) -> TraceResult {
                 _ => panic!("unread transform {t}"),
             });
         }
-        Some(TracedPath {
-            path: novavector_geom::PathData::from_bezpath(&path),
-            color: [0; 3],
-            pixels: 0,
-            stroke: None,
-            shape: None,
-            gradient: None,
-        })
+        Some(TracedPath { path: novavector_geom::PathData::from_bezpath(&path), color: [0; 3], pixels: 0, stroke: None, shape: None, gradient: None })
     });
     TraceResult { paths: paths.collect(), palette: vec![[0; 3]], ..Default::default() }
 }

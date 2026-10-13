@@ -2,9 +2,9 @@
 
 use std::collections::BTreeSet;
 
-use serde_json::{Value, json};
 use novavector_color::Paint;
 use novavector_doc::{Document, Node, NodeId, NodeKind};
+use serde_json::{Value, json};
 
 use super::*;
 

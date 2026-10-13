@@ -31,11 +31,11 @@ mod text;
 
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_color::Paint;
 use novavector_doc::{Appearance, Document, ImageObject, LinkInfo, Node, NodeId, NodeKind, Scaling};
 use novavector_geom::{Affine, Point, Rect, shapes};
 use novavector_pdf::CropTo;
+use serde_json::{Value, json};
 
 use super::fileio::{self, Format, RasterImage};
 use super::*;

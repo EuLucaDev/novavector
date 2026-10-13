@@ -4,8 +4,8 @@ use std::borrow::Cow;
 use std::collections::HashSet;
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_doc::{Document, Node, NodeId, NodeKind};
+use serde_json::{Value, json};
 
 use crate::DocState;
 

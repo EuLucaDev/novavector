@@ -1,9 +1,9 @@
 //! Edit → Edit Colors: Adjust Color Balance modes and the live preview.
 
-use serde_json::{Value, json};
 use novavector_color::{Color, Paint};
 use novavector_doc::Node;
 use novavector_tools::{PointerEvent, PointerKind};
+use serde_json::{Value, json};
 
 use super::*;
 use crate::tooling::ViewInfo;
@@ -171,14 +171,8 @@ fn image_node(s: &mut Session) -> NodeId {
     s.edit("Place", |d, sel| {
         d.images.insert("pic".into(), novavector_doc::ImageBlob::png(bytes));
         let id = d.alloc_id();
-        let im = novavector_doc::ImageObject {
-            key: "pic".into(),
-            width: 2,
-            height: 2,
-            xf: Default::default(),
-            link: None,
-            placement: Default::default(),
-        };
+        let im =
+            novavector_doc::ImageObject { key: "pic".into(), width: 2, height: 2, xf: Default::default(), link: None, placement: Default::default() };
         d.insert(d.default_layer(), 0, Node::new(id, NodeKind::Image(Box::new(im))))?;
         sel.set([id]);
         Ok(id)

@@ -1,8 +1,8 @@
 //! The width profile library (`stroke.widthProfile.*`): saved profiles kept with the preferences
 //! next to the built-in ones, applied by name with `stroke.set {profile}`.
 
-use serde_json::{Value, json};
 use novavector_doc::WidthProfile;
+use serde_json::{Value, json};
 
 use super::*;
 

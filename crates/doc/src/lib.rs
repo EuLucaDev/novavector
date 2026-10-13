@@ -88,6 +88,8 @@ pub use node::Knockout;
 pub use node::Scaling;
 pub use node::{Extras, ExtrasMut, ImageObject, LAYER_COLORS, LayerColor, LiveShape, Node, NodeExtras, NodeId, NodeKind, OpacityMask};
 pub use node::{ImageMap, ObjectAttributes};
+pub use novavector_color as color;
+pub use novavector_geom as geom;
 pub use orient::OrientedBox;
 pub use pattern::{Overlap, PatternDef, PatternEdit, RepeatKind, RepeatSpec, TileType};
 pub use perspective::PerspectiveAttachment;
@@ -106,12 +108,10 @@ pub use text::{
 };
 pub use trace::TraceView;
 pub use variables::{DataSet, DataValue, Variable, VariableKind, Variables};
-pub use novavector_color as color;
-pub use novavector_geom as geom;
 
-use serde::{Deserialize, Serialize};
 use novavector_color::{Swatch, SwatchGroup};
 use novavector_geom::{Affine, Point, Rect, Vec2};
+use serde::{Deserialize, Serialize};
 
 #[derive(Debug, thiserror::Error, PartialEq)]
 pub enum DocError {

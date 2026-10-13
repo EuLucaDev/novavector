@@ -1,9 +1,9 @@
 //! Save PDF settings: JSON shape, checks and the warnings for options not applied yet.
 
-use serde_json::json;
 use novavector_color::{Color, Paint};
 use novavector_doc::{Appearance, Document, Node};
 use novavector_geom::{Rect, shapes};
+use serde_json::json;
 
 use crate::*;
 

@@ -11,11 +11,11 @@
 
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_color::Paint;
 use novavector_doc::pattern::{self, Overlap, PATTERN_EDIT_LAYER, PatternDef, PatternEdit, RepeatKind, RepeatSpec, TileType, pattern_paint};
 use novavector_doc::{Document, Node, NodeId, NodeKind, Selection};
 use novavector_geom::Rect;
+use serde_json::{Value, json};
 
 use super::edit::selected_roots;
 use super::pathops::Beside;

@@ -1,11 +1,11 @@
 //! Original tiny-geometry controls for Pen endpoint/Alt integration with continue-any-path.
 #![allow(clippy::unwrap_used, clippy::expect_used, clippy::panic)]
 
-use serde_json::json;
 use novavector_doc::{Node, NodeId, NodeKind};
 use novavector_engine::{Session, ViewInfo};
 use novavector_geom::{AnchorKind, Point};
 use novavector_tools::{Cursor, Mods, PointerEvent, PointerKind};
+use serde_json::json;
 
 fn session() -> Session {
     let mut s = Session::new();

@@ -21,11 +21,11 @@ use block2::RcBlock;
 use egui::{Key, KeyboardShortcut};
 use muda::accelerator::{Accelerator, Code, Modifiers};
 use muda::{CheckMenuItem, Menu, MenuEvent, MenuItem, PredefinedMenuItem, Submenu};
+use novavector_ui_egui::NovavectorApp;
+use novavector_ui_egui::native_menu::{self, Backend, Event, MenuBar, MenuRole, Node, Standard};
 use objc2::MainThreadMarker;
 use objc2_app_kit::{NSApplication, NSEventModifierFlags, NSEventType, NSMenuDidBeginTrackingNotification, NSMenuDidEndTrackingNotification};
 use objc2_foundation::{NSNotification, NSNotificationCenter};
-use novavector_ui_egui::NovavectorApp;
-use novavector_ui_egui::native_menu::{self, Backend, Event, MenuBar, MenuRole, Node, Standard};
 
 // AppKit can deliver window input while its system menu is still tracking (especially with
 // asynchronous menu presentation). Keep the native tracking state separate from egui popups.

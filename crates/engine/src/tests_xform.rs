@@ -1,9 +1,9 @@
 //! Transform & utility tools driven through `Session::pointer`, and their commands.
 
-use serde_json::json;
 use novavector_color::{Color, Paint};
 use novavector_geom::{Point, Rect};
 use novavector_tools::{Mods, PointerEvent, PointerKind, ToolKey};
+use serde_json::json;
 
 use super::*;
 

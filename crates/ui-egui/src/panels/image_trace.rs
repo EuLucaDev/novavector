@@ -5,9 +5,9 @@
 //! redraws it without tracing again. With an image selected, Trace makes a new Image Trace object.
 
 use egui::Ui;
-use serde_json::{Value, json};
 use novavector_doc::{Node, NodeKind, TraceView};
 use novavector_engine::cmd::swatchlib::DOCUMENT_SWATCHES;
+use serde_json::{Value, json};
 
 use super::{first_selected, library_panel, pstate, set_pstate, swatches};
 use crate::NovavectorApp;

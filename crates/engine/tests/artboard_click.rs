@@ -1,11 +1,11 @@
 //! Artboard clicks fit the object without changing its art or selection, and are one undo step.
 #![allow(clippy::unwrap_used)]
 
-use serde_json::json;
 use novavector_doc::NodeId;
 use novavector_engine::{Session, ViewInfo};
 use novavector_geom::Rect;
 use novavector_tools::{Mods, PointerEvent, PointerKind, ToolKey};
+use serde_json::json;
 
 fn fixture(x: f64, y: f64) -> (Session, NodeId) {
     let mut s = Session::new();

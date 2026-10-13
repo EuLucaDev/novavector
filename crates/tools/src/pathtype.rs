@@ -5,10 +5,10 @@
 //! (Cmd/Ctrl held: it only slides). Each drag is one undo step of `type.pathOptions`. The tools
 //! draw the brackets from the same geometry they hit-test.
 
-use serde_json::{Map, Value, json};
 use novavector_doc::{NodeId, NodeKind, TextKind};
 use novavector_geom::kurbo::{Line, ParamCurveNearest};
 use novavector_geom::{Affine, ArcPath, Point, Vec2};
+use serde_json::{Map, Value, json};
 
 use crate::{Action, Overlay, PointerEvent, ToolContext};
 

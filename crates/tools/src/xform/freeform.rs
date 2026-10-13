@@ -11,12 +11,12 @@
 //! through the points they add, until Escape (or a click off the art) ends it; clicking an
 //! existing point first starts the line from it. Delete or Backspace removes the selected point.
 
-use serde_json::{Value, json};
 use novavector_color::freeform::LineHit;
 use novavector_color::{Color, Freeform, FreeformMode, FreeformPoint};
 use novavector_doc::NodeId;
 use novavector_doc::hit::hit_test;
 use novavector_geom::{Point, Shape, Vec2};
+use serde_json::{Value, json};
 
 use super::paint_owner;
 use crate::{Action, Cursor, Overlay, ToolContext, ToolKey};

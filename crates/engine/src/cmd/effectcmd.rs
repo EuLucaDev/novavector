@@ -7,10 +7,10 @@
 
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_doc::{Document, Effect, Node, NodeKind, StrokeLayer};
 use novavector_geom::{FillRule, PathData};
 use novavector_render::effects;
+use serde_json::{Value, json};
 
 use super::appearance::{ItemTarget, appearance_targets, index_param, item_target, item_target_at};
 use super::rasterfx;
@@ -515,9 +515,9 @@ fn expand_appearance(s: &mut Session, p: &Value) -> Result<Value> {
 
 #[cfg(test)]
 mod tests {
-    use serde_json::json;
     use novavector_doc::NodeKind;
     use novavector_render::effects;
+    use serde_json::json;
 
     use crate::{NodeId, Session};
 

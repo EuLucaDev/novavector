@@ -8,9 +8,9 @@
 
 use std::collections::HashSet;
 
-use serde_json::{Value, json};
 use novavector_color::BlendMode;
 use novavector_doc::{Document, Knockout, Node, NodeId, OpacityMask, Selection};
+use serde_json::{Value, json};
 
 use super::maskedit::{begin, finish, mask_group, mask_parts, show_editing};
 use super::pathops::{Beside, separate};

@@ -2,9 +2,9 @@
 //! no transparency (no soft masks, blend modes, constant opacity or transparency groups): it is
 //! flattened with the chosen preset, and reads back looking like the canvas.
 
-use serde_json::{Value, json};
 use novavector_geom::Rect;
 use novavector_render::{Rendered, Renderer};
+use serde_json::{Value, json};
 
 use super::*;
 

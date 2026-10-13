@@ -7,12 +7,12 @@ use std::sync::atomic::{AtomicUsize, Ordering};
 use std::sync::{Arc, Mutex};
 use std::time::{Duration, Instant};
 
-use serde_json::json;
 use novavector_engine::Session;
 use novavector_engine::cmd::clipboard::Flavour;
+use serde_json::json;
 
 use crate::tests_sysclip::{copy_rect, run};
-use crate::{Services, SystemClipboard, NovavectorApp, menus};
+use crate::{NovavectorApp, Services, SystemClipboard, menus};
 
 /// What the clipboard handles saw: the thread each `has()` ran on, and how many handles are alive.
 #[derive(Default)]

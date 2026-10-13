@@ -1,10 +1,10 @@
 //! Copy and paste between documents (resources, swatch conflicts) and paste placement (M4.22,
 //! M4.23).
 
-use serde_json::{Value, json};
 use novavector_color::{Color, Paint};
 use novavector_doc::{Document, Node, NodeKind};
 use novavector_geom::{Point, Rect};
+use serde_json::{Value, json};
 
 use super::*;
 

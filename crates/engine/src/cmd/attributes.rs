@@ -4,9 +4,9 @@
 
 use std::collections::BTreeSet;
 
-use serde_json::{Value, json};
 use novavector_doc::{Document, ImageMap, Node, NodeKind, ObjectAttributes};
 use novavector_geom::FillRule;
+use serde_json::{Value, json};
 
 use super::overprint::{AttributesInfo, apply_overprint, edit_counted, overprint_jobs};
 use super::path::paths_in;

@@ -4,11 +4,11 @@
 
 use std::sync::Arc;
 
-use serde::Deserialize;
-use serde_json::{Value, json};
 use novavector_cad::{ColorDepth, DxfOptions, DxfVersion, Preserve, RasterFormat};
 use novavector_doc::{Document, Unit};
 use novavector_geom::Rect;
+use serde::Deserialize;
+use serde_json::{Value, json};
 
 use super::super::*;
 use super::{ArtboardPick, Encoded, FormatOption};

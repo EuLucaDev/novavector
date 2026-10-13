@@ -1,10 +1,10 @@
 //! Rich text editing: range edit/style commands, the Type tools through the session, area and
 //! on-path type from paths, Fit Headline, Convert To Area/Point Type.
 
-use serde_json::{Value, json};
 use novavector_doc::{NodeId, NodeKind, TextKind, TextObject};
 use novavector_geom::Point;
 use novavector_tools::{Mods, PointerEvent, PointerKind, ToolKey};
+use serde_json::{Value, json};
 
 use super::*;
 

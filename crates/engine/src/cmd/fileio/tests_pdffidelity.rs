@@ -1,9 +1,9 @@
 //! `document.open` PDF options `textAs` and `layers`.
 
-use serde_json::{Value, json};
 use novavector_doc::NodeKind;
 use novavector_pdf::TextAs;
 use novavector_testkit::pdf::{PdfPage, first_extra, pdf, pdf_with_catalog};
+use serde_json::{Value, json};
 
 use super::*;
 

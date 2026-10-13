@@ -7,8 +7,8 @@
 
 use std::collections::BTreeMap;
 
-use serde_json::{Value, json};
 use novavector_doc::{DataSet, DataValue, NodeId, NodeKind, Variable, VariableKind, Variables};
+use serde_json::{Value, json};
 
 use super::edit::selected_roots;
 use super::textedit::set_plain_text;

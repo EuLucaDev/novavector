@@ -1,10 +1,10 @@
 //! Window → Attributes (`attributes.set`, `attributes.info`, `path.setFillRule`, `path.reverse`)
 //! and the links SVG export writes for objects with a URL.
 
-use serde_json::{Value, json};
 use novavector_doc::{ImageMap, NodeKind};
 use novavector_geom::{Affine, FillRule};
 use novavector_render::{RenderOptions, Renderer};
+use serde_json::{Value, json};
 
 use super::*;
 

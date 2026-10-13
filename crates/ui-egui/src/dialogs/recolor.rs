@@ -19,12 +19,12 @@
 //! `limitTo` reduces the rows again.
 
 use egui::{Rect, Sense, Ui, pos2, vec2};
-use serde_json::{Value, json};
 use novavector_color::harmony::{Harmony, move_on_wheel};
 use novavector_color::recolor::{ColorKey, Method};
 use novavector_color::{Color, keep_model};
 use novavector_engine::cmd::color_value;
 use novavector_engine::cmd::swatchlib;
+use serde_json::{Value, json};
 
 use super::{DialogSpec, form};
 use crate::panels::c32;

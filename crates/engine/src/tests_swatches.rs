@@ -2,8 +2,8 @@
 //! Info), naming and kinds, Swatch Options edits reaching linked art, deleting, new swatches in
 //! groups and colour groups made from artwork.
 
-use serde_json::{Value, json};
 use novavector_color::{Color, Paint};
+use serde_json::{Value, json};
 
 use super::*;
 

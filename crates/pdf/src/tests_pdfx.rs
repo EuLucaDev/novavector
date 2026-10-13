@@ -1,11 +1,11 @@
 //! PDF/X-1a, PDF/X-3 and PDF/X-4: each standard's header, output intent, boxes and identification,
 //! and what each refuses (RGB in PDF/X-1a, transparency in PDF/X-1a and PDF/X-3, passwords).
 
-use serde_json::json;
 use novavector_color::cms::{self, GENERIC_CMYK, SRGB};
 use novavector_color::{Color, Paint};
 use novavector_doc::{Appearance, Document, ImageBlob, ImageObject, Node, NodeKind};
 use novavector_geom::{Affine, Rect, shapes};
+use serde_json::json;
 
 use crate::*;
 

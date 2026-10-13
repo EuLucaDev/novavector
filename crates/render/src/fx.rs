@@ -1346,10 +1346,10 @@ impl Renderer {
 
 #[cfg(test)]
 mod tests {
-    use serde_json::json;
     use novavector_doc::color::{Color, Paint};
     use novavector_doc::{Appearance, Document, Effect, Node};
     use novavector_geom::{Affine, Rect, shapes};
+    use serde_json::json;
 
     use super::Drawn;
     use crate::{RenderOptions, Rendered, Renderer};

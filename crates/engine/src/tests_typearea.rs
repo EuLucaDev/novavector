@@ -2,12 +2,12 @@
 //! and the text reflows at its size; Direct Selection reshapes the frame by a corner or an edge.
 //! Point type still scales. The type widget converts point type to area type and back.
 
-use serde_json::{Value, json};
 use novavector_doc::{NodeKind, TextKind, TextObject};
 use novavector_geom::{Affine, Point, Rect};
 use novavector_text::TextLayout;
 use novavector_tools::bbox::Handle;
 use novavector_tools::{Mods, PointerEvent, PointerKind};
+use serde_json::{Value, json};
 
 use super::*;
 

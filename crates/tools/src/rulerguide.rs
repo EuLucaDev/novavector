@@ -8,8 +8,8 @@
 //! ruler, a moved guide is deleted. Hidden or locked guides (View › Guides), and guides on a hidden
 //! or locked layer, can't be picked.
 
-use serde_json::json;
 use novavector_geom::Point;
+use serde_json::json;
 
 use crate::guides::Targets;
 use crate::{Action, Cursor, Overlay, PointerEvent, PointerKind, ToolContext};

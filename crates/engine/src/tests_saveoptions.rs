@@ -3,8 +3,8 @@
 
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_color::cms;
+use serde_json::{Value, json};
 
 use super::*;
 use crate::tests_links::{Folder, png};
@@ -141,10 +141,7 @@ fn an_embedded_profile_is_restored() {
     let mut v: Value = serde_json::from_str(&moved.replace(&elsewhere, &broken)).unwrap();
     v["profiles"][&broken]["data"] = json!("AAAA");
     let r = s
-        .execute(
-            "document.open",
-            &json!({"name": "b.novavector", "dataBase64": novavector_format::base64_encode(&serde_json::to_vec(&v).unwrap())}),
-        )
+        .execute("document.open", &json!({"name": "b.novavector", "dataBase64": novavector_format::base64_encode(&serde_json::to_vec(&v).unwrap())}))
         .unwrap();
     assert!(r["warnings"][0].as_str().unwrap().contains(&broken), "{r}");
 }

@@ -18,10 +18,10 @@ mod warp;
 
 use std::sync::Arc;
 
-use serde::{Deserialize, Serialize};
 use novavector_color::Paint;
 use novavector_doc::{Appearance, AppearanceItem, Document, FillLayer, Node, NodeId, NodeKind, StrokeLayer};
 use novavector_geom::{BezPath, Rect};
+use serde::{Deserialize, Serialize};
 
 pub use colorize::{art_colors, colorize, instance_art, stain, tint_node};
 pub use defaults::defaults;

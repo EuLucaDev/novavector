@@ -1,8 +1,8 @@
 //! The appearance model: a stack of fills and strokes, each with its own opacity, blend mode and
 //! effects, plus object-level effects.
 
-use serde::{Deserialize, Serialize};
 use novavector_color::{BlendMode, Color, Paint};
+use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub enum LineCap {
@@ -641,9 +641,7 @@ impl StrokeLayer {
     /// paint when [`Self::gradient_mode`] isn't Within (freeform gradients always paint within).
     pub fn path_gradient(&self) -> Option<&novavector_color::GradientPaint> {
         match &self.paint {
-            Paint::Gradient(g)
-                if self.gradient_mode != StrokeGradientMode::Within && g.gradient.kind != novavector_color::GradientKind::Freeform =>
-            {
+            Paint::Gradient(g) if self.gradient_mode != StrokeGradientMode::Within && g.gradient.kind != novavector_color::GradientKind::Freeform => {
                 Some(g)
             }
             _ => None,

@@ -3,11 +3,11 @@
 
 use std::sync::Arc;
 
-use serde_json::json;
 use novavector_engine::Session;
 use novavector_engine::cmd::recovery::{MemoryStore, RecoveryStore};
+use serde_json::json;
 
-use crate::{Services, NovavectorApp, background, dialogs, recovery, theme};
+use crate::{NovavectorApp, Services, background, dialogs, recovery, theme};
 
 /// An app keeping its copies in `store`, with a modified document.
 fn app_with(store: &Arc<MemoryStore>, services: Services) -> NovavectorApp {

@@ -27,9 +27,9 @@
 
 use std::collections::HashMap;
 
-use serde_json::json;
 use novavector_color::Paint;
 use novavector_doc::{Dash, Effect, LineCap, LineJoin, WidthProfile};
+use serde_json::json;
 
 use super::lex::{Lexer, Tok};
 use super::obj::V;

@@ -23,8 +23,6 @@
 use std::collections::BTreeSet;
 use std::sync::Arc;
 
-use serde::{Deserialize, Serialize};
-use serde_json::{Value, json};
 use novavector_color::blend::{cmyk_planes, composite, planes_cmyk};
 use novavector_color::{BlendMode, Color, Paint};
 use novavector_doc::appearance::{AppearanceItem, FillLayer};
@@ -32,6 +30,8 @@ use novavector_doc::{Appearance, ColorMode, Document, Effect, ImageBlob, ImageOb
 use novavector_geom::{Affine, FillRule, PathData, Rect, shapes};
 use novavector_pathops as po;
 use novavector_render::effects;
+use serde::{Deserialize, Serialize};
+use serde_json::{Value, json};
 
 use super::edit::roots_of;
 use super::menucmds::{MAX_PIXELS, isolated_doc, unique_key};

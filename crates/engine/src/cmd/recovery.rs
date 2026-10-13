@@ -38,9 +38,9 @@ use std::collections::{BTreeMap, BTreeSet};
 use std::hash::{Hash, Hasher};
 use std::sync::{Arc, Mutex, Weak};
 
+use novavector_doc::{Document, ImageBlob};
 use serde::{Deserialize, Serialize};
 use serde_json::{Value, json};
-use novavector_doc::{Document, ImageBlob};
 
 use super::fileio::{self, SAVE_FORMATS, SaveJob, SaveMode, SavePlan};
 use super::*;

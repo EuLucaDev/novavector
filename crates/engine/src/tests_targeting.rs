@@ -1,9 +1,9 @@
 //! Targeting through the Layers panel's target circles (`layer.target`) and moving or copying
 //! appearances between objects (`appearance.transfer`).
 
-use serde_json::{Value, json};
 use novavector_color::{BlendMode, Paint};
 use novavector_doc::Node;
+use serde_json::{Value, json};
 
 use super::*;
 

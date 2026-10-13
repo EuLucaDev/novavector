@@ -1,9 +1,9 @@
 //! Tests for Pathfinder, Object → Path and Type commands.
 
-use serde_json::{Value, json};
 use novavector_color::{Color, Paint};
 use novavector_doc::{Appearance, NodeKind};
 use novavector_geom::{FillRule, PathData, Rect};
+use serde_json::{Value, json};
 
 use super::*;
 

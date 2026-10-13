@@ -26,8 +26,8 @@
 
 use std::sync::mpsc::Sender;
 
-use serde_json::{Value, json};
 use novavector_tools::{Mods, PointerEvent, PointerKind};
+use serde_json::{Value, json};
 
 use crate::NovavectorApp;
 use crate::canvas::Xf;
@@ -404,11 +404,11 @@ pub fn save_screenshot(app: &mut NovavectorApp, image: &egui::ColorImage, path: 
 
 #[cfg(test)]
 mod tests {
-    use serde_json::{Value, json};
     use novavector_engine::Session;
+    use serde_json::{Value, json};
 
     use super::{ControlRequest, Outcome, handle};
-    use crate::{Services, NovavectorApp};
+    use crate::{NovavectorApp, Services};
 
     /// #1004: `ui.render` (the MCP `screenshot` of a connected app) renders the artboard asked
     /// for, at the scale asked for; the first without one.

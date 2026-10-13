@@ -3,9 +3,9 @@
 
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_doc::{AreaFit, Document, Justify, Node, NodeId, NodeKind, TextObject};
 use novavector_geom::{Affine, PathData, Vec2};
+use serde_json::{Value, json};
 
 use super::edit::selected_roots;
 use super::pathops::{len_param, num_param, shape_node};

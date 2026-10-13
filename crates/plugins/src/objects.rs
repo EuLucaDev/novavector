@@ -8,10 +8,10 @@
 use std::collections::{HashMap, HashSet};
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_color::{Color, Paint};
 use novavector_doc::{Appearance, AppearanceItem, Document, FillLayer, Node, NodeId, NodeKind, StrokeLayer};
 use novavector_geom::{FillRule, PathData, Point, Rect};
+use serde_json::{Value, json};
 
 use crate::{Error, Result};
 

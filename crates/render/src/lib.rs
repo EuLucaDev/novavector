@@ -38,8 +38,8 @@ pub use brush_fx::instance_art;
 pub use effects::stroke::width_outline;
 pub use images::{IMAGE_CACHE_MAX, image_cache_bytes, set_image_cache_budget};
 pub use live::expand_live;
-pub use pattern::render_pattern_swatch;
 pub use novavector_effects as effects;
+pub use pattern::render_pattern_swatch;
 pub use vello_cpu;
 
 /// Bounds of everything `n` paints, as the renderer culls it: its members, strokes, brush art and

@@ -1,11 +1,11 @@
 //! Compound appearance and fill-rule edits from a directly selected member (#1197).
 #![allow(clippy::unwrap_used, clippy::expect_used, clippy::panic)]
 
-use serde_json::{Value, json};
 use novavector_doc::{NodeId, NodeKind};
 use novavector_engine::Session;
 use novavector_geom::{Affine, FillRule, PathData};
 use novavector_render::{RenderOptions, Renderer};
+use serde_json::{Value, json};
 
 fn run(s: &mut Session, command: &str, params: Value) -> Value {
     s.execute(command, &params).unwrap()

@@ -28,12 +28,12 @@ use std::ops::{Range, RangeInclusive};
 use std::rc::Rc;
 use std::str::FromStr;
 
-use usvg::roxmltree;
 use novavector_color::{Color, Paint};
 use novavector_doc::{CharStyle, Dash, Justify, LineCap, LineJoin, ParaDirection, ParaStyle, StrokeLayer, TextKind, TextObject, TextRun};
 use novavector_geom::kurbo::ParamCurveArclen;
 use novavector_geom::{Affine, BezPath, PathData, Point, Rect};
 use novavector_text::{FontDb, TextLayout};
+use usvg::roxmltree;
 
 use super::css::{Styles, XNode};
 use super::{DEFAULT_FONT_SIZE, PT_PER_IN, href, vector_effect};

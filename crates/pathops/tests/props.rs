@@ -5,9 +5,9 @@ mod common;
 use std::f64::consts::PI;
 
 use kurbo::{ParamCurve, Point, Rect, Shape as _};
-use proptest::prelude::*;
 use novavector_geom::{FillRule, PathData, SubPath};
 use novavector_pathops::*;
+use proptest::prelude::*;
 
 const NZ: FillRule = FillRule::NonZero;
 

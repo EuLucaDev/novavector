@@ -1,9 +1,9 @@
 //! Proptest strategies: geometry, engine command sequences, junk parameters.
 
-use proptest::prelude::*;
-use serde_json::{Value, json};
 use novavector_engine::{Session, command_specs};
 use novavector_geom::{Anchor, PathData, Point, Rect, SubPath};
+use proptest::prelude::*;
+use serde_json::{Value, json};
 
 use crate::fixtures::{art_nodes, top_level_ids};
 

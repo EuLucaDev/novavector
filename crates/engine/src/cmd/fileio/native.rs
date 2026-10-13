@@ -6,11 +6,11 @@
 use std::borrow::Cow;
 use std::collections::BTreeMap;
 
-use serde::Deserialize;
-use serde_json::{Value, json};
 use novavector_color::cms;
 use novavector_doc::Document;
 use novavector_format::{PREVIEW_MAX, SaveOptions};
+use serde::Deserialize;
+use serde_json::{Value, json};
 
 use super::super::*;
 use super::{Format, FormatOption};

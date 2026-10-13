@@ -18,8 +18,8 @@ use std::borrow::Cow;
 use std::collections::BTreeSet;
 use std::sync::{Arc, Mutex, MutexGuard, OnceLock, PoisonError};
 
-use serde::{Deserialize, Serialize};
 use novavector_geom::{Affine, Rect};
+use serde::{Deserialize, Serialize};
 
 use novavector_color::Paint;
 

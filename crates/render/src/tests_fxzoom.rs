@@ -1,10 +1,10 @@
 //! Raster effects stay where they are, and look the same, at every zoom and pan (#755).
 
-use serde_json::json;
 use novavector_color::{BlendMode, Color, Paint};
 use novavector_doc::text::{CharStyle, TextObject};
 use novavector_doc::{Appearance, Effect, Node, NodeKind};
 use novavector_geom::{Point, shapes};
+use serde_json::json;
 
 use super::*;
 

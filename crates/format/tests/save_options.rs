@@ -6,13 +6,13 @@
 
 use std::sync::Arc;
 
-use serde_json::Value;
 use novavector_doc::links::LinkInfo;
 use novavector_doc::{Document, ImageBlob, ImageObject, Node, NodeKind, Symbol};
 use novavector_format::{ICC_MIME, PRETTY_MAX_BYTES, PRETTY_MAX_OBJECTS, SaveOptions, load, load_file, pdf_content, save_file, save_with};
 use novavector_geom::path::{PathData, SubPath};
 use novavector_geom::{Affine, Point};
 use novavector_testkit::fixtures::DocBuilder;
+use serde_json::Value;
 
 fn json_of(bytes: &[u8]) -> Value {
     serde_json::from_slice(bytes).unwrap()

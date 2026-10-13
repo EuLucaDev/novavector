@@ -2,10 +2,10 @@
 //! from a file), drawn and output as vectors, saved with its preview, checked, updated and
 //! relinked when the file changes, and turned into an editable copy (Break Link, Expand).
 
-use serde_json::{Value, json};
 use novavector_color::{Color, Paint};
 use novavector_doc::{Appearance, Document, Node, NodeKind, PlacedDocument};
 use novavector_geom::{Rect, shapes};
+use serde_json::{Value, json};
 
 use super::tests_links::{BLUE, Folder, RED, centre_colour, near, open, save, session, write};
 use super::*;
@@ -237,9 +237,8 @@ fn ai_export_preserves_placed_links_while_drawing_full_art_or_previews() {
                     }
                 }
                 let mut restored = session();
-                let result = restored
-                    .execute("document.open", &json!({"name": "export.ai", "dataBase64": novavector_format::base64_encode(&bytes)}))
-                    .unwrap();
+                let result =
+                    restored.execute("document.open", &json!({"name": "export.ai", "dataBase64": novavector_format::base64_encode(&bytes)})).unwrap();
                 assert_eq!(result["restored"], true);
                 assert_eq!(placed(&restored, id), original, "link metadata stays editable");
                 assert_eq!(placed(&s, id), original, "export leaves the source intact");
@@ -325,10 +324,7 @@ fn native_included_links_keep_missing_placed_documents_editable() {
                     if missing && include_linked {
                         let mut restored = Session::new();
                         restored
-                            .execute(
-                                "document.open",
-                                &json!({"name": "included.novavector", "dataBase64": novavector_format::base64_encode(&bytes)}),
-                            )
+                            .execute("document.open", &json!({"name": "included.novavector", "dataBase64": novavector_format::base64_encode(&bytes)}))
                             .unwrap();
                         assert_eq!(placed(&restored, id), original);
                         assert_eq!(restored.execute("links.check", &json!({})).unwrap()["missing"], 1);
@@ -780,9 +776,8 @@ fn eps_editing_keeps_placed_links_and_requested_source_bytes() {
                 }
                 let mut restored = Session::new();
                 assert_eq!(
-                    restored
-                        .execute("document.open", &json!({"name":"editable.eps","dataBase64":novavector_format::base64_encode(&bytes)}))
-                        .unwrap()["restored"],
+                    restored.execute("document.open", &json!({"name":"editable.eps","dataBase64":novavector_format::base64_encode(&bytes)})).unwrap()
+                        ["restored"],
                     true
                 );
                 assert_eq!(placed(&restored, id), original);

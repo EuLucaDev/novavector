@@ -12,7 +12,6 @@
 
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_color::{Color, Paint};
 use novavector_doc::appearance::{AppearanceItem, FillLayer, LineCap, LineJoin, StrokeLayer};
 use novavector_doc::{Appearance, Document, LiveShape, Node, NodeId, NodeKind, Selection, TraceView};
@@ -23,6 +22,7 @@ use novavector_tools::builder::{
     sorted_roots,
 };
 use novavector_trace as tr;
+use serde_json::{Value, json};
 
 use super::edit::selected_roots;
 use super::paint::paint_from;

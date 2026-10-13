@@ -6,11 +6,11 @@
 //! selected and the selected objects that are object slices. Commands that take slice ids take
 //! user slice ids and the ids of objects with an object slice.
 
-use serde_json::{Value, json};
 use novavector_color::Paint;
 use novavector_doc::slices::valid_rect;
 use novavector_doc::{Appearance, CellAlign, CellVAlign, Document, Node, NodeKind, Slice, SliceKind, SliceOptions};
 use novavector_geom::{Rect, shapes};
+use serde_json::{Value, json};
 
 use super::*;
 
@@ -496,9 +496,9 @@ impl Edits {
             .map(|b| match b.to_ascii_lowercase().as_str() {
                 "" | "none" => Ok(String::new()),
                 "matte" => Ok("matte".to_string()),
-                _ => novavector_color::Color::from_hex(&b)
-                    .map(|c| c.to_hex())
-                    .ok_or_else(|| bad(C, "`background` must be \"\", \"matte\" or #rrggbb")),
+                _ => {
+                    novavector_color::Color::from_hex(&b).map(|c| c.to_hex()).ok_or_else(|| bad(C, "`background` must be \"\", \"matte\" or #rrggbb"))
+                }
             })
             .transpose()?;
         for k in Self::TEXT {

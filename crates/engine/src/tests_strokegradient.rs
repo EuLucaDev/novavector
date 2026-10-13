@@ -1,11 +1,11 @@
 //! Gradients within, along or across a stroke: `paint.editGradient {strokeMode}`, the saved mode,
 //! and the same picture on the canvas, after Outline Stroke and Expand, and in SVG and PDF.
 
-use serde_json::{Value, json};
 use novavector_color::Paint;
 use novavector_doc::{Document, NodeKind, StrokeGradientMode};
 use novavector_geom::Rect;
 use novavector_render::{Rendered, Renderer};
+use serde_json::{Value, json};
 
 use super::*;
 

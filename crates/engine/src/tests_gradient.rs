@@ -1,10 +1,10 @@
 //! Gradients through commands: lossless, validated params (M3.14), transforms (M3.15), the active
 //! proxy and type (M3.16) and the interactive annotator (M3.17).
 
-use serde_json::{Value, json};
 use novavector_color::{Color, Gradient, GradientGeom, GradientKind, GradientPaint, GradientStop, Paint};
 use novavector_geom::Point;
 use novavector_tools::{Mods, PointerEvent, PointerKind, ToolKey};
+use serde_json::{Value, json};
 
 use super::*;
 

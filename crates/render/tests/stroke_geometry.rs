@@ -193,8 +193,7 @@ fn shapes_far_beyond_the_page_are_left_undrawn_without_crashing() {
     far.move_to((13607718712.4, 13.2));
     far.curve_to((-0.03, 720.96), (-3.08e17, -8.36e20), (-3.35e20, -1.0));
     far.close_path();
-    let black =
-        || Appearance { items: vec![AppearanceItem::Fill(novavector_doc::FillLayer::new(Paint::solid(Color::BLACK)))], ..Default::default() };
+    let black = || Appearance { items: vec![AppearanceItem::Fill(novavector_doc::FillLayer::new(Paint::solid(Color::BLACK)))], ..Default::default() };
     for (path, app) in [
         (novavector_geom::PathData::from_bezpath(&far), black()),
         (shapes::rectangle(Rect::new(10.0, 10.0, 30.0, 30.0)), black()),

@@ -2,9 +2,9 @@
 //! Setup set it, new documents start in the preference), Stroke and Type are preferences, and the
 //! canvas measurement labels follow them.
 
-use serde_json::json;
 use novavector_doc::Unit;
 use novavector_tools::{Mods, Overlay, PointerEvent, PointerKind};
+use serde_json::json;
 
 use super::*;
 use crate::cmd::prefscmds::{PREF_SPECS, PrefKind, UNITS};

@@ -2359,8 +2359,7 @@ fn a_compound_path_has_holes_where_its_paths_overlap() {
     let diamond = NodeId(s.execute("path.create", &json!({"d": "M50 -20 L120 50 L50 120 L-20 50 Z"})).unwrap()["id"].as_u64().unwrap());
     s.execute("select.set", &json!({"ids": [square.0, diamond.0]})).unwrap();
     let c = NodeId(s.execute("object.compoundPath.make", &json!({})).unwrap()["id"].as_u64().unwrap());
-    let hit =
-        |x: f64, y: f64| novavector_doc::hit::hit_test(&s.doc().unwrap().doc, Point::new(x, y), Default::default()).map(|h| h.top_object(None));
+    let hit = |x: f64, y: f64| novavector_doc::hit::hit_test(&s.doc().unwrap().doc, Point::new(x, y), Default::default()).map(|h| h.top_object(None));
     assert_eq!(hit(50.0, 50.0), None, "the overlap is a hole");
     assert_eq!(hit(3.0, 3.0), Some(c), "the square's corner is filled");
     assert_eq!(hit(110.0, 50.0), Some(c), "the diamond's point outside the square is filled");

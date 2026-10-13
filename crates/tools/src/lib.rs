@@ -35,11 +35,11 @@ pub mod text;
 pub mod typewidget;
 pub mod xform;
 
-use serde::{Deserialize, Serialize};
-use serde_json::Value;
 use novavector_color::Paint;
 use novavector_doc::{Document, NodeId, Selection, Unit};
 use novavector_geom::{BezPath, Point, Rect, Vec2};
+use serde::{Deserialize, Serialize};
+use serde_json::Value;
 
 pub use catalog::{TOOL_GROUPS, ToolInfo, tool_info};
 

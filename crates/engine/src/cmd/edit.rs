@@ -3,9 +3,9 @@
 use std::collections::{BTreeMap, BTreeSet};
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_doc::{Document, Node, NodeId, Unit};
 use novavector_geom::{Affine, Point, Vec2};
+use serde_json::{Value, json};
 
 use super::clipboard::SwatchChoices;
 use super::*;

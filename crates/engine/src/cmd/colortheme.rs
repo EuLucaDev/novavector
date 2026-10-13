@@ -2,12 +2,12 @@
 //! preferences (no online service). `colorTheme.addToSwatches` adds a theme to the Swatches panel as a
 //! colour group.
 
-use serde::{Deserialize, Serialize};
-use serde_json::{Value, json};
 use novavector_color::Color;
 use novavector_color::harmony::{Harmony, THEME_SIZE};
 use novavector_color::recolor::ColorKey;
 use novavector_tools::params::color_json;
+use serde::{Deserialize, Serialize};
+use serde_json::{Value, json};
 
 use super::*;
 

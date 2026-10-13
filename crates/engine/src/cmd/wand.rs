@@ -2,10 +2,10 @@
 //! Magic Wand panel's (session state, kept across tool switches); the tool runs
 //! `select.magicWand` on click.
 
-use serde::{Deserialize, Serialize};
-use serde_json::{Value, json};
 use novavector_color::Paint;
 use novavector_doc::{Document, Node, NodeId, NodeKind};
+use serde::{Deserialize, Serialize};
+use serde_json::{Value, json};
 
 use super::*;
 

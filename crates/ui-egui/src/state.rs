@@ -1,8 +1,8 @@
 //! Serializable UI state (read and driven by the control channel).
 
+use novavector_geom::Point;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
-use novavector_geom::Point;
 
 use crate::theme::Brightness;
 

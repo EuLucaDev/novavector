@@ -22,12 +22,12 @@
 //!
 //! On a freeform gradient the tool edits its points instead (see `freeform`).
 
-use serde_json::{Value, json};
 use novavector_color::gradient::{duplicate_stop, insert_stop, midpoint_from_pos, midpoint_pos, move_stop, remove_stop, set_midpoint};
 use novavector_color::{Gradient, GradientGeom, GradientKind, GradientStop};
 use novavector_doc::NodeId;
 use novavector_doc::hit::hit_test;
 use novavector_geom::{Affine, Point, Shape, Vec2, constrain_angle_from};
+use serde_json::{Value, json};
 
 use super::freeform::{self, Annotator as FreeformAnnotator};
 use super::paint_owner;

@@ -3,11 +3,11 @@
 
 use std::sync::Arc;
 
-use serde_json::json;
 use novavector_color::{Color, Paint, Swatch};
 use novavector_doc::{Appearance, Artboard, Document, LayerColor, Node, NodeKind};
 use novavector_geom::{Rect, shapes};
 use novavector_testkit::raster::render_region;
+use serde_json::json;
 
 use crate::*;
 

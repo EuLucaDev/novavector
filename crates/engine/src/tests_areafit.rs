@@ -1,10 +1,10 @@
 //! Area type fitting: Auto Size (the frame's height follows the text), Shrink Text to Fit, and
 //! overflow reporting.
 
-use serde_json::{Value, json};
 use novavector_doc::{AreaFit, NodeKind, TextKind, TextObject};
 use novavector_geom::Rect;
 use novavector_tools::{Mods, PointerEvent, PointerKind, ToolKey};
+use serde_json::{Value, json};
 
 use super::*;
 

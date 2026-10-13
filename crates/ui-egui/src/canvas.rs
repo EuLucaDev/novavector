@@ -2,10 +2,10 @@
 //! selection visuals (bounding box, anchors, handles, smart-guide style labels).
 
 use egui::{Color32, CornerRadius, Pos2, Sense, Shape, Stroke, StrokeKind, Ui, Vec2, pos2, vec2};
-use serde_json::json;
 use novavector_doc::{Node, NodeKind, Unit};
 use novavector_geom::{Affine, BezPath, PathEl, Point, Rect};
 use novavector_tools::{Cursor, Mods, Overlay, PointerEvent, PointerKind};
+use serde_json::json;
 
 use crate::state::View;
 use crate::theme::{self, Tokens};

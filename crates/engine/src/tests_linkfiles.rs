@@ -6,8 +6,8 @@ use std::path::{Path, PathBuf};
 use std::sync::{Arc, Mutex, mpsc};
 use std::time::{Duration, Instant};
 
-use serde_json::{Value, json};
 use novavector_doc::{NodeId, NodeKind};
+use serde_json::{Value, json};
 
 use crate::cmd::findfiles::{self, Limits, Rules, Visitor};
 use crate::cmd::linkfiles::{self, LinkSearch, Sought};

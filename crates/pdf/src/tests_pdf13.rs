@@ -1,10 +1,10 @@
 //! Compatibility PDF 1.3: which standards allow it, the header and metadata that say so, the
 //! writer refusing transparency (the app flattens it first) and 40-bit RC4 encryption.
 
-use serde_json::json;
 use novavector_color::{BlendMode, Color, Paint};
 use novavector_doc::{Appearance, Document, Node};
 use novavector_geom::{Rect, shapes};
+use serde_json::json;
 
 use crate::*;
 

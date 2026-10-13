@@ -1,9 +1,9 @@
 //! Brushes and symbols: commands, tools, rendering and persistence.
 
-use serde_json::{Value, json};
 use novavector_doc::{Document, Node, NodeKind};
 use novavector_geom::Rect;
 use novavector_tools::{Mods, PointerEvent, PointerKind};
+use serde_json::{Value, json};
 
 use super::*;
 

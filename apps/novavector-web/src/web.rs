@@ -13,7 +13,7 @@ use novavector_ui_egui::graphics::GraphicsLoss;
 use novavector_ui_egui::i18n;
 use novavector_ui_egui::place::{DropTarget, PlaceArrival, PlaceInbox};
 use novavector_ui_egui::print::{PrintJob, PrintService, Printer};
-use novavector_ui_egui::{Services, NovavectorApp};
+use novavector_ui_egui::{NovavectorApp, Services};
 use wasm_bindgen::JsCast as _;
 
 use crate::locks::WebLocks;
@@ -403,8 +403,8 @@ fn services(inbox: Inbox, place_inbox: PlaceInbox, ctx: egui::Context, locks: Op
             let inbox = picked.clone();
             let ctx = place_ctx.clone();
             wasm_bindgen_futures::spawn_local(async move {
-                let dialog =
-                    fileio::place_filters().fold(rfd::AsyncFileDialog::new().set_title(novavector_ui_egui::i18n::t("Place")), |d, (name, exts)| {
+                let dialog = fileio::place_filters()
+                    .fold(rfd::AsyncFileDialog::new().set_title(novavector_ui_egui::i18n::t("Place")), |d, (name, exts)| {
                         d.add_filter(novavector_ui_egui::i18n::tr_ctx(novavector_ui_egui::i18n::current(), "file-filter", name), exts)
                     });
                 let Some(files) = dialog.pick_files().await else {

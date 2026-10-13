@@ -1,9 +1,9 @@
 //! Convert to Shape, Round Corners and Scribble.
 
-use serde_json::Value;
 use novavector_geom::kurbo;
 use novavector_geom::shapes::{self, KAPPA};
 use novavector_geom::{Affine, Anchor, PathData, Point, Rect, SubPath};
+use serde_json::Value;
 
 use crate::util::*;
 

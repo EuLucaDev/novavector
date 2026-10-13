@@ -2,14 +2,14 @@
 // Integration tests: unwrapping and panicking on failure is fine here, unlike in shipped code (AGENTS.md › Robustness).
 #![allow(clippy::unwrap_used, clippy::expect_used, clippy::panic)]
 
-use proptest::prelude::*;
-use serde_json::{Value, json};
 use novavector_doc::{Document, ImageBlob, ImageObject, Node, NodeId, NodeKind};
 use novavector_format::{SaveOptions, base64_decode, base64_encode, load, load_file, pdf_content, preview, save, save_with, sniff};
 use novavector_geom::Affine;
 use novavector_testkit::fixtures;
 use novavector_testkit::invariants::{check_document, check_native_roundtrip, check_native_roundtrip_exact, doc_json, json_approx_eq};
 use novavector_testkit::strategies::arb_ops;
+use proptest::prelude::*;
+use serde_json::{Value, json};
 
 fn rich_doc() -> Document {
     (*fixtures::rich_session().doc().unwrap().doc).clone()

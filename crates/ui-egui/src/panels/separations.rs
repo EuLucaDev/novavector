@@ -4,9 +4,9 @@
 //! Setup (working spaces, intent, black-point compensation, proof target, gamut check).
 
 use egui::{Sense, Ui, vec2};
-use serde_json::{Value, json};
 use novavector_color::cms::{self, Intent, ProfileKind};
 use novavector_render::proof;
+use serde_json::{Value, json};
 
 use crate::NovavectorApp;
 use crate::theme::Tokens;

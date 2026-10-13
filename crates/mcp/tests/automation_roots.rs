@@ -7,9 +7,9 @@
 
 use std::path::{Path, PathBuf};
 
-use serde_json::{Value, json};
 use novavector_engine::file_access::AutomationRoots;
 use novavector_mcp::{Headless, Server};
+use serde_json::{Value, json};
 
 const SVG: &str = r#"<svg xmlns="http://www.w3.org/2000/svg" width="40" height="30"><rect width="20" height="10" fill="red"/></svg>"#;
 

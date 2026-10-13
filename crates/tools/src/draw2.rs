@@ -8,9 +8,9 @@ mod curvature;
 mod family;
 mod gesture;
 
-use serde_json::{Value, json};
 use novavector_doc::{NodeId, NodeKind};
 use novavector_geom::{Anchor, AnchorKind, BezPath, Point, SubPath};
+use serde_json::{Value, json};
 
 use crate::{Action, Tool, ToolContext};
 

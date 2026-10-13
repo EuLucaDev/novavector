@@ -5,9 +5,9 @@
 //! PostScript file (`format: "postscript"`, or a `.ps` path) is always saved. `print.printers`
 //! lists the printers.
 
+use novavector_engine::cmd::fileio;
 use serde::Serialize;
 use serde_json::{Value, json};
-use novavector_engine::cmd::fileio;
 
 use crate::{NovavectorApp, io};
 

@@ -9,9 +9,9 @@
 
 use std::collections::BTreeSet;
 
-use serde_json::{Value, json};
 use novavector_engine::doc::{LiveCorners, NodeId};
 use novavector_geom::shapes::CornerKind;
+use serde_json::{Value, json};
 
 use super::swatch_options::{grid, label};
 use super::{DialogSpec, form, run_and_close};

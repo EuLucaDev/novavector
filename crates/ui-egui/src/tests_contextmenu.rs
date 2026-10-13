@@ -2,10 +2,10 @@
 //! applies to the selection.
 
 use egui::{Event, PointerButton, Pos2, Rect, pos2, vec2};
-use serde_json::json;
 use novavector_doc::{NodeId, NodeKind};
 use novavector_engine::Session;
 use novavector_geom::Point;
+use serde_json::json;
 
 use crate::canvas::Xf;
 use crate::menus::{self, Item};

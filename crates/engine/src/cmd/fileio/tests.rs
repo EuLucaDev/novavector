@@ -1,7 +1,7 @@
 use std::io::Cursor;
 
-use serde_json::{Value, json};
 use novavector_doc::NodeKind;
+use serde_json::{Value, json};
 
 use super::*;
 use crate::cmd::parse_range;

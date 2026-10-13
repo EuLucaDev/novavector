@@ -5,13 +5,11 @@
 
 mod common;
 
-use proptest::prelude::*;
 use novavector_geom::{FillRule, PathData, Point, Rect};
 use novavector_pathops::*;
 use novavector_testkit::geom::{directed_hausdorff, grid, hausdorff, polygon_area, rel_close};
-use novavector_testkit::strategies::{
-    arb_closed_shape, arb_convex_polygon, arb_ellipse, arb_rect, arb_smooth_curve, arb_star_polygon, polygon_path,
-};
+use novavector_testkit::strategies::{arb_closed_shape, arb_convex_polygon, arb_ellipse, arb_rect, arb_smooth_curve, arb_star_polygon, polygon_path};
+use proptest::prelude::*;
 
 const NZ: FillRule = FillRule::NonZero;
 

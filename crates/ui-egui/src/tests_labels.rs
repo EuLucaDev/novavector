@@ -1,8 +1,8 @@
 //! Neutral wording in menus and panels: what users read names Nova Vector's own features.
 
 use egui::epaint::Shape;
-use serde_json::json;
 use novavector_engine::Session;
+use serde_json::json;
 
 use crate::NovavectorApp;
 use crate::menus::{self, Item};

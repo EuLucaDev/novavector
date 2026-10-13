@@ -4,10 +4,10 @@
 
 use std::collections::BTreeSet;
 
-use serde_json::{Value, json};
 use novavector_doc::{AnchorRef, LiveCorners, LiveShape, NodeKind};
 use novavector_geom::Affine;
 use novavector_geom::shapes::CornerKind;
+use serde_json::{Value, json};
 
 use super::*;
 

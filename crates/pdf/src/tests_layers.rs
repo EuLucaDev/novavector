@@ -3,10 +3,10 @@
 //! for the overprinting fills and strokes).
 
 use hayro_syntax::object::{Array, Dict, Name, ObjectIdentifier};
-use serde_json::{Value, json};
 use novavector_color::{Color, Paint};
 use novavector_doc::{Appearance, CharStyle, Document, LayerColor, Node, NodeKind, TextObject};
 use novavector_geom::{Point, Rect, shapes};
+use serde_json::{Value, json};
 
 use crate::*;
 

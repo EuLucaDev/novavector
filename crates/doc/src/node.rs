@@ -2,11 +2,11 @@
 
 use std::sync::Arc;
 
-use serde::{Deserialize, Serialize};
 use novavector_color::BlendMode;
 use novavector_geom::corners::cut_corners;
 use novavector_geom::shapes::{self, CornerKind};
 use novavector_geom::{Affine, BezPath, FillRule, PathData, Point, Rect};
+use serde::{Deserialize, Serialize};
 
 use crate::appearance::Appearance;
 use crate::live::{BlendSpec, EnvelopeKind, GradientMesh, Outliner};
@@ -1645,10 +1645,10 @@ mod kind_de {
     use std::fmt;
     use std::sync::Arc;
 
+    use novavector_geom::{Affine, FillRule, PathData};
     use serde::de::value::{MapAccessDeserializer, StringDeserializer};
     use serde::de::{self, DeserializeSeed, Deserializer, EnumAccess, IntoDeserializer, MapAccess, VariantAccess, Visitor};
     use serde::{Deserialize, forward_to_deserialize_any};
-    use novavector_geom::{Affine, FillRule, PathData};
 
     use super::{LayerColor, LiveShape, Node, NodeKind, yes};
     use crate::live::{BlendSpec, EnvelopeKind, GradientMesh};

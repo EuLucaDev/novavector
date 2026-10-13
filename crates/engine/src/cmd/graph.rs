@@ -8,12 +8,12 @@
 use std::collections::HashMap;
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_color::{Color, Paint};
 use novavector_doc::{
     Appearance, CharStyle, Document, GraphDesign, GraphKind, GraphSpec, Justify, Node, NodeId, NodeKind, TextObject, TickLength, ValueAxisSide,
 };
 use novavector_geom::{Affine, BezPath, PathData, Point, Rect, shapes};
+use serde_json::{Value, json};
 
 use super::typecmd::refresh_bounds;
 use super::*;
@@ -1900,9 +1900,9 @@ fn set_type(s: &mut Session, p: &Value) -> Result<Value> {
 
 #[cfg(test)]
 mod tests {
-    use serde_json::json;
     use novavector_color::Paint;
     use novavector_doc::{CharStyle, GraphKind, GraphSpec, NodeKind};
+    use serde_json::json;
 
     use crate::{NodeId, Session};
 
@@ -3501,10 +3501,7 @@ mod tests {
         s.execute("document.save", &json!({"path": path})).unwrap();
         s.execute("document.open", &json!({"path": path})).unwrap();
         let g = spec(&s, id);
-        assert_eq!(
-            (g.pie_legend_in_wedges, g.pie_position, g.pie_sort),
-            (true, novavector_doc::PiePosition::Stacked, novavector_doc::PieSort::All)
-        );
+        assert_eq!((g.pie_legend_in_wedges, g.pie_position, g.pie_sort), (true, novavector_doc::PiePosition::Stacked, novavector_doc::PieSort::All));
         let v = serde_json::to_value(GraphSpec::default()).unwrap();
         for k in ["pieLegendInWedges", "piePosition", "pieSort"] {
             assert!(v.get(k).is_none(), "{k}");

@@ -9,8 +9,6 @@
 //! View options (Lock Grid, Lock Station Point, Snap to Grid, Show Rulers) are view state on
 //! the grid: they toggle without an undo step, as Show Grid does.
 
-use serde::{Deserialize, Serialize};
-use serde_json::{Value, json};
 use novavector_doc::{Document, NodeId};
 use novavector_geom::{Point, Rect, Vec2};
 use novavector_tools::distort::perspective::Plane;
@@ -18,6 +16,8 @@ use novavector_tools::distort::perspective::define::{BUILTINS, LETTER, first_art
 use novavector_tools::distort::perspective::widget::{WidgetCorner, WidgetPlace};
 use novavector_tools::distort::perspective::{GridDefinition, PerspectiveGrid};
 use novavector_tools::{PointerEvent, PointerKind, ToolKey};
+use serde::{Deserialize, Serialize};
+use serde_json::{Value, json};
 
 use super::distortcmds::{grid_of, silent, store_grid};
 use super::*;

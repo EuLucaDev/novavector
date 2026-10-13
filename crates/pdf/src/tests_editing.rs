@@ -1,10 +1,10 @@
 //! Preserve Editing: the native document as an embedded file, found again (also under its legacy
 //! name) and checked against the pages it was written with.
 
-use serde_json::json;
 use novavector_color::{Color, Paint};
 use novavector_doc::{Appearance, Document, Node};
 use novavector_geom::{Rect, shapes};
+use serde_json::json;
 
 use crate::*;
 

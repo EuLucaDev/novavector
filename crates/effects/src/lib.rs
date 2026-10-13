@@ -54,9 +54,9 @@ mod tests;
 #[cfg(test)]
 mod tests_scale;
 
-use serde_json::{Map, Value, json};
 use novavector_doc::{AppearanceItem, Effect, Node, NodeKind, StrokeLayer};
 use novavector_geom::{BezPath, FillRule, PathData, Rect};
+use serde_json::{Map, Value, json};
 
 pub use adjust::{ADJUSTMENTS, ColorMap, ImageHook, adjust, adjust_in_document, color_map, curve_at, curve_points, has_adjustment, is_adjustment};
 pub use bake::{StrokeArt, bake_appearance, bake_document, expand_art, expand_leaf, fresh_ids, needs_bake};

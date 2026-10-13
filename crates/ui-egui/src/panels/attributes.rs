@@ -5,10 +5,10 @@
 //! through `attributes.set`, `path.reverse` and `path.setFillRule`.
 
 use egui::Ui;
-use serde_json::{Value, json};
 use novavector_doc::{ImageMap, NodeId, NodeKind};
 use novavector_engine::cmd::AttributesInfo;
 use novavector_geom::FillRule;
+use serde_json::{Value, json};
 
 use super::{pstate, selection_len, set_pstate};
 use crate::NovavectorApp;

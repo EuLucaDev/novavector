@@ -1,10 +1,10 @@
 //! Type on a path (#429): Type on a Path Options keep its brackets, flip it, align it to the path
 //! and space it; the selection tools drag its brackets to move it along the path and across it.
 
-use serde_json::{Value, json};
 use novavector_doc::{NodeKind, PathAlign, TextKind, TextObject};
 use novavector_geom::{Point, Rect, Shape};
 use novavector_tools::{Mods, PointerEvent, PointerKind};
+use serde_json::{Value, json};
 
 use super::*;
 

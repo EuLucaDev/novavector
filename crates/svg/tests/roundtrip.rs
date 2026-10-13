@@ -947,8 +947,7 @@ fn outline_text_writes_glyph_paths() {
 #[test]
 fn bidirectional_svg_export_preserves_shaped_appearance_as_outlines() {
     let t = TextObject::point(Point::new(10.0, 40.0), "שלום Rust 123 مرحبا", CharStyle::default());
-    let expected =
-        novavector_text::layout(novavector_text::FontDb::global(), &t).glyphs.iter().filter(|g| !g.outline.elements().is_empty()).count();
+    let expected = novavector_text::layout(novavector_text::FontDb::global(), &t).glyphs.iter().filter(|g| !g.outline.elements().is_empty()).count();
     assert!(expected > 0);
     let d = doc_with(vec![Node::new(NodeId(100), NodeKind::Text(Box::new(t)))]);
     let svg = export(&d, &ExportOptions::default());

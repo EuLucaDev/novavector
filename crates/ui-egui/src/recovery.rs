@@ -6,8 +6,8 @@
 
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_engine::cmd::recovery::{self, RecoveryStore};
+use serde_json::{Value, json};
 
 use crate::NovavectorApp;
 use crate::background::{self, Writer};

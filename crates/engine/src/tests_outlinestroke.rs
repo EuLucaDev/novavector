@@ -2,10 +2,10 @@
 //! stroke as the canvas paints it: dashes, arrowheads, width profiles, alignment, every stroke
 //! item in order, with the stroke's opacity and blend mode moved to the new fill.
 
-use serde_json::{Value, json};
 use novavector_color::BlendMode;
 use novavector_doc::{AppearanceItem, Node, NodeKind};
 use novavector_geom::{FillRule, PathData, Rect};
+use serde_json::{Value, json};
 
 use super::*;
 

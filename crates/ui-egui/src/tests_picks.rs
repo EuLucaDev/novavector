@@ -8,15 +8,15 @@ use std::rc::Rc;
 use std::sync::mpsc::{Sender, channel};
 
 use egui::{Pos2, Rect, vec2};
-use serde_json::{Value, json};
 use novavector_engine::Session;
+use serde_json::{Value, json};
 
 use crate::panels::graphic_styles::GraphicStyleLibraries;
 use crate::panels::library_panel::library_menu;
 use crate::panels::swatches::SwatchLibraries;
 use crate::picks::{self, PickRequest};
 use crate::state::Dialog;
-use crate::{FilePick, Services, NovavectorApp};
+use crate::{FilePick, NovavectorApp, Services};
 
 const SVG: &[u8] = br#"<svg xmlns="http://www.w3.org/2000/svg" width="40" height="30"><rect width="10" height="10"/></svg>"#;
 

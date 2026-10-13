@@ -9,12 +9,12 @@
 
 use std::path::Path;
 
+use novavector_ui_egui::{FilePick, i18n};
 use objc2::rc::{Retained, Weak};
 use objc2::{DefinedClass, MainThreadMarker, MainThreadOnly, define_class, msg_send, sel};
 use objc2_app_kit::{NSPopUpButton, NSSavePanel, NSTextField, NSView};
 use objc2_foundation::{NSObjectProtocol, NSPoint, NSRect, NSSize, NSString};
 use raw_window_handle::{HasWindowHandle, RawWindowHandle};
-use novavector_ui_egui::{FilePick, i18n};
 
 type Filter = (&'static str, &'static [&'static str]);
 

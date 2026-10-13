@@ -4,9 +4,9 @@
 use std::sync::{Mutex, OnceLock};
 
 use egui::{Key, Ui, vec2};
-use serde_json::{Value, json};
 use novavector_doc::{CharStyle, NodeId, NodeKind};
 use novavector_tools::{Mods, ToolKey};
+use serde_json::{Value, json};
 
 use super::{pstate, set_pstate};
 use crate::NovavectorApp;

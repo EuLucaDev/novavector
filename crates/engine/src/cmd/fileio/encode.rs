@@ -3,9 +3,6 @@
 
 use std::borrow::Cow;
 
-use serde::Deserialize;
-use serde::de::DeserializeOwned;
-use serde_json::Value;
 use novavector_doc::{Artboard, Document};
 use novavector_geom::Rect;
 use novavector_render::AntiAlias;
@@ -13,6 +10,9 @@ use novavector_render::encode::jpeg::{self, JpegOptions};
 use novavector_render::encode::quantize::{Dither, PaletteOptions, Reduction};
 use novavector_render::encode::tiff::{ByteOrder, TiffOptions};
 use novavector_render::encode::{RasterExportOptions, RasterFormat, bmp, psd, tga};
+use serde::Deserialize;
+use serde::de::DeserializeOwned;
+use serde_json::Value;
 
 use super::super::*;
 use super::Format;

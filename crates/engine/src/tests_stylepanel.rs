@@ -1,8 +1,8 @@
 //! Graphic Styles panel depth: Merge Graphic Styles, moving styles and Override Character Color.
 
-use serde_json::{Value, json};
 use novavector_color::{BlendMode, Color, Paint};
 use novavector_doc::{GraphicStyle, NodeId, NodeKind};
+use serde_json::{Value, json};
 
 use super::*;
 

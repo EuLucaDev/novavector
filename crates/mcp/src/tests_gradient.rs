@@ -1,9 +1,9 @@
 //! The Gradient tool's annotator through MCP: `pointer_gesture` edits stops and the vector,
 //! `press_key` reaches the selected stop.
 
-use serde_json::{Value, json};
 use novavector_doc::color::{GradientPaint, Paint};
 use novavector_geom::Point;
+use serde_json::{Value, json};
 
 use crate::{Backend, Headless, call_tool};
 

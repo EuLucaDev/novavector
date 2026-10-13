@@ -2,11 +2,11 @@
 //! (`print.preview`) and the print settings saved with the document (`print.setup`,
 //! [`novavector_doc::Document::print_setup`]).
 
-use serde::Deserialize;
-use serde_json::{Value, json};
 use novavector_doc::Document;
 use novavector_eps::{Level, PrintJob, PrintPage};
 use novavector_pdf::{PrintOptions, PrintSettings};
+use serde::Deserialize;
+use serde_json::{Value, json};
 
 use super::fileio::pdf::{merge, pdf_error};
 use super::fileio::{extension, write_or_return};

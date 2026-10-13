@@ -5,10 +5,10 @@
 use std::borrow::Cow;
 use std::sync::Arc;
 
-use serde::Deserialize;
-use serde_json::{Value, json};
 use novavector_doc::{Document, Node, NodeKind};
 use novavector_pdf::{Overprint, PdfError, PdfOptions, PdfPreset, PdfSettings, Standard, THUMBNAIL_SIZE, Thumbnail};
+use serde::Deserialize;
+use serde_json::{Value, json};
 
 use super::super::flatten::{FlattenOptions, flatten_document, see_through_images};
 use super::super::*;

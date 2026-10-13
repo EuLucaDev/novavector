@@ -1,10 +1,10 @@
 //! Visible art is readable by the Eyedropper without making it editable (#1251).
 #![allow(clippy::unwrap_used)]
 
-use serde_json::json;
 use novavector_doc::NodeId;
 use novavector_engine::{Session, UiRequest, ViewInfo};
 use novavector_tools::{Mods, PointerEvent, PointerKind};
+use serde_json::json;
 
 fn fixture() -> (Session, NodeId, NodeId, NodeId) {
     let mut s = Session::new();

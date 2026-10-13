@@ -7,7 +7,6 @@
 
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_color::{Color, Paint};
 use novavector_doc::live::{
     self, BlendDefaults, BlendOrientation, BlendSpacing, BlendSpec, EnvelopeKind, EnvelopeMap, EnvelopeOptions, GradientMesh, MeshAppearance,
@@ -15,6 +14,7 @@ use novavector_doc::live::{
 };
 use novavector_doc::{Appearance, Document, Node, NodeId, NodeKind, Selection};
 use novavector_geom::{Affine, PathData, Point, Vec2};
+use serde_json::{Value, json};
 
 use super::edit::selected_roots;
 use super::expand::gradient_sampler;

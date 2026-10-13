@@ -4,12 +4,12 @@
 use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::{Arc, Mutex};
 
-use serde_json::{Value, json};
 use novavector_doc::{Appearance, Document, Node};
 use novavector_engine::Session;
 use novavector_geom::{Rect, shapes};
+use serde_json::{Value, json};
 
-use crate::{Services, NovavectorApp, background, io};
+use crate::{NovavectorApp, Services, background, io};
 
 type Files = Arc<Mutex<Vec<(String, Vec<u8>)>>>;
 

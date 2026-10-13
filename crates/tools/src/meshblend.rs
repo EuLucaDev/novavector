@@ -11,10 +11,10 @@
 //!   `object.mesh.deletePoint`. Clicking a gradient mesh's point selects the mesh, and the next
 //!   solid fill colour recolours just that point.
 
-use serde_json::json;
 use novavector_color::Paint;
 use novavector_doc::{NodeId, NodeKind};
 use novavector_geom::Point;
+use serde_json::json;
 
 use crate::meshedit::{MeshEdit, grid_of};
 use crate::{Action, Cursor, Mods, Overlay, PointerEvent, PointerKind, Tool, ToolContext};

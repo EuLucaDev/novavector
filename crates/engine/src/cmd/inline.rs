@@ -1,10 +1,10 @@
 //! Inline graphics in text: document symbols placed in a run of text, flowing like a glyph
 //! (beyond Illustrator; InDesign's inline anchored objects). See [`novavector_doc::InlineArt`].
 
-use serde_json::{Value, json};
 use novavector_doc::text::INLINE_MAX_SCALE;
 use novavector_doc::{Document, InlineArt, NodeId, NodeKind, TextRun};
 use novavector_text::edit;
+use serde_json::{Value, json};
 
 use super::typecmd::refresh_bounds;
 use super::*;

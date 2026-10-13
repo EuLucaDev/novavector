@@ -5,11 +5,11 @@
 
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_color::{Color, Paint};
 use novavector_doc::text::{CharStyle, TextObject};
 use novavector_doc::{Appearance, AppearanceItem, Effect, FillLayer, Knockout, Node, NodeKind, StrokeLayer};
 use novavector_geom::{Point, shapes};
+use serde_json::{Value, json};
 
 use super::*;
 

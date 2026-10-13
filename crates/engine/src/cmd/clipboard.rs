@@ -15,11 +15,11 @@ mod resources;
 use std::collections::BTreeMap;
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_brush::Brush;
 use novavector_color::Swatch;
 use novavector_doc::{Document, GraphicStyle, ImageBlob, Node, NodeId, PatternDef, Symbol, TextStyleDef};
 use novavector_geom::Rect;
+use serde_json::{Value, json};
 
 pub use flavours::{BITMAP, EMF, EPS, FILE_HEAD, Flavour, PASTE_ORDER, PDF, PNG, SVG, TEXT, file_flavour, is_address, names_a_picture};
 pub(crate) use resources::SwatchChoices;

@@ -11,11 +11,11 @@
 //! samples the colour under the cursor into the selected gradient stop (`paint.sampleColor
 //! {stop}`) and switches back to that tool.
 
-use serde_json::{Value, json};
 use novavector_color::{Color, Paint};
 use novavector_doc::hit::{HitKind, hit_test, hit_test_visible};
 use novavector_doc::{Node, NodeKind};
 use novavector_geom::Point;
+use serde_json::{Value, json};
 
 use super::paint_owner;
 use crate::params::color_json;
@@ -262,10 +262,8 @@ mod tests {
 
     #[test]
     fn radial_sample_honours_aspect() {
-        let mut g = novavector_color::GradientPaint::new(novavector_color::Gradient {
-            kind: novavector_color::GradientKind::Radial,
-            ..Default::default()
-        });
+        let mut g =
+            novavector_color::GradientPaint::new(novavector_color::Gradient { kind: novavector_color::GradientKind::Radial, ..Default::default() });
         // Radius 100 along x, 50 across: 50 pt above the centre is already the outer (black) edge.
         g.geom = Some(novavector_color::GradientGeom { start: Point::ZERO, end: Point::new(100.0, 0.0), aspect: 0.5, focal: None });
         let paint = Paint::Gradient(Box::new(g));

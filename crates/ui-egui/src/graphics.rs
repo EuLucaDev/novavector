@@ -126,9 +126,9 @@ impl NovavectorApp {
 mod tests {
     use std::sync::Arc;
 
-    use serde_json::json;
     use novavector_engine::Session;
     use novavector_engine::cmd::recovery::{MemoryStore, RecoveryStore};
+    use serde_json::json;
 
     use super::*;
     use crate::Services;

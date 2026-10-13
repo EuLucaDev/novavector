@@ -2,10 +2,10 @@
 //! category), the user's saved presets and the recently used sizes (both kept in the
 //! preferences), and the artboard grid layout shared with Rearrange All Artboards.
 
-use serde::{Deserialize, Serialize};
-use serde_json::{Value, json};
 use novavector_doc::{Artboard, Background, ColorMode, Document, Unit};
 use novavector_geom::{Point, Rect};
+use serde::{Deserialize, Serialize};
+use serde_json::{Value, json};
 
 use super::*;
 

@@ -4,12 +4,12 @@
 
 use std::path::{Path, PathBuf};
 
-use serde_json::{Value, json};
 use novavector_engine::Session;
 use novavector_engine::file_access::AutomationRoots;
+use serde_json::{Value, json};
 
 use crate::control::ControlRequest;
-use crate::{Services, NovavectorApp};
+use crate::{NovavectorApp, Services};
 
 /// A folder holding `in` (the read root, with `a.svg`), `out` (the write root) and `outside`
 /// (with `b.svg`), and an app with the desktop's file services confined to `in` and `out`.

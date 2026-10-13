@@ -13,9 +13,9 @@
 
 use std::sync::Arc;
 
-use serde::{Deserialize, Serialize};
 use novavector_color::Paint;
 use novavector_geom::{Affine, Point, Rect, Vec2};
+use serde::{Deserialize, Serialize};
 
 use crate::appearance::AppearanceItem;
 use crate::node::{Node, NodeId, NodeKind};

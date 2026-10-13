@@ -5,10 +5,10 @@
 
 use std::sync::Arc;
 
-use serde_json::Value;
 use novavector_doc::{Document, ImageBlob, ImageObject, LinkInfo, Node, NodeKind};
 use novavector_format::{base64_decode, load, save};
 use novavector_geom::Affine;
+use serde_json::Value;
 
 fn image(d: &mut Document, key: &str, link: Option<LinkInfo>) {
     let (id, layer) = (d.alloc_id(), d.layers[0].id);

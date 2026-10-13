@@ -12,11 +12,11 @@
 //! and confirm.
 
 use egui::{Sense, vec2};
-use serde_json::{Value, json};
 use novavector_color::gradient::move_stop;
 use novavector_color::{Color, FreeformPoint, GradientKind, GradientStop, Paint};
 use novavector_geom::Point;
 use novavector_tools::params::color_json;
+use serde_json::{Value, json};
 
 use super::{DialogResult, DialogSpec};
 use crate::NovavectorApp;

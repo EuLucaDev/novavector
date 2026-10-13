@@ -6,12 +6,12 @@
 use std::io::Write as _;
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_doc::{ColorProfiles, Composer, Document, ImageBlob, ImageObject, Node, NodeKind, OpacityMask, Symbol};
 use novavector_format::{FormatError, SaveOptions, VERSION, is_compressed, load, preview, save, save_with, sniff};
 use novavector_geom::Affine;
 use novavector_testkit::fixtures;
 use novavector_testkit::invariants::{check_native_roundtrip, doc_json, json_approx_eq};
+use serde_json::{Value, json};
 
 fn rich_doc() -> Document {
     (*fixtures::rich_session().doc().unwrap().doc).clone()

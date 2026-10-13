@@ -2,9 +2,9 @@
 //! filter dialog with its live preview, plug-in effects in the effect dialog, and installing
 //! `.wasm` files through File › Open.
 
-use serde_json::{Value, json};
 use novavector_engine::Session;
 use novavector_plugins::wat as tpl;
+use serde_json::{Value, json};
 
 use crate::state::Dialog;
 use crate::{NovavectorApp, dialogs, io, menus, theme};

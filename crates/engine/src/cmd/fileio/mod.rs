@@ -61,6 +61,10 @@ pub use load::{
 pub use load::{losses_summary, overwrite_losses};
 pub(crate) use native::preview_png;
 pub use native::with_compression_pref;
+/// Atomic file writes (a temporary file renamed over the target: a failed write never damages the
+/// file it replaces), for the apps' own writers too.
+#[cfg(not(target_arch = "wasm32"))]
+pub use novavector_format::write_atomic;
 pub use pdfimport::{LoadOptions, page_document};
 pub(crate) use save::job_for;
 pub use save::{
@@ -72,10 +76,6 @@ pub(crate) use screens::{
     SHARED_KEYS as SCREEN_SETTINGS_KEYS, check_settings as check_screen_settings, export as export_screens, store_settings as store_screen_settings,
 };
 pub use svg::options_map as svg_options;
-/// Atomic file writes (a temporary file renamed over the target: a failed write never damages the
-/// file it replaces), for the apps' own writers too.
-#[cfg(not(target_arch = "wasm32"))]
-pub use novavector_format::write_atomic;
 
 use super::*;
 use crate::EngineError;

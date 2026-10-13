@@ -10,9 +10,6 @@
 
 use std::collections::HashSet;
 
-use serde::de::Error as _;
-use serde::{Deserialize, Deserializer, Serialize, Serializer};
-use serde_json::{Value, json};
 use novavector_doc::slices::SliceArea;
 use novavector_doc::{CellAlign, CellVAlign, Document, NodeId, NodeKind, SliceKind};
 use novavector_geom::Rect;
@@ -20,6 +17,9 @@ use novavector_render::AntiAlias;
 use novavector_render::encode::quantize::{self, Dither, Indexed, PaletteOptions, Reduction};
 use novavector_render::encode::web::{self, ColorSort};
 use novavector_render::encode::{gif, jpeg, png};
+use serde::de::Error as _;
+use serde::{Deserialize, Deserializer, Serialize, Serializer};
+use serde_json::{Value, json};
 
 use super::*;
 

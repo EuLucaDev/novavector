@@ -9,8 +9,8 @@
 
 use std::sync::Arc;
 
-use serde_json::{Value, json};
 use novavector_doc::{Document, MaskEdit, Node, NodeId, NodeKind, Selection};
+use serde_json::{Value, json};
 
 use super::*;
 

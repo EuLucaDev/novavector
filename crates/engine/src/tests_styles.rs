@@ -1,9 +1,9 @@
 //! Graphic styles: transparency, capture from groups and type, add-apply, unique names, links
 //! (redefine, break link, delete, rename), Select All Unused, Sort by Name and Select > Same.
 
-use serde_json::{Value, json};
 use novavector_color::{BlendMode, Color, Paint};
 use novavector_doc::{GraphicStyle, Knockout, Node};
+use serde_json::{Value, json};
 
 use super::*;
 

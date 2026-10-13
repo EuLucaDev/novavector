@@ -1,13 +1,13 @@
 //! Paste in the app: the Swatch Conflict dialog, pasting at the view centre, the Paste menu items
 //! enabled by SVG on the system clipboard, and the Layers panel's Paste Remembers Layers.
 
-use serde_json::{Value, json};
 use novavector_color::{Color, Paint};
 use novavector_doc::NodeId;
 use novavector_engine::Session;
 use novavector_geom::Point;
+use serde_json::{Value, json};
 
-use crate::{Services, NovavectorApp, dialogs, menus};
+use crate::{NovavectorApp, Services, dialogs, menus};
 
 fn run(app: &mut NovavectorApp, id: &str, p: Value) -> Value {
     app.run(id, p).unwrap_or_else(|e| panic!("{id}: {e}"))

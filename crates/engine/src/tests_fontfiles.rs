@@ -7,8 +7,8 @@ use std::path::{Path, PathBuf};
 use std::sync::{Arc, Mutex, mpsc};
 use std::time::{Duration, Instant};
 
-use serde_json::{Value, json};
 use novavector_text::FontMatch;
+use serde_json::{Value, json};
 
 use crate::cmd::findfiles::{self, Limits, Rules, Visitor};
 use crate::cmd::fontfiles::{self, FontSearch, MAX_FONT_FILE, Sought, copy_into};

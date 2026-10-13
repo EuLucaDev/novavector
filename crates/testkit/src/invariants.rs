@@ -2,9 +2,9 @@
 
 use std::collections::HashSet;
 
-use serde_json::{Value, json};
 use novavector_doc::{Document, NodeKind};
 use novavector_engine::Session;
+use serde_json::{Value, json};
 
 /// Serialize a document to JSON (the canonical form for equality checks).
 pub fn doc_json(doc: &Document) -> Value {

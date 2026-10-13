@@ -2,10 +2,10 @@
 //! with three dash/gap pairs, arrowheads with rendered previews, arrow scale, width profiles.
 
 use egui::{Color32, Rect, Sense, Stroke, StrokeKind, Ui, pos2, vec2};
-use serde_json::{Value, json};
 use novavector_color::{Color, Paint};
 use novavector_doc::{Appearance, ArrowAlign, Arrowhead, Dash, Document, LineCap, LineJoin, Node, StrokeAlign, StrokeLayer, Unit, WidthProfile};
 use novavector_engine::inspect::StrokeMixed;
+use serde_json::{Value, json};
 
 use super::{character, current_stroke, pstate, set_pstate, stroke_mixed};
 use crate::theme::Tokens;

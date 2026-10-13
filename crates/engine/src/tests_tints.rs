@@ -1,9 +1,9 @@
 //! Tints of global and spot colours: applying a swatch at a tint, tints following swatch edits,
 //! tint swatches, spot tints on their plate and in PDF, Adjust Color Balance's Global mode.
 
-use serde_json::{Value, json};
 use novavector_color::{Color, Paint};
 use novavector_render::proof;
+use serde_json::{Value, json};
 
 use super::*;
 

@@ -3,8 +3,8 @@
 
 use std::path::PathBuf;
 
-use serde_json::{Value, json};
 use novavector_format::{is_compressed, sniff};
+use serde_json::{Value, json};
 
 use super::*;
 

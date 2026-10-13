@@ -2,9 +2,9 @@
 //! and tool keys (Enter/Esc/↑/↓ while drawing).
 
 use egui::{Key, KeyboardShortcut, Modifiers};
-use serde_json::json;
 use novavector_engine::cmd::clipboard::{Flavour, TEXT};
 use novavector_tools::{Mods, ToolKey};
+use serde_json::json;
 
 use crate::NovavectorApp;
 

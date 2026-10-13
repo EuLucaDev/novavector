@@ -4,10 +4,10 @@ use std::cell::RefCell;
 use std::rc::Rc;
 
 use egui::{Event, Pos2, Rect, Shape, vec2};
-use serde_json::json;
 use novavector_engine::Session;
+use serde_json::json;
 
-use crate::{Services, NovavectorApp};
+use crate::{NovavectorApp, Services};
 
 use super::tests_export::Written;
 

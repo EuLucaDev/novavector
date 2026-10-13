@@ -1,15 +1,15 @@
 //! File I/O through the injected services (pick, read, write, download, reveal); the engine's
 //! `fileio` decodes, encodes and saves every format.
 
-use serde_json::{Value, json};
 use novavector_doc::SavedView;
 use novavector_engine::EngineError;
 use novavector_engine::cmd::fileio::{self, Format, SAVE_FORMATS, SaveMode, SavePlan};
+use serde_json::{Value, json};
 
 use crate::background::{self, Writer};
 use crate::dialogs::svg_options;
 use crate::state::Dialog;
-use crate::{FilePick, Services, NovavectorApp, dialogs};
+use crate::{FilePick, NovavectorApp, Services, dialogs};
 
 /// Template extensions New from Template's open dialog lists first.
 const TEMPLATE_EXTS: &[&str] = &["vctemplate", "ait", "novavector", "drawcraft"];
@@ -24,8 +24,7 @@ pub fn open_bytes(app: &mut NovavectorApp, name: &str, bytes: &[u8], path: Optio
     let opens = opens_as(name);
     // A WebAssembly plug-in is installed.
     if opens == Some(OpensAs::Plugin) {
-        let r =
-            app.run("plugin.install", json!({"dataBase64": novavector_format::base64_encode(bytes), "name": path.as_deref().unwrap_or(name)}))?;
+        let r = app.run("plugin.install", json!({"dataBase64": novavector_format::base64_encode(bytes), "name": path.as_deref().unwrap_or(name)}))?;
         app.status(format!("Installed plug-in {}", r["name"].as_str().unwrap_or(name)));
         return Ok(Value::Null);
     }
@@ -789,8 +788,8 @@ mod tests {
     use std::cell::RefCell;
     use std::rc::Rc;
 
-    use serde_json::json;
     use novavector_engine::Session;
+    use serde_json::json;
 
     use super::*;
     use crate::Services;

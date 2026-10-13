@@ -1,9 +1,9 @@
 //! File → Document Setup (`document.setup`): validation, one undo step, round-trips, and the
 //! options other commands read (typographer's quotes, superscript/subscript, SVG text export).
 
-use serde_json::{Value, json};
 use novavector_doc::{CharPosition, DocSetup, ExportText, GridSize, NodeId, NodeKind, ScriptMetrics, TextObject, TextStyleDef, Unit};
 use novavector_tools::{PointerEvent, PointerKind, ToolKey};
+use serde_json::{Value, json};
 
 use super::*;
 
