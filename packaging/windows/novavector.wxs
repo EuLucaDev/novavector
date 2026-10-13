@@ -18,13 +18,13 @@
      xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
   <Package
       Name="NovaVector"
-      Manufacturer="Learning Machines LLC"
+      Manufacturer="Nova Foods"
       Version="$(var.Version)"
-      UpgradeCode="601C6437-08AE-4645-ADCC-27F036C2EA2F"
+      UpgradeCode="56700CCF-CA59-536A-B994-5A5237EF00CD"
       Scope="perMachine"
       Compressed="yes"
       Language="1033">
-    <SummaryInformation Description="NovaVector vector illustration app" Manufacturer="Learning Machines LLC" />
+    <SummaryInformation Description="NovaVector vector illustration app" Manufacturer="Nova Foods" />
     <!-- Same-version upgrades let successive pre-releases of one X.Y.Z replace each other
          (MSI versions are numeric, so 1.2.3-rc.1 and 1.2.3-rc.2 are both 1.2.3). -->
     <MajorUpgrade AllowSameVersionUpgrades="yes"
@@ -109,7 +109,7 @@
 
   <Fragment>
     <ComponentGroup Id="NovavectorFiles" Directory="INSTALLFOLDER">
-      <Component Id="NovavectorApp" Guid="0E8C6C5E-DE4A-4E1D-9DB0-44E8E38C2103">
+      <Component Id="NovavectorApp" Guid="671E3A61-0C34-54A9-977E-D97B89002760">
         <File Id="NovavectorExe" Source="$(var.BinDir)\novavector.exe" KeyPath="yes">
           <Shortcut Id="StartMenuShortcut" Directory="ProgramMenuFolder" Name="NovaVector"
               Description="NovaVector vector illustration app" WorkingDirectory="INSTALLFOLDER" Advertise="yes"
@@ -123,12 +123,15 @@
       <Component Id="NovavectorCli">
         <File Id="NovavectorCliExe" Source="$(var.BinDir)\novavector-cli.exe" KeyPath="yes" />
       </Component>
+      <Component Id="NovaFoodsLegalNotice">
+        <File Id="NovaFoodsLegalNoticeFile" Source="$(sys.SOURCEFILEDIR)..\..\NOTICE" KeyPath="yes" />
+      </Component>
     </ComponentGroup>
 
     <!-- Installed only with INSTALLDESKTOPSHORTCUT set (the Shortcuts page's box); removed with the
          app. A per-machine install puts it on the common desktop. `wix msi validate` reports ICE38,
          ICE43 and ICE57 for it: they take a desktop shortcut for per-user data, which it isn't here. -->
-    <Component Id="DesktopShortcut" Directory="DesktopFolder" Guid="498F2D4C-E655-47F6-B406-2D4C449B8D26" Condition="INSTALLDESKTOPSHORTCUT">
+    <Component Id="DesktopShortcut" Directory="DesktopFolder" Guid="2AAE28AC-7FFA-5628-A2BE-337B5B5BA49F" Condition="INSTALLDESKTOPSHORTCUT">
       <Shortcut Id="DesktopShortcut" Name="NovaVector" Description="NovaVector vector illustration app"
           Target="[#NovavectorExe]" WorkingDirectory="INSTALLFOLDER" Icon="NovavectorIcon.ico" IconIndex="0" />
       <RegistryValue Root="HKLM" Key="Software\NovaVector" Name="DesktopShortcut" Value="1" Type="integer" KeyPath="yes" />
