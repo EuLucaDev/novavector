@@ -1,0 +1,45 @@
+[package]
+name = "novavector-engine"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "NovaVector engine: sessions, history, selection, the command registry"
+
+[lints]
+workspace = true
+
+[dependencies]
+novavector-geom = { workspace = true }
+novavector-color = { workspace = true }
+novavector-doc = { workspace = true }
+novavector-tools = { workspace = true }
+novavector-text = { workspace = true }
+novavector-render = { workspace = true }
+novavector-pathops = { workspace = true }
+novavector-brush = { workspace = true }
+novavector-trace = { workspace = true }
+novavector-svg = { workspace = true }
+novavector-format = { workspace = true }
+novavector-pdf = { workspace = true }
+novavector-cad = { workspace = true }
+novavector-eps = { workspace = true }
+novavector-metafile = { workspace = true }
+novavector-plugins = { workspace = true }
+novavector-affinity = { workspace = true }
+novavector-scriptcheck = { workspace = true }
+image = { workspace = true }
+flate2 = { workspace = true }
+kurbo = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+log = { workspace = true }
+
+[dev-dependencies]
+novavector-affinity = { workspace = true, features = ["synth"] }
+crc32fast = { workspace = true }
+novavector-testkit = { workspace = true }
+proptest = { workspace = true }
+wat = { workspace = true }
+# Zstandard streams for the Illustrator editing data fuzz tests.
+ruzstd = { workspace = true }

@@ -1,0 +1,23 @@
+[package]
+name = "novavector-tools"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "NovaVector tool state machines: pointer events in, commands and overlays out"
+
+[lints]
+workspace = true
+
+[dependencies]
+novavector-geom = { workspace = true }
+novavector-color = { workspace = true }
+novavector-doc = { workspace = true }
+novavector-pathops = { workspace = true }
+novavector-text = { workspace = true }
+kurbo = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+[dev-dependencies]
+image = { workspace = true }
+novavector-text = { workspace = true, features = ["test-fonts"] }

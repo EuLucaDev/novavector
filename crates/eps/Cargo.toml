@@ -1,0 +1,32 @@
+[package]
+name = "novavector-eps"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "NovaVector Encapsulated PostScript: a hand-written EPS writer (PostScript Level 2 and 3) with TIFF previews"
+
+[lints]
+workspace = true
+
+[dependencies]
+novavector-geom = { workspace = true }
+novavector-color = { workspace = true }
+novavector-doc = { workspace = true }
+novavector-effects = { workspace = true }
+novavector-brush = { workspace = true }
+novavector-text = { workspace = true }
+# Windows metafile previews, opened when a file's PostScript can't be read.
+novavector-metafile = { workspace = true }
+# Non-native art in Illustrator editing data (a placed PDF's content, kept as a PDF).
+novavector-pdf = { workspace = true }
+# The TIFF writer (previews) and PackBits, shared with raster export.
+novavector-render = { workspace = true }
+kurbo = { workspace = true }
+image = { workspace = true }
+flate2 = { workspace = true }
+ruzstd = { workspace = true }
+# Live effects' params, as the art styles that name them give them.
+serde_json = { workspace = true }
+
+[dev-dependencies]
+novavector-testkit = { workspace = true }

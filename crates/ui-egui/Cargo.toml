@@ -1,0 +1,43 @@
+[package]
+name = "novavector-ui-egui"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "NovaVector egui frontend (menus, panels, tools and canvas); swappable — nothing below depends on it"
+
+[lints]
+workspace = true
+
+[dependencies]
+nova-ui = { workspace = true }
+novavector-geom = { workspace = true }
+novavector-color = { workspace = true }
+novavector-doc = { workspace = true }
+novavector-brush = { workspace = true }
+novavector-render = { workspace = true }
+novavector-text = { workspace = true }
+novavector-tools = { workspace = true }
+novavector-engine = { workspace = true }
+novavector-svg = { workspace = true }
+novavector-effects = { workspace = true }
+novavector-three-d = { workspace = true }
+novavector-plugins = { workspace = true }
+novavector-pdf = { workspace = true }
+novavector-cad = { workspace = true }
+novavector-eps = { workspace = true }
+novavector-format = { workspace = true }
+egui = { workspace = true }
+egui_extras = { workspace = true }
+image = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+log = { workspace = true }
+
+[dev-dependencies]
+egui_kittest = { workspace = true, features = ["wgpu", "snapshot"] }
+novavector-testkit = { workspace = true }
+wat = { workspace = true }
+
+[build-dependencies]
+serde_json = { workspace = true }
+toml = "1"

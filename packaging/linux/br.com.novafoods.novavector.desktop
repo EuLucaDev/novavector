@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Name=Nova Vector
+GenericName=Vector Graphics Editor
+Comment=Draw and edit vector illustrations, SVG and PDF
+Exec=novavector %F
+TryExec=novavector
+Icon=br.com.novafoods.novavector
+Terminal=false
+StartupNotify=true
+StartupWMClass=br.com.novafoods.novavector
+Categories=Graphics;2DGraphics;VectorGraphics;
+Keywords=vector;illustration;svg;pdf;drawing;bezier;
+MimeType=image/svg+xml;application/pdf;

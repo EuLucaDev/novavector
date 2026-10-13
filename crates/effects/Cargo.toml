@@ -1,0 +1,22 @@
+[package]
+name = "novavector-effects"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "NovaVector live effects evaluated to geometry"
+
+[lints]
+workspace = true
+
+[dependencies]
+novavector-geom = { workspace = true }
+novavector-three-d = { workspace = true }
+novavector-doc = { workspace = true }
+novavector-pathops = { workspace = true }
+novavector-text = { workspace = true }
+novavector-plugins = { workspace = true }
+kurbo = { workspace = true }
+serde_json = { workspace = true }
+
+[dev-dependencies]
+novavector-color = { workspace = true }

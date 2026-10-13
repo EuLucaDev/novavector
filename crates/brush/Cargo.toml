@@ -1,0 +1,17 @@
+[package]
+name = "novavector-brush"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "NovaVector brushes: calligraphic, scatter, art, pattern and bristle brush definitions and stroke geometry"
+
+[lints]
+workspace = true
+
+[dependencies]
+novavector-geom = { workspace = true }
+novavector-color = { workspace = true }
+novavector-doc = { workspace = true }
+kurbo = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }

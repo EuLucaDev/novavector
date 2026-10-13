@@ -1,0 +1,21 @@
+[package]
+name = "novavector-plugins"
+description = "Sandboxed WebAssembly plug-ins for NovaVector: a resource-limited wasmi host for object filters and live effects"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+novavector-geom = { workspace = true }
+novavector-color = { workspace = true }
+novavector-doc = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+wasmi = { workspace = true }
+
+[dev-dependencies]
+wat = { workspace = true }

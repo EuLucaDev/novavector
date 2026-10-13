@@ -1,0 +1,23 @@
+[package]
+name = "novavector-cad"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "NovaVector CAD interchange: a hand-written ASCII DXF writer (R12 to 2018)"
+
+[lints]
+workspace = true
+
+[dependencies]
+novavector-geom = { workspace = true }
+novavector-color = { workspace = true }
+novavector-doc = { workspace = true }
+novavector-effects = { workspace = true }
+novavector-brush = { workspace = true }
+novavector-pathops = { workspace = true }
+novavector-text = { workspace = true }
+kurbo = { workspace = true }
+image = { workspace = true }
+
+[dev-dependencies]
+serde_json = { workspace = true }
