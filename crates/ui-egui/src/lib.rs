@@ -14,8 +14,6 @@ macro_rules! tl {
 }
 
 pub mod background;
-#[cfg(not(target_arch = "wasm32"))]
-pub mod live_ui;
 mod brand;
 pub mod canvas;
 pub mod chrome;
@@ -36,6 +34,8 @@ pub mod i18n;
 pub mod icon_data;
 pub mod icons;
 pub mod io;
+#[cfg(not(target_arch = "wasm32"))]
+pub mod live_ui;
 pub mod menus;
 pub mod native_menu;
 pub mod opening;

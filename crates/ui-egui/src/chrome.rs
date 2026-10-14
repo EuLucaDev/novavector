@@ -90,8 +90,8 @@ pub fn app_bar(app: &mut NovavectorApp, ui: &mut Ui) {
             if discord {
                 ui.add_space(10.0);
                 #[cfg(not(target_arch = "wasm32"))]
-        crate::live_ui::button(app, ui);
-        crate::community::discord_button(app, ui, false);
+                crate::live_ui::button(app, ui);
+                crate::community::discord_button(app, ui, false);
             }
             if app.services.native_menu.is_some() {
                 let title = ui.painter().layout_no_wrap("Nova Vector".into(), egui::FontId::proportional(13.5), t.text);

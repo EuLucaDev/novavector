@@ -7,12 +7,12 @@
 #![forbid(unsafe_code)]
 
 pub mod cmd;
-pub mod live;
 pub mod file_access;
 pub mod guard;
 pub mod inspect;
 pub mod journal;
 pub mod link_watch;
+pub mod live;
 pub mod steps;
 mod tooling;
 pub mod units;

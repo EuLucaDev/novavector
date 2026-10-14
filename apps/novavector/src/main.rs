@@ -781,7 +781,7 @@ fn main() -> std::process::ExitCode {
             options,
             Box::new(move |cc| {
                 let mut app = NovavectorApp::new(Session::new(), services(cc.winit_window().cloned(), cc.egui_ctx.clone()));
-            app.live.pending_join = novavector_ui_egui::live_ui::launch_invite();
+                app.live.pending_join = novavector_ui_egui::live_ui::launch_invite();
                 load_prefs(&mut app, saved);
                 // Fit the window to its monitor, or put it back where it was (still hidden).
                 if let Some(w) = cc.winit_window() {
