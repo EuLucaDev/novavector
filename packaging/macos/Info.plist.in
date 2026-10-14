@@ -142,5 +142,16 @@
       </dict>
     </dict>
   </array>
+  <key>CFBundleURLTypes</key>
+  <array>
+    <dict>
+      <key>CFBundleURLName</key>
+      <string>br.com.novafoods.novavector.invite</string>
+      <key>CFBundleTypeRole</key>
+      <string>Editor</string>
+      <key>CFBundleURLSchemes</key>
+      <array><string>novavector</string></array>
+    </dict>
+  </array>
 </dict>
 </plist>

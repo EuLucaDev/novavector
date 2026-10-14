@@ -2623,15 +2623,26 @@ dependencies = [
 [[package]]
 name = "nova-live"
 version = "0.1.0"
-source = "git+https://github.com/EuLucaDev/nova-live?rev=73c86a72931074d3a0b55997ac0d9dc64237cfa1#73c86a72931074d3a0b55997ac0d9dc64237cfa1"
+source = "git+https://github.com/EuLucaDev/nova-live?rev=4bae300bfa60a31ef62f1d9f28a4cd067b46ed7c#4bae300bfa60a31ef62f1d9f28a4cd067b46ed7c"
 dependencies = [
  "base64 0.22.1",
  "getrandom 0.4.3",
+ "nova-live-macos",
  "rustls",
  "serde",
  "serde_json",
  "tungstenite",
  "webpki-roots",
+ "windows-registry",
+]
+
+[[package]]
+name = "nova-live-macos"
+version = "0.1.0"
+source = "git+https://github.com/EuLucaDev/nova-live?rev=4bae300bfa60a31ef62f1d9f28a4cd067b46ed7c#4bae300bfa60a31ef62f1d9f28a4cd067b46ed7c"
+dependencies = [
+ "objc2 0.6.4",
+ "objc2-foundation 0.3.2",
 ]
 
 [[package]]
@@ -2651,7 +2662,7 @@ dependencies = [
 
 [[package]]
 name = "novavector"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "arboard",
  "block2 0.6.2",
@@ -2685,7 +2696,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-affinity"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "crc32fast",
  "flate2",
@@ -2696,7 +2707,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-brush"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "kurbo 0.13.1",
  "novavector-color",
@@ -2708,7 +2719,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-cad"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "image",
  "kurbo 0.13.1",
@@ -2724,7 +2735,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-cli"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "log",
  "novavector-color",
@@ -2746,7 +2757,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-color"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "kurbo 0.13.1",
  "moxcms",
@@ -2758,7 +2769,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-doc"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "image",
  "jpeg-encoder",
@@ -2775,7 +2786,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-effects"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "kurbo 0.13.1",
  "novavector-color",
@@ -2790,7 +2801,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-engine"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "crc32fast",
  "flate2",
@@ -2826,7 +2837,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-eps"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "flate2",
  "image",
@@ -2847,7 +2858,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-format"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "flate2",
  "novavector-doc",
@@ -2862,7 +2873,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-geom"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "kurbo 0.13.1",
  "novavector-testkit",
@@ -2874,7 +2885,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-mcp"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "image",
  "log",
@@ -2893,7 +2904,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-metafile"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "image",
  "kurbo 0.13.1",
@@ -2907,7 +2918,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-pathops"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "kurbo 0.13.1",
  "linesweeper",
@@ -2919,7 +2930,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-pdf"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "aes",
  "flate2",
@@ -2948,7 +2959,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-plugins"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "novavector-color",
  "novavector-doc",
@@ -2962,7 +2973,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-render"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "flate2",
  "gif",
@@ -2987,14 +2998,14 @@ dependencies = [
 
 [[package]]
 name = "novavector-scriptcheck"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "proptest",
 ]
 
 [[package]]
 name = "novavector-svg"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "flate2",
  "image",
@@ -3018,7 +3029,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-testkit"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "image",
  "kurbo 0.13.1",
@@ -3035,7 +3046,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-text"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "harfrust 0.13.3",
  "icu_segmenter",
@@ -3055,7 +3066,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-three-d"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "novavector-geom",
  "novavector-pathops",
@@ -3063,7 +3074,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-tools"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "image",
  "kurbo 0.13.1",
@@ -3078,7 +3089,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-trace"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "image",
  "kurbo 0.13.1",
@@ -3090,7 +3101,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-ui-egui"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "egui",
  "egui_extras",
@@ -3124,7 +3135,7 @@ dependencies = [
 
 [[package]]
 name = "novavector-web"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "eframe",
  "egui",
@@ -6303,7 +6314,7 @@ checksum = "9440ea3e5aeabb0ac63af70daf835274065238cdd0cec83418f417eae38bacee"
 
 [[package]]
 name = "xtask"
-version = "0.11.0"
+version = "0.12.0"
 dependencies = [
  "serde_json",
 ]

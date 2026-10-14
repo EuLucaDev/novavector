@@ -604,6 +604,8 @@ fn native_options(custom_titlebar: bool) -> eframe::NativeOptions {
 }
 
 fn main() -> std::process::ExitCode {
+    #[cfg(not(target_arch = "wasm32"))]
+    novavector_ui_egui::live_ui::install_link_handler();
     // Validate roots before logging, font scans, preferences or the window: a missing value
     // must not clear an environment root and start the control channel without confinement.
     let mut control = automation_args::ControlArg::default();
