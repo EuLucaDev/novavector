@@ -7,6 +7,7 @@
 #![forbid(unsafe_code)]
 
 pub mod cmd;
+pub mod live;
 pub mod file_access;
 pub mod guard;
 pub mod inspect;
@@ -1018,6 +1019,8 @@ pub struct Session {
     /// lends the other tools. None until one is chosen.
     pub(crate) last_selection_tool: Option<&'static str>,
     pub(crate) last_view: ViewInfo,
+    /// Colaboração em tempo real (Nova Live), ver `live`.
+    pub live: live::LiveState,
     depth: u32,
     /// Set when the active tool panicked (see [`guard`]); reported by the next tool event.
     tool_panic: Option<EngineError>,
@@ -1125,6 +1128,7 @@ impl Session {
             lender: None,
             last_selection_tool: None,
             last_view: ViewInfo::default(),
+            live: live::LiveState::default(),
             depth: 0,
             tool_panic: None,
             draw_mode: DrawMode::Normal,
@@ -1339,14 +1343,25 @@ impl Session {
             self.note_depth = 1;
             self.batch_stash = None;
         }
+        let live_ctx = (self.depth == 0 && self.live.doc.is_some()).then(|| self.active().map(|d| live::context(&d.selection))).flatten();
         let r = if self.depth == 0 { self.run_guarded(id, |s| (spec.run)(s, params)) } else { self.run_nested(|s| (spec.run)(s, params)) };
         let r = r?;
         if self.depth == 0 {
             self.inherit_new_art();
         }
-        if spec.journal && self.depth == 0 && self.active().is_none_or(|d| d.interaction.is_none()) {
-            let p = self.noted(params);
+        // Parâmetros com o que o comando resolveu das preferências e do relógio: repetem igual.
+        let noted = (self.depth == 0).then(|| self.noted(params));
+        if spec.journal
+            && self.depth == 0
+            && self.active().is_none_or(|d| d.interaction.is_none())
+            && let Some(p) = noted.clone()
+        {
             self.journal.push((id.to_string(), p));
+        }
+        if let Some(ctx) = live_ctx {
+            let replicable = spec.journal && !matches!(id, "edit.undo" | "edit.redo") && self.active().is_some_and(|d| d.interaction.is_none());
+            let p = noted.unwrap_or_else(|| params.clone());
+            self.live_record(id, &p, replicable, ctx);
         }
         if self.depth == 0 {
             self.after_command();

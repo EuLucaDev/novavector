@@ -14,6 +14,8 @@ macro_rules! tl {
 }
 
 pub mod background;
+#[cfg(not(target_arch = "wasm32"))]
+pub mod live_ui;
 mod brand;
 pub mod canvas;
 pub mod chrome;
@@ -429,6 +431,9 @@ pub struct NovavectorApp {
     /// This frame carries input the control channel injected ([`Self::raw_input_hook`]): it runs
     /// confined to [`Self::automation_roots`].
     synthetic_frame: bool,
+    /// Colaboração em tempo real (Nova Live).
+    #[cfg(not(target_arch = "wasm32"))]
+    pub live: live_ui::LiveUi,
 }
 
 /// A window capture asked for through the control channel (`ui.screenshot`), answered once a
@@ -455,6 +460,8 @@ impl NovavectorApp {
         }
         let views = session.documents().iter().map(View::of).collect();
         Self {
+            #[cfg(not(target_arch = "wasm32"))]
+            live: live_ui::LiveUi::default(),
             session,
             ui: UiState::default(),
             views,
@@ -1226,6 +1233,8 @@ impl NovavectorApp {
 
     fn ui_frame(&mut self, ui: &mut egui::Ui) {
         let ctx = ui.ctx().clone();
+        #[cfg(not(target_arch = "wasm32"))]
+        live_ui::pump(self, &ctx);
         if !self.fonts_ready {
             ctx.request_repaint();
             return;
@@ -1260,6 +1269,8 @@ impl NovavectorApp {
         dock::floating_panel(self, &ctx);
         floating::show(self, &ctx);
         panels::library_panel::show_window(self, &ctx);
+        #[cfg(not(target_arch = "wasm32"))]
+        live_ui::window(self, &ctx);
         dialogs::show(self, &ctx);
         palette::show(self, &ctx);
         if self.custom_titlebar {

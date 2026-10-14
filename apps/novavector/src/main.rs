@@ -612,7 +612,7 @@ fn main() -> std::process::ExitCode {
         automation_args::AutomationArgs::new(root_env("NOVAVECTOR_AUTOMATION_READ_ROOT"), root_env("NOVAVECTOR_AUTOMATION_WRITE_ROOT"));
     let mut files = Vec::new();
     let mut in_window_menus = std::env::var_os("NOVAVECTOR_IN_WINDOW_MENUS").is_some_and(|v| !v.is_empty() && v != "0");
-    let mut args = std::env::args().skip(1);
+    let mut args = std::env::args().skip(1).filter(|arg| !novavector_ui_egui::live_ui::is_invite_arg(arg));
     while let Some(a) = args.next() {
         match roots_args.consume(&a, &mut args).and_then(|root| if root { Ok(true) } else { control.consume(&a, &mut args) }) {
             Ok(true) => continue,
@@ -781,6 +781,7 @@ fn main() -> std::process::ExitCode {
             options,
             Box::new(move |cc| {
                 let mut app = NovavectorApp::new(Session::new(), services(cc.winit_window().cloned(), cc.egui_ctx.clone()));
+            app.live.pending_join = novavector_ui_egui::live_ui::launch_invite();
                 load_prefs(&mut app, saved);
                 // Fit the window to its monitor, or put it back where it was (still hidden).
                 if let Some(w) = cc.winit_window() {
