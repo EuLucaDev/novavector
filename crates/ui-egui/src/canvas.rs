@@ -185,6 +185,19 @@ pub fn show(app: &mut NovavectorApp, ui: &mut Ui) {
     }
     let v = *app.view().unwrap_or(&View::default());
     let xf = Xf::new(rect, &v);
+    // Colaboração: o mouse vai em coordenadas do documento.
+    #[cfg(not(target_arch = "wasm32"))]
+    if app.session.live_on_screen() {
+        app.live.view = Some(crate::live_ui::LiveView::new(
+            rect,
+            "documento",
+            move |p| {
+                let d = xf.to_doc(p);
+                (d.x, d.y)
+            },
+            move |x, y| xf.to_screen(Point::new(x, y)),
+        ));
+    }
     let origin_preview = if app.ui.view.rulers && app.ui.screen_mode < 3 { ruler_input(app, ui, full, rect, &xf) } else { None };
     panel_drop(app, ui, &resp, &xf);
     context_menu(app, &resp, &xf);
