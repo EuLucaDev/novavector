@@ -64,6 +64,7 @@ static ALLOC: Counting = Counting;
 
 /// Whether `input` is what `preset` is meant for.
 fn target(preset: &str, input: &Input) -> bool {
+    let preset = preset.strip_suffix(", enhanced").unwrap_or(preset);
     let classes: &[Class] = match preset {
         "High Fidelity Photo"
         | "Low Fidelity Photo"
@@ -140,7 +141,15 @@ fn svg_trace(svg: &str) -> TraceResult {
                 _ => panic!("unread transform {t}"),
             });
         }
-        Some(TracedPath { path: novavector_geom::PathData::from_bezpath(&path), color: [0; 3], pixels: 0, stroke: None, shape: None, gradient: None })
+        Some(TracedPath {
+            path: novavector_geom::PathData::from_bezpath(&path),
+            color: [0; 3],
+            pixels: 0,
+            stroke: None,
+            shape: None,
+            gradient: None,
+            square_caps: false,
+        })
     });
     TraceResult { paths: paths.collect(), palette: vec![[0; 3]], ..Default::default() }
 }
@@ -178,12 +187,12 @@ fn stat(runs: &[&Metrics], field: impl Fn(&Metrics) -> f64, max: bool, digits: u
     if x.is_finite() { format!("{:.digits$}", x + 0.0) } else { "all".into() }
 }
 
-const HEADER: &str = "| ΔE | edge ΔE | off mean | off max | missed max | paths | anchors | × art | lines % | upright % | corners % | kinks | odd colours | odd px | gap px | overlap px | specks | outside px | centre off | width off | anchors a stroke | shapes % | grouped % | gradient paths | found % | angle off | ramp off |\n|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|\n";
+const HEADER: &str = "| ΔE | edge ΔE | off mean | off max | missed max | paths | anchors | × art | lines % | upright % | corners % | kinks | odd colours | odd px | gap px | overlap px | specks | outside px | centre off | width off | anchors a stroke | shapes % | false shapes | grouped % | gradient paths | found % | angle off | ramp off |\n|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|\n";
 
 fn row(runs: &[&Run]) -> String {
     let m: Vec<&Metrics> = runs.iter().filter_map(|r| r.metrics.as_ref()).collect();
     if m.is_empty() {
-        return format!("| refused |{}", " |".repeat(26));
+        return format!("| refused |{}", " |".repeat(27));
     }
     let cells = [
         stat(&m, |m| m.delta, false, 2),
@@ -208,6 +217,7 @@ fn row(runs: &[&Run]) -> String {
         stat(&m, |m| m.width_off, false, 2),
         stat(&m, |m| m.stroke_anchors, false, 1),
         stat(&m, |m| m.shapes, false, 0),
+        stat(&m, |m| m.false_shapes, false, 2),
         stat(&m, |m| m.grouped, false, 0),
         stat(&m, |m| m.gradients, false, 1),
         stat(&m, |m| m.ramp_found, false, 0),
@@ -256,6 +266,11 @@ fn report() -> String {
         ("High Fidelity Photo with Gradients", "High Fidelity Photo", true),
     ] {
         presets.push((name, TraceParams { gradients, ..novavector_trace::preset(base).unwrap() }));
+    }
+    // Each preset's enhanced version, on that preset's own inputs.
+    for name in novavector_trace::PRESET_NAMES {
+        let enhanced: &'static str = Box::leak(format!("{name}, enhanced").into_boxed_str());
+        presets.extend(novavector_trace::enhanced_preset(name).map(|p| (enhanced, p)));
     }
     let inputs = inputs();
     let drawn = draw_all(&inputs);
