@@ -12,16 +12,24 @@ pub enum Brightness {
     MediumDark,
     MediumLight,
     Light,
+    /// One of the Nova Foods suite themes (Nova Photo's fourteen, from `nova-themes`).
+    Suite(nova_themes::ThemeKind),
 }
 
 impl Brightness {
     pub const ALL: [Brightness; 4] = [Brightness::Dark, Brightness::MediumDark, Brightness::MediumLight, Brightness::Light];
+
+    /// Every choice the Appearance menu offers: the four above, then the suite themes.
+    pub fn menu() -> Vec<Brightness> {
+        Brightness::ALL.into_iter().chain(nova_themes::ThemeKind::ALL.into_iter().map(Brightness::Suite)).collect()
+    }
     pub fn label(self) -> &'static str {
         match self {
             Brightness::Dark => "Dark",
             Brightness::MediumDark => "Medium Dark",
             Brightness::MediumLight => "Medium Light",
             Brightness::Light => "Light",
+            Brightness::Suite(kind) => kind.label(),
         }
     }
     pub fn id(self) -> &'static str {
@@ -30,10 +38,14 @@ impl Brightness {
             Brightness::MediumDark => "mediumDark",
             Brightness::MediumLight => "mediumLight",
             Brightness::Light => "light",
+            Brightness::Suite(kind) => kind.id(),
         }
     }
     pub fn parse(s: &str) -> Option<Self> {
-        Self::ALL.into_iter().find(|b| b.id().eq_ignore_ascii_case(s) || b.label().eq_ignore_ascii_case(s))
+        Self::ALL
+            .into_iter()
+            .find(|b| b.id().eq_ignore_ascii_case(s) || b.label().eq_ignore_ascii_case(s))
+            .or_else(|| nova_themes::ThemeKind::from_name(s).map(Brightness::Suite))
     }
 }
 
@@ -142,6 +154,7 @@ impl Tokens {
             axis_z: hex(0x378ef0),
         };
         match b {
+            Brightness::Suite(kind) => Tokens::for_suite(kind),
             Brightness::Dark => base,
             // Measured from Illustrator 2026 (plan/illustrator/10-observed-ui.md §1).
             Brightness::MediumDark => Tokens {
@@ -224,6 +237,46 @@ impl Tokens {
     pub fn get(ctx: &egui::Context) -> Tokens {
         ctx.data(|d| d.get_temp::<Tokens>(egui::Id::NULL)).unwrap_or_else(|| Tokens::for_brightness(Brightness::MediumDark))
     }
+
+    /// A suite theme paints the chrome (bars, panels, fields, text, accent, tabs); artboards,
+    /// guides, selection colours and the gizmo axes keep Nova Vector's own colours.
+    pub fn for_suite(kind: nova_themes::ThemeKind) -> Self {
+        let p = kind.palette();
+        let dark = kind.is_dark();
+        let base = Tokens::for_brightness(if dark { Brightness::Dark } else { Brightness::Light });
+        let strong = if dark { [255, 255, 255, 255] } else { [0, 0, 0, 255] };
+        Tokens {
+            dark,
+            app_bar: rgba(p.chrome),
+            panel: rgba(p.card),
+            panel_darker: rgba(p.dock),
+            input: rgba(p.field),
+            input_border: rgba(p.field_border),
+            border: rgba(p.card_border),
+            divider: rgba(p.separator),
+            text: rgba(p.text),
+            text_dim: rgba(p.text_dim),
+            text_disabled: rgba(p.text_faint),
+            icon: rgba(p.icon),
+            hover: rgba(p.hover),
+            tool_active: rgba(p.pressed),
+            accent: rgba(p.accent),
+            accent_strong: rgba(nova_themes::mix(p.accent, [0, 0, 0, 255], 0.15)),
+            row_selected: rgba(p.row_selected),
+            pasteboard: rgba(p.canvas),
+            ruler: rgba(p.card),
+            ruler_tick: rgba(p.text_dim),
+            button: rgba(p.card),
+            radius: p.radius_sm.clamp(0.0, 12.0) as u8,
+            text_strong: rgba(nova_themes::mix(p.text, strong, 0.5)),
+            tab_strip: rgba(p.tab_strip),
+            button_border: rgba(p.field_border),
+            flyout_active: rgba(p.accent),
+            caption_close: rgba(p.caption_close),
+            caption_close_text: rgba(p.caption_close_text),
+            ..base
+        }
+    }
     pub fn cr(&self) -> CornerRadius {
         CornerRadius::same(self.radius)
     }
@@ -235,6 +288,10 @@ impl Tokens {
 /// the same stroke.
 pub fn strong_selected_text(ui: &mut egui::Ui) {
     ui.visuals_mut().selection.stroke.color = Tokens::get(ui.ctx()).text_strong;
+}
+
+fn rgba(c: nova_themes::Rgba) -> Color32 {
+    Color32::from_rgba_unmultiplied(c[0], c[1], c[2], c[3])
 }
 
 pub const FONT_UI: &str = "ui";

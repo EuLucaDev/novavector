@@ -340,7 +340,12 @@ pub const UI_COMMANDS: &[(&str, &str, &str, &str)] = &[
         "",
         "{collapsed?: bool} collapse the dock's Properties | Layers | Libraries group to icons (true), expand it (false) or toggle (omitted), as the double arrow at the top of the dock does; returns the new state",
     ),
-    ("window.brightness", "UI Brightness", "", "{brightness: dark|mediumDark|mediumLight|light}"),
+    (
+        "window.brightness",
+        "UI Brightness",
+        "",
+        "{brightness: dark|mediumDark|mediumLight|light|<suite theme id: pro, proMedium, proLightGray, proLight, studio, studioLight, classic, solarizedDark, adwaita, adwaitaDark, breezeLight, breezeDark, softDark, softLight>}",
+    ),
     ("window.workspace", "Workspace", "", "{name} switch workspace (Essentials, Essentials Classic, Painting, …)"),
     ("window.workspace.reset", "Reset Essentials", "", "{} reset the current workspace"),
     ("window.workspace.new", "New Workspace…", "", "{name?} save the current layout"),
@@ -1269,7 +1274,7 @@ pub fn run_ui_command(app: &mut NovavectorApp, id: &str, p: &Value) -> Option<Re
                 app.canvas.key = None;
                 Ok(json!(b.id()))
             }
-            None => Err("brightness must be dark|mediumDark|mediumLight|light".into()),
+            None => Err("brightness must be dark|mediumDark|mediumLight|light or a suite theme id (studio, proMedium, classic…)".into()),
         },
         "window.newWindow" => Err("multiple windows land with M11.5".into()),
         "tool.select" => match s("tool") {

@@ -263,7 +263,26 @@ pub const PREF_SPECS: &[PrefSpec] = &[
         "User Interface",
         "",
         "Brightness",
-        choice(&[("dark", "Dark"), ("mediumDark", "Medium Dark"), ("mediumLight", "Medium Light"), ("light", "Light")])
+        choice(&[
+            ("dark", "Dark"),
+            ("mediumDark", "Medium Dark"),
+            ("mediumLight", "Medium Light"),
+            ("light", "Light"),
+            ("pro", "Pro (Dark)"),
+            ("proMedium", "Pro (Medium Gray)"),
+            ("proLightGray", "Pro (Light Gray)"),
+            ("proLight", "Pro (Light)"),
+            ("studio", "Studio (Dark)"),
+            ("studioLight", "Studio (Light)"),
+            ("classic", "Classic"),
+            ("solarizedDark", "Solarized Dark"),
+            ("adwaita", "Adwaita (Light)"),
+            ("adwaitaDark", "Adwaita (Dark)"),
+            ("breezeLight", "Breeze Light"),
+            ("breezeDark", "Breeze Dark"),
+            ("softDark", "Soft Dark"),
+            ("softLight", "Soft Light")
+        ])
     ),
     p!(
         "canvasColor",

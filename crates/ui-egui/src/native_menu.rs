@@ -372,7 +372,7 @@ fn language_node(app: &NovavectorApp, lang: Lang) -> Node {
 /// Appearance in the app menu (the UI-brightness theme, as Mac apps call it).
 fn appearance_node(app: &NovavectorApp, lang: Lang) -> Node {
     let children =
-        Brightness::ALL.iter().map(|b| Node::Item(native_item(app, b.label(), "window.brightness", json!({"brightness": b.id()})))).collect();
+        Brightness::menu().iter().map(|b| Node::Item(native_item(app, b.label(), "window.brightness", json!({"brightness": b.id()})))).collect();
     Node::Submenu { label: tr_ctx(lang, "theme", "Appearance").into(), children }
 }
 
