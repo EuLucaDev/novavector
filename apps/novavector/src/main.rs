@@ -86,6 +86,10 @@ impl eframe::App for App {
     }
     #[cfg_attr(not(target_os = "macos"), allow(unused_variables))]
     fn ui(&mut self, ui: &mut egui::Ui, frame: &mut eframe::Frame) {
+        #[cfg(not(target_arch = "wasm32"))]
+        if !novavector_ui_egui::account_ui::gate(ui, "novavector") {
+            return;
+        }
         #[cfg(target_os = "macos")]
         {
             let bar = novavector_ui_egui::chrome::APP_BAR_HEIGHT;
