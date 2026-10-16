@@ -111,9 +111,6 @@
   <Fragment>
     <ComponentGroup Id="PdfDocumentation" Directory="INSTALLFOLDER">
       <Files Include="$(var.DocsDir)\**" />
-      <Component Id="NovaFoodsLegalNotice">
-        <File Id="NovaFoodsLegalNoticeFile" Source="$(sys.SOURCEFILEDIR)..\..\NOTICE" KeyPath="yes" />
-      </Component>
     </ComponentGroup>
     <ComponentGroup Id="NovavectorFiles" Directory="INSTALLFOLDER">
       <Component Id="NovavectorApp" Guid="671E3A61-0C34-54A9-977E-D97B89002760">
