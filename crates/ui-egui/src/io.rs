@@ -3,7 +3,7 @@
 
 use novavector_doc::SavedView;
 use novavector_engine::EngineError;
-use novavector_engine::cmd::fileio::{self, Format, SAVE_FORMATS, SaveMode, SavePlan};
+use novavector_engine::cmd::fileio::{self, Format, SAVE_FORMATS, SaveMode, SavePlan, TEMPLATE_FORMATS};
 use serde_json::{Value, json};
 
 use crate::background::{self, Writer};
@@ -348,10 +348,11 @@ pub fn remember_view(app: &mut NovavectorApp) {
     }
 }
 
-/// A path typed in a save panel: kept when its extension names a save format (the panel's file
-/// type), else `f`'s extension is added.
-fn with_save_extension(path: &str, f: &Format) -> String {
-    with_extension(path, f.extensions[0], |g| SAVE_FORMATS.contains(&g.id))
+/// A path typed in a save panel: kept when its extension names a save format, or, for Save as
+/// Template (`mode`), when it names a template format (the panel's file type); otherwise `f`'s
+/// extension is added.
+fn with_save_extension(path: &str, f: &Format, mode: SaveMode) -> String {
+    with_extension(path, f.extensions[0], |g| SAVE_FORMATS.contains(&g.id) || (mode == SaveMode::Template && TEMPLATE_FORMATS.contains(&g.id)))
 }
 
 /// Write every file of an export (one per artboard, linked images) for the destination `path`.
@@ -371,8 +372,9 @@ fn plan(app: &NovavectorApp, mode: SaveMode, p: &Value) -> Result<SavePlan, Stri
 /// File → Save, Save As…, Save a Copy…, Save as Template… and the options dialogs' OK. `p` is the
 /// engine command's `{path?, format?, options?, svg?}`.
 ///
-/// When no path is known, desktop asks with a save panel (one file type per save format) and the
-/// web opens the Save As dialog (file name and format). With `ask_options` and no options in `p`,
+/// When no path is known, desktop asks with a save panel (one file type per save format, or one
+/// per template format for Save as Template) and the web opens the Save As dialog (file name and
+/// format). With `ask_options` and no options in `p`,
 /// a format picked that way that has options asks for them before anything is written (SVG
 /// Options, the Save PDF dialog, or the save options dialog: native and `.ai` files on Save As
 /// only), and so does Save As or Save a Copy to a given SVG path. → `{path, format, warnings…}` once written, or `{pending: <dialog kind>,
@@ -395,7 +397,7 @@ pub fn save(app: &mut NovavectorApp, mode: SaveMode, p: &Value, ask_options: boo
         return Ok(open_options(app, mode.command(), first.format, &first.name, true));
     }
     let filters = match mode {
-        SaveMode::Template => vec![(first.format.label, first.format.extensions)],
+        SaveMode::Template => fileio::template_filters(first.format.id),
         _ => fileio::save_filters(first.format.id),
     };
     let picked = pick_path(app, &FilePick { name: first.name.clone(), folder: first.folder.clone(), filters })?;
@@ -403,7 +405,7 @@ pub fn save(app: &mut NovavectorApp, mode: SaveMode, p: &Value, ask_options: boo
     let mut q = if p.is_object() { p.clone() } else { json!({}) };
     if let Some(o) = q.as_object_mut() {
         o.remove("format");
-        o.insert("path".into(), json!(with_save_extension(&picked, first.format)));
+        o.insert("path".into(), json!(with_save_extension(&picked, first.format, mode)));
     }
     let chosen = plan(app, mode, &acknowledged(&q))?;
     if let Some(r) = chosen.path.as_deref().and_then(|path| ask_before_losing(app, path, save_command(mode), &q)) {
@@ -411,7 +413,11 @@ pub fn save(app: &mut NovavectorApp, mode: SaveMode, p: &Value, ask_options: boo
     }
     if ask && asks_options(mode, chosen.format) {
         let path = chosen.path.clone().unwrap_or_default();
-        return ask_format_options(app, mode, chosen.format, &path);
+        let r = ask_format_options(app, mode, chosen.format, &path);
+        if let Some(d) = app.ui.dialog.as_mut() {
+            d.fields.insert(crate::dialogs::AFTER_PANEL.into(), json!(true));
+        }
+        return r;
     }
     write_plan(app, chosen)
 }
@@ -459,7 +465,7 @@ fn asks_options(mode: SaveMode, f: &Format) -> bool {
     !f.options.is_empty()
         && match f.id {
             "novavector" | "ai" => mode == SaveMode::SaveAs,
-            "template" => false,
+            "template" | "ait" => false,
             _ => true,
         }
 }
@@ -613,6 +619,7 @@ pub fn export(app: &mut NovavectorApp, format: Option<&str>, path: Option<String
         std::borrow::Cow::Borrowed(_) => st.doc.clone(),
         std::borrow::Cow::Owned(d) => std::sync::Arc::new(d),
     };
+    let doc = fileio::titled_for_export(&doc, st.path.as_deref(), f.id).map_or(doc, std::sync::Arc::new);
     let path = target_path(app, path, f.extensions[0])?;
     let mut again = params.clone();
     if let Some(o) = again.as_object_mut() {

@@ -284,6 +284,14 @@ pub const PREF_SPECS: &[PrefSpec] = &[
             ("softLight", "Soft Light")
         ])
     ),
+    p!("uiColorScheme", "User Interface", "", "Color Scheme", choice(&[("modern", "Modern"), ("classic", "Classic")])),
+    p!(
+        "uiAccent",
+        "User Interface",
+        "",
+        "Accent Color",
+        choice(&[("coral", "Coral"), ("blue", "Blue"), ("violet", "Violet"), ("green", "Green"), ("amber", "Amber"), ("pink", "Pink")])
+    ),
     p!(
         "canvasColor",
         "User Interface",

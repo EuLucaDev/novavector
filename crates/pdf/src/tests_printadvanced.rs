@@ -3,7 +3,7 @@
 
 use std::sync::Arc;
 
-use hayro_syntax::Pdf;
+use craft_pdf::syntax::Pdf;
 use novavector_color::cms::{self, Cms, ColorSettings, DEVICE_CMYK, GENERIC_CMYK, Intent};
 use novavector_color::{Color, Paint};
 use novavector_doc::{Appearance, Document, Node};

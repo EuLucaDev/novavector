@@ -50,6 +50,7 @@
 
     <Feature Id="Main" Title="NovaVector" Level="1">
       <ComponentGroupRef Id="NovavectorFiles" />
+      <ComponentGroupRef Id="PdfDocumentation" />
       <ComponentRef Id="DesktopShortcut" />
     </Feature>
 
@@ -108,6 +109,12 @@
   </Package>
 
   <Fragment>
+    <ComponentGroup Id="PdfDocumentation" Directory="INSTALLFOLDER">
+      <Files Include="$(var.DocsDir)\**" />
+      <Component Id="NovaFoodsLegalNotice">
+        <File Id="NovaFoodsLegalNoticeFile" Source="$(sys.SOURCEFILEDIR)..\..\NOTICE" KeyPath="yes" />
+      </Component>
+    </ComponentGroup>
     <ComponentGroup Id="NovavectorFiles" Directory="INSTALLFOLDER">
       <Component Id="NovavectorApp" Guid="671E3A61-0C34-54A9-977E-D97B89002760">
         <File Id="NovavectorExe" Source="$(var.BinDir)\novavector.exe" KeyPath="yes">
@@ -122,9 +129,6 @@
 
       <Component Id="NovavectorCli">
         <File Id="NovavectorCliExe" Source="$(var.BinDir)\novavector-cli.exe" KeyPath="yes" />
-      </Component>
-      <Component Id="NovaFoodsLegalNotice">
-        <File Id="NovaFoodsLegalNoticeFile" Source="$(sys.SOURCEFILEDIR)..\..\NOTICE" KeyPath="yes" />
       </Component>
     </ComponentGroup>
 

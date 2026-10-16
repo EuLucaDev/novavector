@@ -8,6 +8,12 @@ description = "NovaVector engine: sessions, history, selection, the command regi
 [lints]
 workspace = true
 
+[features]
+default = ["bundled-fonts"]
+# The fonts novavector-text bundles (see its `bundled-fonts`). Embedders that supply every font at
+# run time (`novavector_text::FontDb::add_font`) build with `default-features = false`.
+bundled-fonts = ["novavector-text/bundled-fonts"]
+
 [dependencies]
 novavector-geom = { workspace = true }
 novavector-color = { workspace = true }
