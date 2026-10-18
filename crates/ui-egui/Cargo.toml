@@ -43,6 +43,8 @@ web-time = "1"
 [dev-dependencies]
 egui_kittest = { workspace = true, features = ["wgpu", "snapshot"] }
 novavector-testkit = { workspace = true }
+# A variable font built in code (no font file is committed).
+novavector-text = { workspace = true, features = ["test-fonts"] }
 wat = { workspace = true }
 
 [build-dependencies]

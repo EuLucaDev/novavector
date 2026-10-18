@@ -9,6 +9,8 @@ description = "NovaVector SVG import and export"
 workspace = true
 
 [dependencies]
+# Which paths stored in documents may be opened.
+craft-docpath = { workspace = true }
 novavector-geom = { workspace = true }
 novavector-color = { workspace = true }
 novavector-doc = { workspace = true }

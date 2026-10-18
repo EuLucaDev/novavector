@@ -871,6 +871,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "craft-docpath"
+version = "0.1.0"
+
+[[package]]
 name = "craft-pdf"
 version = "0.1.0"
 dependencies = [
@@ -2818,6 +2822,7 @@ dependencies = [
 name = "novavector-doc"
 version = "0.16.0"
 dependencies = [
+ "hayro-ccitt",
  "image",
  "jpeg-encoder",
  "kurbo 0.13.1",
@@ -2851,6 +2856,7 @@ dependencies = [
 name = "novavector-engine"
 version = "0.16.0"
 dependencies = [
+ "craft-docpath",
  "crc32fast",
  "flate2",
  "image",
@@ -2876,6 +2882,7 @@ dependencies = [
  "novavector-tools",
  "novavector-trace",
  "proptest",
+ "roxmltree 0.21.1",
  "ruzstd",
  "serde",
  "serde_json",
@@ -2887,7 +2894,9 @@ dependencies = [
 name = "novavector-eps"
 version = "0.16.0"
 dependencies = [
+ "fax",
  "flate2",
+ "hayro-ccitt",
  "image",
  "kurbo 0.13.1",
  "novavector-brush",
@@ -3058,6 +3067,7 @@ dependencies = [
 name = "novavector-svg"
 version = "0.16.0"
 dependencies = [
+ "craft-docpath",
  "flate2",
  "image",
  "kurbo 0.13.1",
@@ -3082,6 +3092,7 @@ dependencies = [
 name = "novavector-testkit"
 version = "0.16.0"
 dependencies = [
+ "fax",
  "image",
  "kurbo 0.13.1",
  "novavector-color",
@@ -5265,9 +5276,9 @@ dependencies = [
 
 [[package]]
 name = "ureq-proto"
-version = "0.6.4"
+version = "0.6.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f86fd172ccca569e458f61b6bdd6220965a9ef36e672a6852953b51a0e1583be"
+checksum = "841583fc36089d7d59419568ae157f43a5a03a2e5a81ba87c77d1596ef46e922"
 dependencies = [
  "base64 0.23.1",
  "http",
